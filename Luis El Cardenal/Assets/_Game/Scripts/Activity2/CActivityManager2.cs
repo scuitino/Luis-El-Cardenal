@@ -15,6 +15,10 @@ public class CActivityManager2 : MonoBehaviour {
     // actual question word
     CWordA2 _actualWord;
 
+    // Frog animator
+    [SerializeField]
+    Animator _frogAnimator;
+
     private void Start()
     {
         PlayWord();
@@ -54,6 +58,8 @@ public class CActivityManager2 : MonoBehaviour {
     {
         if (_playerAnswer == _actualWord._numberOfSyllables)
         {
+            _frogAnimator.SetInteger("Result", _playerAnswer);
+            _frogAnimator.SetTrigger("StartJump");
             Debug.Log("Respuesta correcta.");
         }
         else
