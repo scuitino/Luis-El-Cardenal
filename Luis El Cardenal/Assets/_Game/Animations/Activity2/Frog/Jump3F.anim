@@ -57,13 +57,13 @@ AnimationClip:
         time: 0.9142857
         value: -135
         inSlope: 0
-        outSlope: 748.1481
+        outSlope: 1139.579
         tangentMode: 1
       - serializedVersion: 2
         time: 1.6571429
-        value: 159
-        inSlope: 279.1247
-        outSlope: 279.1247
+        value: 164.8205
+        inSlope: -70.2573
+        outSlope: -70.2573
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -76,19 +76,19 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 12429b266c5dc3c46822f4d821ff3e88, type: 3}
-    - time: 0.37142858
+    - time: 0.42857143
       value: {fileID: 21300000, guid: 750f0240d3224bb4684dc6f01f88c0e1, type: 3}
-    - time: 0.9142857
+    - time: 0.87142855
       value: {fileID: 21300000, guid: 9e0fe96bb28ed4f4aa033c9207db3130, type: 3}
-    - time: 0.9714286
+    - time: 0.98571426
       value: {fileID: 21300000, guid: 5c0eb89994050df41b7a9e183d0a155a, type: 3}
     - time: 1.0714285
       value: {fileID: 21300000, guid: 174f80a47f4932a45b1966be9b71ee3f, type: 3}
-    - time: 1.2428571
+    - time: 1.2
       value: {fileID: 21300000, guid: 453be804f1d95184d9344613ccb0c52c, type: 3}
-    - time: 1.4142857
+    - time: 1.3285714
       value: {fileID: 21300000, guid: fa4edfbd8e0ad2c43b46633bdcc4aa1b, type: 3}
-    - time: 1.5285715
+    - time: 1.5142857
       value: {fileID: 21300000, guid: 4aaa119424c1fb8499d7a073033635a6, type: 3}
     - time: 1.6142857
       value: {fileID: 21300000, guid: 02466eb82424bfb4294a9d1149a1633e, type: 3}
@@ -199,13 +199,13 @@ AnimationClip:
         time: 0.9142857
         value: -135
         inSlope: 0
-        outSlope: 748.1481
+        outSlope: 1139.579
         tangentMode: 1
       - serializedVersion: 2
         time: 1.6571429
-        value: 159
-        inSlope: 279.1247
-        outSlope: 279.1247
+        value: 164.8205
+        inSlope: -70.2573
+        outSlope: -70.2573
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2

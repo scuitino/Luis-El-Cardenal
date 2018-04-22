@@ -11,7 +11,7 @@ AnimatorController:
   - m_Name: Result
     m_Type: 3
     m_DefaultFloat: 0
-    m_DefaultInt: 3
+    m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: StartJump
@@ -136,7 +136,7 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
+  - m_ConditionMode: 6
     m_ConditionEvent: Result
     m_EventTreshold: 5
   m_DstStateMachine: {fileID: 0}
