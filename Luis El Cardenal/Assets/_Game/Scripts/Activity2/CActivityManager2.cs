@@ -19,6 +19,10 @@ public class CActivityManager2 : MonoBehaviour {
     [SerializeField]
     Animator _frogAnimator;
 
+    // prefabs to load the help images 
+    [SerializeField]
+    CSyllableQuestion _1Syllable, _2Syllable, _3Syllable, _4Syllable; 
+
     private void Start()
     {
         PlayWord();
