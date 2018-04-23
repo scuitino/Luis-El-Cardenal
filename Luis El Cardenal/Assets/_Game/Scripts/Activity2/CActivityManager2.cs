@@ -41,7 +41,29 @@ public class CActivityManager2 : MonoBehaviour {
                 _actualWord = tSelectedWord;
                 tReady = true; // ready to play
             }
-        }        
+        }       
+
+        // load the image sprites
+        switch (_actualWord._numberOfSyllables)
+        {
+            case 1:
+                _1Syllable.gameObject.SetActive(true);
+                _1Syllable.LoadImageParts(_actualWord);
+                break;
+            case 2:
+                _2Syllable.gameObject.SetActive(true);
+                _2Syllable.LoadImageParts(_actualWord);
+                break;
+            case 3:
+                _3Syllable.gameObject.SetActive(true);
+                _3Syllable.LoadImageParts(_actualWord);
+                break;
+            case 4:
+                _4Syllable.gameObject.SetActive(true);
+                _4Syllable.LoadImageParts(_actualWord);
+                break;
+        }
+
         // TODO: play animation of the word
     }
 
