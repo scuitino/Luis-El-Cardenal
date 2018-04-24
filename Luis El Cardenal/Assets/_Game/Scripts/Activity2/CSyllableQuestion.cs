@@ -20,4 +20,16 @@ public class CSyllableQuestion : MonoBehaviour {
             _imagesToFill[i].sprite = aWord._images[i];
         }
     }
+
+    // go to the next word
+    public void NextQuestion()
+    {
+        CActivityManager2._instance.PlayWord();
+    }
+
+    // to change when the player can play
+    public void EnableReady()
+    {
+        CActivityManager2._instance.ChangeReady(true);
+    }
 }
