@@ -9,16 +9,18 @@ public class CActivityManager2 : MonoBehaviour {
     public static CActivityManager2 _instance = null; //static - the same variable is shared by all instances of the class that are created
     #endregion
 
+    // syllables for all questions on this level
     [SerializeField, Header("Configuration")]
-    int _1SyllablesWords;
-    [SerializeField]
-    int _2SyllablesWords, _3SyllablesWords, _4SyllablesWords;
+    List<int> _syllablesOnThisLevel;
+
+    // actual question on the _syllablesOnThisLevel list
+    int _actualQuestion;
 
     // list of all the words available on this activity
     [SerializeField, Header("References")]
-    List<CWordA2> _1SwordsList;
+    List<CWordA2> _1SWordsList;
     [SerializeField]
-    List<CWordA2> _2SwordsList, _3SwordsList, _4SwordsList;
+    List<CWordA2> _2SWordsList, _3SWordsList, _4SWordsList;
 
     // answer of the actual question 
     [SerializeField]
@@ -42,6 +44,11 @@ public class CActivityManager2 : MonoBehaviour {
     // to know if the player can play
     bool _readyToPlay;
 
+    // to move result button
+    [SerializeField]
+    DOTweenAnimation _resultButton;
+
+    // player buttons
     [SerializeField]
     List<DOTweenAnimation> _whiteButtons;
 
@@ -62,57 +69,83 @@ public class CActivityManager2 : MonoBehaviour {
     // Play with the next word
     public void PlayWord()
     {
-        _readyToPlay = false;
-        bool tReady = false;
-        while (!tReady) // while the next word is not selected
+        if (_syllablesOnThisLevel.Count > 0)
         {
-            CWordA2 tSelectedWord = _1SwordsList[Random.Range(0, _1SwordsList.Count)];
-            if (!tSelectedWord._wasUsed) //  is the word was not used
+            _readyToPlay = false;
+            bool tReady = false;
+            CWordA2 tSelectedWord;
+            int tSyllables = 0; // syllables for the next word
+            _actualQuestion = Random.Range(0, _syllablesOnThisLevel.Count);
+            tSyllables = _syllablesOnThisLevel[_actualQuestion]; // select the sylabbles for the next word
+
+            while (!tReady) // while the next word is not selected
             {
-                _actualWord = tSelectedWord;
-                tReady = true; // ready to play
+                switch (tSyllables) // try to choose a word
+                {
+                    case 1:
+                        tSelectedWord = _1SWordsList[Random.Range(0, _1SWordsList.Count)];
+                        break;
+                    case 2:
+                        tSelectedWord = _2SWordsList[Random.Range(0, _2SWordsList.Count)];
+                        break;
+                    case 3:
+                        tSelectedWord = _3SWordsList[Random.Range(0, _3SWordsList.Count)];
+                        break;
+                    case 4:
+                        tSelectedWord = _4SWordsList[Random.Range(0, _4SWordsList.Count)];
+                        break;
+                    default:
+                        tSelectedWord = null;
+                        break;
+                }
+
+                if (!tSelectedWord._wasUsed) //  is the word was not used
+                {
+                    _actualWord = tSelectedWord;
+                    tReady = true; // ready to play
+                }
             }
-        }
 
-        // clean previous game
-        _playerAnswer = 0; // reset the answer
-        _1Syllable.gameObject.SetActive(false);
-        _2Syllable.gameObject.SetActive(false);
-        _3Syllable.gameObject.SetActive(false);
-        _4Syllable.gameObject.SetActive(false);
-        // reset frog animations
-        _frogAnimator.SetTrigger("Restart");
-        _frogAnimator.SetBool("Fall", false);
-        // reset player buttons
-        for (int i = 0; i < _whiteButtons.Count; i++)
-        {
-            _whiteButtons[i].DORewind();
-        }
+            // clean previous game
+            _playerAnswer = 0; // reset the answer
+            _1Syllable.gameObject.SetActive(false);
+            _2Syllable.gameObject.SetActive(false);
+            _3Syllable.gameObject.SetActive(false);
+            _4Syllable.gameObject.SetActive(false);
+            // reset frog animations
+            _frogAnimator.SetTrigger("Restart");
+            _frogAnimator.SetBool("Fall", false);
+            // reset player buttons
+            for (int i = 0; i < _whiteButtons.Count; i++)
+            {
+                _whiteButtons[i].DORewind();
+            }
 
-        // load the image sprites
-        switch (_actualWord._numberOfSyllables)
-        {
-            case 1:
-                _1Syllable.gameObject.SetActive(true);
-                _1Syllable.LoadImageParts(_actualWord);
-                _1SAnimator.SetTrigger("Restart");
-                break;
-            case 2:
-                _2Syllable.gameObject.SetActive(true);
-                _2Syllable.LoadImageParts(_actualWord);
-                _1SAnimator.SetTrigger("Restart");
-                break;
-            case 3:
-                _3Syllable.gameObject.SetActive(true);
-                _3Syllable.LoadImageParts(_actualWord);
-                _1SAnimator.SetTrigger("Restart");
-                break;
-            case 4:
-                _4Syllable.gameObject.SetActive(true);
-                _4Syllable.LoadImageParts(_actualWord);
-                _1SAnimator.SetTrigger("Restart");
-                break;
-        }
+            // load the image sprites
+            switch (_actualWord._numberOfSyllables)
+            {
+                case 1:
+                    _1Syllable.gameObject.SetActive(true);
+                    _1Syllable.LoadImageParts(_actualWord);
+                    _1SAnimator.SetTrigger("Restart");
+                    break;
+                case 2:
+                    _2Syllable.gameObject.SetActive(true);
+                    _2Syllable.LoadImageParts(_actualWord);
+                    _2SAnimator.SetTrigger("Restart");
+                    break;
+                case 3:
+                    _3Syllable.gameObject.SetActive(true);
+                    _3Syllable.LoadImageParts(_actualWord);
+                    _3SAnimator.SetTrigger("Restart");
+                    break;
+                case 4:
+                    _4Syllable.gameObject.SetActive(true);
+                    _4Syllable.LoadImageParts(_actualWord);
+                    _4SAnimator.SetTrigger("Restart");
+                    break;
+            }
+        }        
     }
 
     // to add 1 to syllables answer
@@ -120,7 +153,7 @@ public class CActivityManager2 : MonoBehaviour {
     {
         if (_readyToPlay)
         {
-            _whiteButtons[aButtonNumber].DOPlay();
+            _whiteButtons[aButtonNumber].DORestart();
             _playerAnswer++;
         }        
     }
@@ -130,7 +163,7 @@ public class CActivityManager2 : MonoBehaviour {
     {
         if (_readyToPlay)
         {
-            _whiteButtons[aButtonNumber].DORewind();
+            _whiteButtons[aButtonNumber].DOPlayBackwards();
             _playerAnswer--;
         }        
     }
@@ -142,17 +175,18 @@ public class CActivityManager2 : MonoBehaviour {
         {            
             if (_playerAnswer > 0) // if the player make a move
             {
+                _resultButton.DOPlayBackwards();
                 _readyToPlay = false;
                 _frogAnimator.SetTrigger("StartJump");
                 _frogAnimator.SetInteger("Result", _playerAnswer);
-                if (_playerAnswer == _actualWord._numberOfSyllables)
+                if (_playerAnswer != _actualWord._numberOfSyllables) // check if the answer is correct
                 {
-                    Debug.Log("Respuesta correcta.");
+                    _frogAnimator.SetTrigger("Fall");
                 }
                 else
                 {
-                    _frogAnimator.SetTrigger("Fall");
-                    Debug.Log("Respuesta incorrecta, intentalo de nuevo.");
+                    _syllablesOnThisLevel.RemoveAt(_actualQuestion); // remove the actual question
+                    _actualWord._wasUsed = true; // label the word as used
                 }
             }
         }             
@@ -162,6 +196,7 @@ public class CActivityManager2 : MonoBehaviour {
     public void ChangeReady(bool aOption)
     {
         _readyToPlay = aOption;
+        _resultButton.DOPlayForward();
     }
 
     //start syllables success animation
@@ -174,15 +209,15 @@ public class CActivityManager2 : MonoBehaviour {
                 _1SAnimator.SetTrigger("StartSuccess");
                 break;
             case 2:
-                _2SAnimator.SetTrigger("Restart");
+                _2SAnimator.SetInteger("Syllables", 2);
                 _2SAnimator.SetTrigger("StartSuccess");
                 break;
             case 3:
-                _3SAnimator.SetTrigger("Restart");
+                _3SAnimator.SetInteger("Syllables", 3);
                 _3SAnimator.SetTrigger("StartSuccess");
                 break;
             case 4:
-                _4SAnimator.SetTrigger("Restart");
+                _4SAnimator.SetInteger("Syllables", 4);
                 _4SAnimator.SetTrigger("StartSuccess");
                 break;
         }

@@ -120,6 +120,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 2109500500}
     m_Modifications:
+    - target: {fileID: 114261144879185824, guid: 51e3330a7588e6e4199fede7100a0533,
+        type: 2}
+      propertyPath: onStart.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114920376838517312, guid: 51e3330a7588e6e4199fede7100a0533,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -334,6 +339,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114261144879185824, guid: 51e3330a7588e6e4199fede7100a0533,
+        type: 2}
+      propertyPath: duration
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51e3330a7588e6e4199fede7100a0533, type: 2}
@@ -1248,7 +1258,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 12429b266c5dc3c46822f4d821ff3e88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd0c0a10377c1c845b50096f3afcbb41, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1307,16 +1317,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df497f946720bd4479b9b8482c24bd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _1SyllablesWords: 0
-  _2SyllablesWords: 0
-  _3SyllablesWords: 0
-  _4SyllablesWords: 0
-  _1SwordsList:
+  _syllablesOnThisLevel: 010000000100000002000000020000000300000004000000
+  _1SWordsList:
   - {fileID: 11400000, guid: 488104ef4b794224bb23edba2ee626ea, type: 2}
   - {fileID: 11400000, guid: da330a1fcd0e2394189b9cbf775a3bde, type: 2}
   - {fileID: 11400000, guid: 66dab36b7287aac48b49d1687d264cbe, type: 2}
   - {fileID: 11400000, guid: 913926f52beba4c44b218c5aeb7b828c, type: 2}
-  _2SwordsList:
+  _2SWordsList:
   - {fileID: 11400000, guid: bb38de4b62a09b1429e8ac67843f086e, type: 2}
   - {fileID: 11400000, guid: f1abfacbfa07824488b68c8710655da7, type: 2}
   - {fileID: 11400000, guid: 8c61eca2e2eb9f247a9ea9dcd4eb1cc4, type: 2}
@@ -1331,7 +1338,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9b0edc27168d06d47b14d38203c4e8fd, type: 2}
   - {fileID: 11400000, guid: e8c63bd6a20b17d4a8dfa3006087c448, type: 2}
   - {fileID: 11400000, guid: fe9e535ffeab13949b617f1f1b2dea94, type: 2}
-  _3SwordsList:
+  _3SWordsList:
   - {fileID: 11400000, guid: fdcb3cd06ffe1264bba6d05eb9cbd442, type: 2}
   - {fileID: 11400000, guid: dbc4bae24a2a7174ca3ef28b1c399b4e, type: 2}
   - {fileID: 11400000, guid: 9189b528f68b0244ca3deb28c6bd01a7, type: 2}
@@ -1341,7 +1348,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8eca287df179a8749ad87acf7904da90, type: 2}
   - {fileID: 11400000, guid: 536a6cc84f0e646419c4eb520f87cf89, type: 2}
   - {fileID: 11400000, guid: a06c6360237dd1f4589b12c500aa14d9, type: 2}
-  _4SwordsList:
+  _4SWordsList:
   - {fileID: 11400000, guid: cf0f73f6dcc14bb4fac193ebe5673361, type: 2}
   - {fileID: 11400000, guid: 8439a0a4e71212d499379fe5da3a285c, type: 2}
   - {fileID: 11400000, guid: 7509d4dc7630ff84897a018b9a97289d, type: 2}
@@ -1358,6 +1365,7 @@ MonoBehaviour:
   _3SAnimator: {fileID: 1368295289}
   _4SAnimator: {fileID: 500467280}
   _frogAnimator: {fileID: 1205460201}
+  _resultButton: {fileID: 1952594273}
   _whiteButtons:
   - {fileID: 996630835}
   - {fileID: 414569070}
@@ -3049,6 +3057,7 @@ GameObject:
   - component: {fileID: 1952594272}
   - component: {fileID: 1952594271}
   - component: {fileID: 1952594270}
+  - component: {fileID: 1952594273}
   m_Layer: 5
   m_Name: CheckResultButton
   m_TagString: Untagged
@@ -3071,7 +3080,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8046875, y: 0.30664062}
   m_AnchorMax: {x: 0.9091797, y: 0.48242188}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 700, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1952594270
@@ -3159,6 +3168,115 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1952594268}
+--- !u!114 &1952594273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952594268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0390bd8b8ffd640b34fe25065ff1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateType: 0
+  isSpeedBased: 0
+  hasOnStart: 0
+  hasOnPlay: 0
+  hasOnUpdate: 0
+  hasOnStepComplete: 0
+  hasOnComplete: 0
+  hasOnTweenCreated: 0
+  hasOnRewind: 0
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onPlay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onStepComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onTweenCreated:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onRewind:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  delay: 0
+  duration: 0.4
+  easeType: 5
+  easeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  loopType: 0
+  loops: 1
+  id: 
+  isRelative: 0
+  isFrom: 0
+  isIndependentUpdate: 0
+  autoKill: 0
+  isActive: 1
+  isValid: 1
+  target: {fileID: 1952594269}
+  animationType: 1
+  targetType: 5
+  forcedTargetType: 0
+  autoPlay: 0
+  useTargetAsV3: 0
+  endValueFloat: 0
+  endValueV3: {x: 0, y: 0, z: 0}
+  endValueV2: {x: 0, y: 0}
+  endValueColor: {r: 1, g: 1, b: 1, a: 1}
+  endValueString: 
+  endValueRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  endValueTransform: {fileID: 0}
+  optionalBool0: 0
+  optionalFloat0: 0
+  optionalInt0: 0
+  optionalRotationMode: 0
+  optionalScrambleMode: 0
+  optionalString: 
 --- !u!1 &1964573202
 GameObject:
   m_ObjectHideFlags: 0
