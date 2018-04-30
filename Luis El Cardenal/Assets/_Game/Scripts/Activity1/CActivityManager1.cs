@@ -8,6 +8,13 @@ public class CActivityManager1 : CActivity
     [SerializeField]
     int _itemsOnScreen;
 
+    // necesary words to win
+    [SerializeField]
+    int _wordsToWin;
+
+    // every good answer +1
+    int _winsCount;
+
     // to play words sounds
     AudioSource _audioSource;
 
@@ -26,6 +33,9 @@ public class CActivityManager1 : CActivity
     // actual correct answer
     [SerializeField]
     int _correctAnswer;
+
+    // to remove from the list when was used
+    int _selectedItemIndex;
 
     private void Start()
     {
@@ -57,11 +67,10 @@ public class CActivityManager1 : CActivity
         if (!_win)
         {
             // select the next word to play
-            int tSelectedItem = Random.Range(0, _selectedItems.Count);
-            _audioSource.clip = _wordsSounds[_selectedItems[tSelectedItem].GetComponent<CItemA1>().GetID()];            
-            _correctAnswer = _selectedItems[tSelectedItem].GetComponent<CItemA1>().GetID();
+            _selectedItemIndex = Random.Range(0, _selectedItems.Count);
+            _audioSource.clip = _wordsSounds[_selectedItems[_selectedItemIndex].GetComponent<CItemA1>().GetID()];            
+            _correctAnswer = _selectedItems[_selectedItemIndex].GetComponent<CItemA1>().GetID();
 
-            //Debug.Log(_selectedItems[tSelectedItem].GetComponent<CItemA1>().GetID());
             // play word sound
             _audioSource.Play();
         }
@@ -70,14 +79,26 @@ public class CActivityManager1 : CActivity
     // to check player answer
     public void CheckResult(int aAnswer)
     {
-        if (aAnswer == _correctAnswer)
+        if (aAnswer == _correctAnswer) // if the answer is correct
         {
             Debug.Log("Gano");
+            _winsCount++;
+            if (_winsCount >= _wordsToWin) // if the player reach the goal
+            {
+                WinGame();
+            }
+            else
+            {
+                _selectedItems.RemoveAt(_selectedItemIndex);
+            }            
         }
         else
         {
             Debug.Log("Perdio");
         }
-        PlayWord();
+        if (!_win)
+        {
+            PlayWord();
+        }        
     }
 }

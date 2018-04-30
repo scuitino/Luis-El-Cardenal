@@ -147,7 +147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 165.00002, y: -118.00001}
+  m_AnchoredPosition: {x: 165, y: -118}
   m_SizeDelta: {x: 1024, y: 1024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &14949669
@@ -1650,6 +1650,7 @@ MonoBehaviour:
   _win: 0
   _winPanel: {fileID: 1412884354}
   _itemsOnScreen: 7
+  _wordsToWin: 5
   _wordsSounds:
   - {fileID: 8300000, guid: e519f9da073077f48800fc9dcfdba375, type: 3}
   - {fileID: 8300000, guid: f13e68ac53663924ab24bef071faa53e, type: 3}
