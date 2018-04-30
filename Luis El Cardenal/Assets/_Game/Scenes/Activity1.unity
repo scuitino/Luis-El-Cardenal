@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 14949670}
   - component: {fileID: 14949669}
   - component: {fileID: 14949671}
+  - component: {fileID: 14949672}
   m_Layer: 5
   m_Name: Vaca
   m_TagString: Untagged
@@ -195,6 +196,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 2
+--- !u!95 &14949672
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 14949667}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 1ac027fc790ecda4c80d7954fbd5f533, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &77375646
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +224,7 @@ GameObject:
   - component: {fileID: 77375649}
   - component: {fileID: 77375648}
   - component: {fileID: 77375650}
+  - component: {fileID: 77375651}
   m_Layer: 5
   m_Name: NubeRayo
   m_TagString: Untagged
@@ -277,6 +296,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 10
+--- !u!95 &77375651
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 77375646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: fafadee528de58e46a9fcc8eb1f01e75, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &84818840
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +445,7 @@ GameObject:
   - component: {fileID: 254421827}
   - component: {fileID: 254421826}
   - component: {fileID: 254421828}
+  - component: {fileID: 254421829}
   m_Layer: 5
   m_Name: Pajaro
   m_TagString: Untagged
@@ -480,6 +517,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 12
+--- !u!95 &254421829
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 254421824}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: d31f7c991a75be74ca801cfbdf4c79f5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &337347021
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +908,7 @@ GameObject:
   - component: {fileID: 554660205}
   - component: {fileID: 554660204}
   - component: {fileID: 554660206}
+  - component: {fileID: 554660207}
   m_Layer: 5
   m_Name: Bebe
   m_TagString: Untagged
@@ -925,6 +980,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 3
+--- !u!95 &554660207
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554660202}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 8301250d7cf74bb4c91c4dfd37cb8d5e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &589586224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1178,6 +1250,7 @@ GameObject:
   - component: {fileID: 663680551}
   - component: {fileID: 663680550}
   - component: {fileID: 663680552}
+  - component: {fileID: 663680553}
   m_Layer: 5
   m_Name: Tren
   m_TagString: Untagged
@@ -1249,6 +1322,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 13
+--- !u!95 &663680553
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 663680548}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 37d1443a53ae18b48a944d77b610fb17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &666317798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1350,7 @@ GameObject:
   - component: {fileID: 666317801}
   - component: {fileID: 666317800}
   - component: {fileID: 666317802}
+  - component: {fileID: 666317803}
   m_Layer: 5
   m_Name: Carpintero
   m_TagString: Untagged
@@ -1331,6 +1422,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 1
+--- !u!95 &666317803
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 666317798}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: dcbadeb7012df264280de803807da87f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &742318378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,6 +2211,7 @@ GameObject:
   - component: {fileID: 1053007864}
   - component: {fileID: 1053007863}
   - component: {fileID: 1053007865}
+  - component: {fileID: 1053007866}
   m_Layer: 5
   m_Name: NubeLlueve
   m_TagString: Untagged
@@ -2174,6 +2283,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 9
+--- !u!95 &1053007866
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1053007861}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: f581a6c429deab74d969339e907b28a4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1055276268
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,6 +2527,7 @@ GameObject:
   - component: {fileID: 1151165815}
   - component: {fileID: 1151165814}
   - component: {fileID: 1151165816}
+  - component: {fileID: 1151165817}
   m_Layer: 5
   m_Name: Campana
   m_TagString: Untagged
@@ -2472,6 +2599,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 4
+--- !u!95 &1151165817
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1151165812}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 1957f2b2196a6bd409167a2b9f3cc514, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1208896228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,13 +2627,14 @@ GameObject:
   - component: {fileID: 1208896231}
   - component: {fileID: 1208896230}
   - component: {fileID: 1208896232}
+  - component: {fileID: 1208896233}
   m_Layer: 5
   m_Name: Viento
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1208896229
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2554,6 +2699,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 14
+--- !u!95 &1208896233
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1208896228}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 032431c731a2b524c8ee56ae46f5bb38, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1357420050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,6 +2991,7 @@ GameObject:
   - component: {fileID: 1640144770}
   - component: {fileID: 1640144769}
   - component: {fileID: 1640144771}
+  - component: {fileID: 1640144772}
   m_Layer: 5
   m_Name: Puerta
   m_TagString: Untagged
@@ -2900,6 +3063,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 0
+--- !u!95 &1640144772
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1640144767}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0b401d024ddfbbb40a30baaa7fd446fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1645194932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2911,6 +3091,7 @@ GameObject:
   - component: {fileID: 1645194935}
   - component: {fileID: 1645194934}
   - component: {fileID: 1645194936}
+  - component: {fileID: 1645194937}
   m_Layer: 5
   m_Name: Gato
   m_TagString: Untagged
@@ -2982,6 +3163,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 7
+--- !u!95 &1645194937
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1645194932}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 70eb05782f26ef041bf6768ac89eea70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1653250668
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,6 +3191,7 @@ GameObject:
   - component: {fileID: 1653250671}
   - component: {fileID: 1653250670}
   - component: {fileID: 1653250672}
+  - component: {fileID: 1653250673}
   m_Layer: 5
   m_Name: Gallina
   m_TagString: Untagged
@@ -3064,6 +3263,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 6
+--- !u!95 &1653250673
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653250668}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 6cd182b0c9e56fe4a898271979f6f49c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1684555434
 GameObject:
   m_ObjectHideFlags: 0
@@ -3196,6 +3412,7 @@ GameObject:
   - component: {fileID: 1726038572}
   - component: {fileID: 1726038571}
   - component: {fileID: 1726038573}
+  - component: {fileID: 1726038574}
   m_Layer: 5
   m_Name: Grillo
   m_TagString: Untagged
@@ -3267,6 +3484,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 8
+--- !u!95 &1726038574
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1726038569}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: affdf9f1ea9f236459390be946869a8d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1752839936
 GameObject:
   m_ObjectHideFlags: 0
@@ -3520,6 +3754,7 @@ GameObject:
   - component: {fileID: 1794055997}
   - component: {fileID: 1794055996}
   - component: {fileID: 1794055998}
+  - component: {fileID: 1794055999}
   m_Layer: 5
   m_Name: Chorro
   m_TagString: Untagged
@@ -3591,6 +3826,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 5
+--- !u!95 &1794055999
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1794055994}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 1d344152f00a0324ea8c98d7a94930f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1794513130
 GameObject:
   m_ObjectHideFlags: 0
@@ -3763,6 +4015,7 @@ GameObject:
   - component: {fileID: 1922631849}
   - component: {fileID: 1922631848}
   - component: {fileID: 1922631850}
+  - component: {fileID: 1922631851}
   m_Layer: 5
   m_Name: Perro
   m_TagString: Untagged
@@ -3834,6 +4087,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemID: 11
+--- !u!95 &1922631851
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1922631846}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 6f8675a06da970a429b224e7c54b49bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1978282326
 GameObject:
   m_ObjectHideFlags: 0
