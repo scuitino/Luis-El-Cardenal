@@ -29,16 +29,16 @@ AnimationClip:
         time: 1.1
         value: 622
         inSlope: 0
-        outSlope: 947.3717
+        outSlope: 1419.1495
         tangentMode: 1
       - serializedVersion: 2
         time: 1.75
         value: 1687
-        inSlope: 0
+        inSlope: 1232.2953
         outSlope: 0
-        tangentMode: 136
+        tangentMode: 1
       - serializedVersion: 2
-        time: 3.5
+        time: 3.2375
         value: 1687
         inSlope: 0
         outSlope: 0
@@ -63,7 +63,7 @@ AnimationClip:
         time: 1.1
         value: 20
         inSlope: 0
-        outSlope: 600.9721
+        outSlope: 1031.4133
         tangentMode: 1
       - serializedVersion: 2
         time: 1.75
@@ -72,7 +72,7 @@ AnimationClip:
         outSlope: 0
         tangentMode: 1
       - serializedVersion: 2
-        time: 3.5
+        time: 3.2375
         value: 154
         inSlope: 0
         outSlope: 0
@@ -172,7 +172,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 3.5
+    m_StopTime: 3.2375
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -201,16 +201,16 @@ AnimationClip:
         time: 1.1
         value: 622
         inSlope: 0
-        outSlope: 947.3717
+        outSlope: 1419.1495
         tangentMode: 1
       - serializedVersion: 2
         time: 1.75
         value: 1687
-        inSlope: 0
+        inSlope: 1232.2953
         outSlope: 0
-        tangentMode: 136
+        tangentMode: 1
       - serializedVersion: 2
-        time: 3.5
+        time: 3.2375
         value: 1687
         inSlope: 0
         outSlope: 0
@@ -235,7 +235,7 @@ AnimationClip:
         time: 1.1
         value: 20
         inSlope: 0
-        outSlope: 600.9721
+        outSlope: 1031.4133
         tangentMode: 1
       - serializedVersion: 2
         time: 1.75
@@ -244,7 +244,7 @@ AnimationClip:
         outSlope: 0
         tangentMode: 1
       - serializedVersion: 2
-        time: 3.5
+        time: 3.2375
         value: 154
         inSlope: 0
         outSlope: 0
@@ -261,7 +261,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 3.35
+  - time: 2
+    functionName: PlayHearts
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.8375
     functionName: LastJumpCallBack
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -20,5 +20,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 10b7679e21d8c9349a13df902a93bd54, type: 3}
   - {fileID: 21300000, guid: 30a546f9450cb2e4ea5ed78009929ab8, type: 3}
   - {fileID: 21300000, guid: 7eba112ff217d3d41a5e2b63d58dd4b0, type: 3}
+  _sounds:
+  - {fileID: 8300000, guid: 01cdf21e0aecdf34db391f0b6390fab2, type: 3}
+  - {fileID: 8300000, guid: 5f7f65062e68f2346bfb0a407c475ea8, type: 3}
+  - {fileID: 8300000, guid: 20d6a3726c55a454a8d0ea44a24edc03, type: 3}
+  - {fileID: 8300000, guid: 2caa12030ef3e7f42a3489c4ff8315f2, type: 3}
   _numberOfSyllables: 3
   _wasUsed: 0

@@ -18,5 +18,9 @@ MonoBehaviour:
   _images:
   - {fileID: 21300000, guid: a6a57d0e1572ba641a6542b2e174e31a, type: 3}
   - {fileID: 21300000, guid: eca7efc435a67264cb66a747be742313, type: 3}
+  _sounds:
+  - {fileID: 8300000, guid: 2365273ed4d65e54ab6c1b23a321d025, type: 3}
+  - {fileID: 8300000, guid: 6e94f71f2d8019e458637e8c98aa7f76, type: 3}
+  - {fileID: 8300000, guid: a1b5bd134d3b16546bc583c239e74d34, type: 3}
   _numberOfSyllables: 2
   _wasUsed: 0

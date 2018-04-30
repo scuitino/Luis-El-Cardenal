@@ -16,5 +16,8 @@ MonoBehaviour:
   - Tren
   _images:
   - {fileID: 21300000, guid: 1f870825377aade458500e10209fed05, type: 3}
+  _sounds:
+  - {fileID: 8300000, guid: 8110ac97f3d9fc4478fc1f77e05228ea, type: 3}
+  - {fileID: 8300000, guid: 8110ac97f3d9fc4478fc1f77e05228ea, type: 3}
   _numberOfSyllables: 1
   _wasUsed: 0

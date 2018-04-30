@@ -44,7 +44,7 @@ AnimationClip:
         outSlope: 0
         tangentMode: 1
       - serializedVersion: 2
-        time: 4.5
+        time: 3.25
         value: 1686
         inSlope: 0
         outSlope: 0
@@ -84,7 +84,7 @@ AnimationClip:
         outSlope: 0
         tangentMode: 1
       - serializedVersion: 2
-        time: 4.5
+        time: 3.25
         value: 158
         inSlope: 0
         outSlope: 0
@@ -130,7 +130,7 @@ AnimationClip:
       value: {fileID: 21300000, guid: 1bfda9f02d5cd2a4da186ff1b7f20ba4, type: 3}
     - time: 2.2125
       value: {fileID: 21300000, guid: 2e65c799112a747418acff7f3de195ad, type: 3}
-    - time: 4.5
+    - time: 3.25
       value: {fileID: 21300000, guid: 2e65c799112a747418acff7f3de195ad, type: 3}
     attribute: m_Sprite
     path: Frog
@@ -187,7 +187,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 4.5125
+    m_StopTime: 3.2625
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -231,7 +231,7 @@ AnimationClip:
         outSlope: 0
         tangentMode: 1
       - serializedVersion: 2
-        time: 4.5
+        time: 3.25
         value: 1686
         inSlope: 0
         outSlope: 0
@@ -271,7 +271,7 @@ AnimationClip:
         outSlope: 0
         tangentMode: 1
       - serializedVersion: 2
-        time: 4.5
+        time: 3.25
         value: 158
         inSlope: 0
         outSlope: 0
@@ -288,7 +288,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 4.1625
+  - time: 2.5
+    functionName: PlayHearts
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.8375
     functionName: LastJumpCallBack
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -22,5 +22,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: db3c7ba8abf2b3f4e8218b8b02e253bc, type: 3}
   - {fileID: 21300000, guid: 168edac57a3ec2445bef23782c699915, type: 3}
   - {fileID: 21300000, guid: a2c421e5d03188e45b27289fb1d93b4f, type: 3}
+  _sounds:
+  - {fileID: 8300000, guid: bca98d13908ee8a4383acbf1bd7db1a7, type: 3}
+  - {fileID: 8300000, guid: 5f595a6df56a17c4bbaf508baba8aca2, type: 3}
+  - {fileID: 8300000, guid: bd9d08cf1d158654dad102396616c8ee, type: 3}
+  - {fileID: 8300000, guid: 2f6884d99bf3b7849859e7b462e52e49, type: 3}
+  - {fileID: 8300000, guid: eef0210da707426409e903f24dfb07c2, type: 3}
   _numberOfSyllables: 4
   _wasUsed: 0

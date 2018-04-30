@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 
-public class CActivityManager2 : MonoBehaviour {
+public class CActivityManager2 : CActivity {
 
     #region SINGLETON PATTERN
     public static CActivityManager2 _instance = null; //static - the same variable is shared by all instances of the class that are created
@@ -39,10 +40,7 @@ public class CActivityManager2 : MonoBehaviour {
 
     // Frog animator
     [SerializeField]
-    Animator _frogAnimator;
-
-    // to know if the player can play
-    bool _readyToPlay;
+    Animator _frogAnimator;    
 
     // to move result button
     [SerializeField]
@@ -51,6 +49,10 @@ public class CActivityManager2 : MonoBehaviour {
     // player buttons
     [SerializeField]
     List<DOTweenAnimation> _whiteButtons;
+
+    // leafs syllabes texts 
+    [SerializeField]
+    List<Text> _leafTexts; 
 
     private void Awake()
     {
@@ -63,12 +65,31 @@ public class CActivityManager2 : MonoBehaviour {
 
     private void Start()
     {
+        // making all the words availables
+        foreach(CWordA2 tWord in _1SWordsList)
+        {
+            tWord._wasUsed = false;            
+        }
+        foreach (CWordA2 tWord in _2SWordsList)
+        {
+            tWord._wasUsed = false;
+        }
+        foreach (CWordA2 tWord in _3SWordsList)
+        {
+            tWord._wasUsed = false;
+        }
+        foreach (CWordA2 tWord in _4SWordsList)
+        {
+            tWord._wasUsed = false;
+        }
+
+        // start the game
         PlayWord();
     }
 
     // Play with the next word
     public void PlayWord()
-    {
+    {        
         if (_syllablesOnThisLevel.Count > 0)
         {
             _readyToPlay = false;
@@ -119,7 +140,8 @@ public class CActivityManager2 : MonoBehaviour {
             for (int i = 0; i < _whiteButtons.Count; i++)
             {
                 _whiteButtons[i].DORewind();
-            }
+                _leafTexts[i].GetComponent<DOTweenAnimation>().DORewind();
+            }            
 
             // load the image sprites
             switch (_actualWord._numberOfSyllables)
@@ -145,13 +167,24 @@ public class CActivityManager2 : MonoBehaviour {
                     _4SAnimator.SetTrigger("Restart");
                     break;
             }
-        }        
+
+            // load leaf syllables
+            for (int i = 0; i < _actualWord._numberOfSyllables; i++)
+            {
+                _leafTexts[i].text = _actualWord._syllables[i];
+            }
+        }
+        else // if the player win
+        {
+            _win = true;
+            WinGame(); // win game
+        }
     }
 
     // to add 1 to syllables answer
     public void AddSyllable(int aButtonNumber)
     {
-        if (_readyToPlay)
+        if (_readyToPlay && !_win)
         {
             _whiteButtons[aButtonNumber].DORestart();
             _playerAnswer++;
@@ -161,7 +194,7 @@ public class CActivityManager2 : MonoBehaviour {
     // to remove 1 to syllables answer
     public void RemoveSyllable(int aButtonNumber)
     {
-        if (_readyToPlay)
+        if (_readyToPlay && !_win)
         {
             _whiteButtons[aButtonNumber].DOPlayBackwards();
             _playerAnswer--;
@@ -175,6 +208,14 @@ public class CActivityManager2 : MonoBehaviour {
         {            
             if (_playerAnswer > 0) // if the player make a move
             {
+                for (int i = 0; i < _whiteButtons.Count; i++)
+                {
+                    _whiteButtons[i].DORewind();
+                }
+                for (int i = 0; i < _playerAnswer; i++)
+                {
+                    _whiteButtons[i].DORestart();
+                }
                 _resultButton.DOPlayBackwards();
                 _readyToPlay = false;
                 _frogAnimator.SetTrigger("StartJump");
@@ -188,15 +229,18 @@ public class CActivityManager2 : MonoBehaviour {
                     _syllablesOnThisLevel.RemoveAt(_actualQuestion); // remove the actual question
                     _actualWord._wasUsed = true; // label the word as used
                 }
-            }
+            }            
         }             
     }
 
     // to control when the player can play
-    public void ChangeReady(bool aOption)
+    public override void ChangeReady(bool aOption)
     {
-        _readyToPlay = aOption;
-        _resultButton.DOPlayForward();
+        if (!_win)
+        {
+            base.ChangeReady(aOption);
+            _resultButton.DOPlayForward();
+        }
     }
 
     //start syllables success animation
@@ -241,5 +285,11 @@ public class CActivityManager2 : MonoBehaviour {
                 _4SAnimator.SetTrigger("StartFail");
                 break;
         }
+    }
+
+    // Fade in leaf syllable (used by word animator)
+    public void TurnOnLeafSyllable(int aIndex)
+    {
+        _leafTexts[aIndex].GetComponent<DOTweenAnimation>().DORestart();
     }
 }

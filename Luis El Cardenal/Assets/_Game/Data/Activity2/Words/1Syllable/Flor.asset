@@ -16,5 +16,8 @@ MonoBehaviour:
   - Flor
   _images:
   - {fileID: 21300000, guid: e1a7732e7e19e8c4b972682107639988, type: 3}
+  _sounds:
+  - {fileID: 8300000, guid: d64fd354e09fac34389eb744cdd451bc, type: 3}
+  - {fileID: 8300000, guid: d64fd354e09fac34389eb744cdd451bc, type: 3}
   _numberOfSyllables: 1
   _wasUsed: 0
