@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CActivity : MonoBehaviour {
+public class CActivity : MonoBehaviour {        
 
     // to know if the player can play
     public bool _readyToPlay;

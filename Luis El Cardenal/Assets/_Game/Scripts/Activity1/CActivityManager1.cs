@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CActivityManager1 : CActivity
 {
+    #region SINGLETON PATTERN
+    public static CActivityManager1 _instance = null; //static - the same variable is shared by all instances of the class that are created
+    #endregion
+
     // how many items on the screen
     [SerializeField]
     int _itemsOnScreen;
@@ -36,6 +40,15 @@ public class CActivityManager1 : CActivity
 
     // to remove from the list when was used
     int _selectedItemIndex;
+
+    private void Awake()
+    {
+        //Singleton check
+        if (_instance == null)
+            _instance = this;
+        else if (_instance != this)
+            Destroy(gameObject);
+    }
 
     private void Start()
     {
@@ -89,16 +102,13 @@ public class CActivityManager1 : CActivity
             }
             else
             {
+                _selectedItems[_selectedItemIndex].GetComponent<Animator>().SetTrigger("Play");
                 _selectedItems.RemoveAt(_selectedItemIndex);
             }            
         }
         else
         {
             Debug.Log("Perdio");
-        }
-        if (!_win)
-        {
-            PlayWord();
-        }        
+        }    
     }
 }

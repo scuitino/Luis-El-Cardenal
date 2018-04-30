@@ -52,7 +52,7 @@ public class CActivityManager2 : CActivity {
 
     // leafs syllabes texts 
     [SerializeField]
-    List<Text> _leafTexts; 
+    List<Text> _leafTexts;
 
     private void Awake()
     {

@@ -1450,7 +1450,7 @@ GameObject:
   - component: {fileID: 742318381}
   - component: {fileID: 742318380}
   m_Layer: 5
-  m_Name: Door
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2634,7 +2634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1208896229
 RectTransform:
   m_ObjectHideFlags: 0

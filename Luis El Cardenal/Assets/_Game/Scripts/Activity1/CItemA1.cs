@@ -8,8 +8,14 @@ public class CItemA1 : MonoBehaviour {
     [SerializeField]
     int _itemID;
 	
+    // get id of the item
     public int GetID()
     {
         return _itemID;
+    }
+
+    public void PlayNextWord()
+    {
+        CActivityManager1._instance.PlayWord();
     }
 }
