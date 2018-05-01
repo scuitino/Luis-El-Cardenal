@@ -75,23 +75,23 @@ public class CActivityManager1 : CActivity
     {
         ChangeReady(false);
         if (!_win)
-        {
+        {            
             // select the next word to play
             _selectedItemIndex = Random.Range(0, _selectedItems.Count);
             _selectedItems[_selectedItemIndex].GetComponent<CItemA1>().PlaySound();
             _correctAnswer = _selectedItems[_selectedItemIndex].GetComponent<CItemA1>().GetID();
 
-            // play word sound
-            _audioSource.Play();
-            StartCoroutine(PlayOn(2));
+            // waiting for the sound
+            StartCoroutine(PlayOn(_selectedItems[_selectedItemIndex].GetComponent<AudioSource>().clip.length)); 
         }
     }
 
     // to check player answer
     public void CheckResult(int aAnswer)
-    {
+    {        
         if (_readyToPlay)
         {
+            ChangeReady(false);
             if (aAnswer == _correctAnswer) // if the answer is correct
             {
                 Debug.Log("Gano");                
