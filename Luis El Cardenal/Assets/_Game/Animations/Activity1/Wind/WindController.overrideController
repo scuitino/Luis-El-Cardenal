@@ -7,4 +7,8 @@ AnimatorOverrideController:
   m_PrefabInternal: {fileID: 0}
   m_Name: WindController
   m_Controller: {fileID: 9100000, guid: 0b401d024ddfbbb40a30baaa7fd446fd, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 66d310637b28e7845bea3ab2f1eee94d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6d2080575b6a0f44c9a21d4febd3843b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 55c71830e9b942c4ba3dae7de01aa4a5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2c80b4d4892439c4a911224e8256ec85, type: 2}

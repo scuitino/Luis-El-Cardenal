@@ -22,10 +22,6 @@ public class CActivityManager1 : CActivity
     // to play words sounds
     AudioSource _audioSource;
 
-    // all the words sounds
-    [SerializeField]
-    List<AudioClip> _wordsSounds;
-
     // all the items of the game
     [SerializeField]
     List<GameObject> _allItems;
@@ -77,39 +73,52 @@ public class CActivityManager1 : CActivity
     // to start a new word
 	public void PlayWord()
     {
+        ChangeReady(false);
         if (!_win)
         {
             // select the next word to play
             _selectedItemIndex = Random.Range(0, _selectedItems.Count);
-            _audioSource.clip = _wordsSounds[_selectedItems[_selectedItemIndex].GetComponent<CItemA1>().GetID()];            
+            _selectedItems[_selectedItemIndex].GetComponent<CItemA1>().PlaySound();
             _correctAnswer = _selectedItems[_selectedItemIndex].GetComponent<CItemA1>().GetID();
 
             // play word sound
             _audioSource.Play();
+            StartCoroutine(PlayOn(2));
         }
     }
 
     // to check player answer
     public void CheckResult(int aAnswer)
     {
-        if (aAnswer == _correctAnswer) // if the answer is correct
+        if (_readyToPlay)
         {
-            Debug.Log("Gano");
-            _winsCount++;
-            if (_winsCount >= _wordsToWin) // if the player reach the goal
+            if (aAnswer == _correctAnswer) // if the answer is correct
             {
-                WinGame();
+                Debug.Log("Gano");                
+                if (_winsCount >= _wordsToWin) // if the player reach the goal
+                {
+                    WinGame();
+                }
+                else
+                {
+                    _selectedItems[_selectedItemIndex].GetComponent<Animator>().SetTrigger("Play");
+                    _selectedItems.RemoveAt(_selectedItemIndex);
+                }
+                _winsCount++;
             }
             else
             {
-                _selectedItems[_selectedItemIndex].GetComponent<Animator>().SetTrigger("Play");
-                _selectedItems.RemoveAt(_selectedItemIndex);
-            }            
-        }
-        else
-        {
-            PlayWord();
-            Debug.Log("Perdio");
-        }    
+                PlayWord();
+                Debug.Log("Perdio");
+            }
+        }        
+    }
+
+    // to control when the player can play
+    public IEnumerator PlayOn(float aDelay)
+    {
+        yield return new WaitForSeconds(aDelay);
+        ChangeReady(true);
+        yield return null;
     }
 }
