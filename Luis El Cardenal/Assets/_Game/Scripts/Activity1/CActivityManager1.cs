@@ -108,6 +108,7 @@ public class CActivityManager1 : CActivity
         }
         else
         {
+            PlayWord();
             Debug.Log("Perdio");
         }    
     }
