@@ -37,6 +37,9 @@ public class CActivityManager1 : CActivity
     // to remove from the list when was used
     int _selectedItemIndex;
 
+    // to check if the carpenter or the door was used
+    bool _wasUsed;
+
     private void Awake()
     {
         //Singleton check
@@ -64,9 +67,22 @@ public class CActivityManager1 : CActivity
         }
 
         // active items on screen
-        foreach (GameObject tItem in _selectedItems)
+        for (int i = 0; i < _selectedItems.Count; i++)
         {
-            tItem.SetActive(true);
+            if (_selectedItems[i].GetComponent<CItemA1>().GetID() == 0 || _selectedItems[i].GetComponent<CItemA1>().GetID() == 1) // check if this item is the door or the carpenter
+            {
+                if (!_wasUsed) // if is one of them but the other is not used
+                {
+                    _wasUsed = true;
+                }
+                else // if both are used, delete this and add another item
+                {
+                    _selectedItems.Remove(_selectedItems[i]);
+                    _selectedItems.Add(_allItems[Random.Range(0, _allItems.Count)]);
+                }
+            }
+            // active each item
+            _selectedItems[i].SetActive(true);
         }
     }
 
@@ -94,15 +110,16 @@ public class CActivityManager1 : CActivity
             ChangeReady(false);
             if (aAnswer == _correctAnswer) // if the answer is correct
             {
-                Debug.Log("Gano");                
+                Debug.Log("Gano");
+                _selectedItems[_selectedItemIndex].GetComponent<Animator>().SetTrigger("Play"); // animate word
                 if (_winsCount >= _wordsToWin) // if the player reach the goal
                 {
-                    WinGame();
+                    _win = true;
+                    StartCoroutine(WinGame(_selectedItems[_selectedItemIndex].GetComponent<AudioSource>().clip.length)); // win the game!
                 }
                 else
                 {
-                    _selectedItems[_selectedItemIndex].GetComponent<Animator>().SetTrigger("Play");
-                    _selectedItems.RemoveAt(_selectedItemIndex);
+                    _selectedItems.RemoveAt(_selectedItemIndex); // remove used word and continue
                 }
                 _winsCount++;
             }
@@ -119,6 +136,14 @@ public class CActivityManager1 : CActivity
     {
         yield return new WaitForSeconds(aDelay);
         ChangeReady(true);
+        yield return null;
+    }
+
+    // delay before win
+    public IEnumerator WinGame(float aDelay)
+    {
+        yield return new WaitForSeconds(aDelay);
+        WinGame();
         yield return null;
     }
 }
