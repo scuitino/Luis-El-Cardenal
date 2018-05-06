@@ -32,4 +32,10 @@ public class CActivity : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    // return to main menu
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

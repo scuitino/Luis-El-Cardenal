@@ -40,6 +40,10 @@ public class CActivityManager1 : CActivity
     // to check if the carpenter or the door was used
     bool _wasUsed;
 
+    // timer and timerLimit to repeat the word sound
+    float _timer;
+    float _timerLimit = 7;
+
     private void Awake()
     {
         //Singleton check
@@ -54,7 +58,20 @@ public class CActivityManager1 : CActivity
         _audioSource = this.GetComponent<AudioSource>();
         SelectGameWords();
         PlayWord();
-    }   
+    }
+
+    private void Update()
+    {
+        if (_readyToPlay)
+        {
+            if(_timer >= _timerLimit) // if the timer reach the limit play the sound
+            {
+                _selectedItems[_selectedItemIndex].GetComponent<AudioSource>().Play();
+                _timer = 0;
+            }
+            _timer += Time.deltaTime;
+        }    
+    }
 
     // select all the words for the next game
     public void SelectGameWords()
@@ -110,7 +127,6 @@ public class CActivityManager1 : CActivity
             ChangeReady(false);
             if (aAnswer == _correctAnswer) // if the answer is correct
             {
-                Debug.Log("Gano");
                 _selectedItems[_selectedItemIndex].GetComponent<Animator>().SetTrigger("Play"); // animate word
                 if (_winsCount >= _wordsToWin) // if the player reach the goal
                 {
@@ -126,7 +142,6 @@ public class CActivityManager1 : CActivity
             else
             {
                 PlayWord();
-                Debug.Log("Perdio");
             }
         }        
     }
@@ -136,6 +151,7 @@ public class CActivityManager1 : CActivity
     {
         yield return new WaitForSeconds(aDelay);
         ChangeReady(true);
+        _timer = 0;
         yield return null;
     }
 

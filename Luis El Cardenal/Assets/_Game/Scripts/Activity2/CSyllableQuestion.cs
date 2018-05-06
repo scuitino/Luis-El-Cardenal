@@ -58,6 +58,7 @@ public class CSyllableQuestion : MonoBehaviour {
     public void EnableReady()
     {
         CActivityManager2._instance.ChangeReady(true);
+        CActivityManager2._instance.ChangeRepeatButtonState(true);
     }
 
     // to fade in leaf texts

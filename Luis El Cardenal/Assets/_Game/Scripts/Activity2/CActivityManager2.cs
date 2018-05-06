@@ -46,6 +46,10 @@ public class CActivityManager2 : CActivity {
     [SerializeField]
     DOTweenAnimation _resultButton;
 
+    // to repeat the word sound
+    [SerializeField]
+    GameObject _repeatSoundButton;
+
     // player buttons
     [SerializeField]
     List<DOTweenAnimation> _whiteButtons;
@@ -120,7 +124,7 @@ public class CActivityManager2 : CActivity {
                         break;
                 }
 
-                if (!tSelectedWord._wasUsed) //  is the word was not used
+                if (!tSelectedWord._wasUsed && _actualWord != tSelectedWord) //  is the word was not used and is not the same of the previous turn
                 {
                     _actualWord = tSelectedWord;
                     tReady = true; // ready to play
@@ -208,6 +212,7 @@ public class CActivityManager2 : CActivity {
         {            
             if (_playerAnswer > 0) // if the player make a move
             {
+                ChangeRepeatButtonState(false);
                 for (int i = 0; i < _whiteButtons.Count; i++)
                 {
                     _whiteButtons[i].DORewind();
@@ -291,5 +296,31 @@ public class CActivityManager2 : CActivity {
     public void TurnOnLeafSyllable(int aIndex)
     {
         _leafTexts[aIndex].GetComponent<DOTweenAnimation>().DORestart();
+    }
+
+    // to repeat when de player touch the button
+    public void RepeatSound()
+    {
+        switch (_actualWord._numberOfSyllables)
+        {
+            case 1:
+                _1Syllable.PlaySound(0);
+                break;
+            case 2:
+                _2Syllable.PlaySound(0);
+                break;
+            case 3:
+                _3Syllable.PlaySound(0);
+                break;
+            case 4:
+                _4Syllable.PlaySound(0);
+                break;
+        }
+    }
+
+    // to enable and disable Repeat Sound button
+    public void ChangeRepeatButtonState(bool aState)
+    {
+        _repeatSoundButton.SetActive(aState);
     }
 }
