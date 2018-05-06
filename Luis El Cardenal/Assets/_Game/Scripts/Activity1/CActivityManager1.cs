@@ -115,7 +115,8 @@ public class CActivityManager1 : CActivity
             _correctAnswer = _selectedItems[_selectedItemIndex].GetComponent<CItemA1>().GetID();
 
             // waiting for the sound
-            StartCoroutine(PlayOn(_selectedItems[_selectedItemIndex].GetComponent<AudioSource>().clip.length)); 
+            //StartCoroutine(PlayOn(_selectedItems[_selectedItemIndex].GetComponent<AudioSource>().clip.length)); 
+            StartCoroutine(PlayOn(0));
         }
     }
 
