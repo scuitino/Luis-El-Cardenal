@@ -37,12 +37,12 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 96c066ba6e954ce4d82bbdb32cdaa812, type: 3}
   - {fileID: 21300000, guid: 6e864d6a3a1c62340b08c9be2eba4cd6, type: 3}
-  - {fileID: 21300000, guid: 76c7ff4587a0df446ae6b7a3e077bf33, type: 3}
   - {fileID: 21300000, guid: 04d41b5caa7094e46864395ee0079fe5, type: 3}
+  - {fileID: 21300000, guid: 76c7ff4587a0df446ae6b7a3e077bf33, type: 3}
   m_PackedSpriteNamesToIndex:
   - "02_Fondo_Rana_S\xEDlabas2"
   - Boton avance-01
-  - Camalote
   - Camalote blanco
+  - Camalote
   m_Tag: A2Atlas1
   m_IsVariant: 0
