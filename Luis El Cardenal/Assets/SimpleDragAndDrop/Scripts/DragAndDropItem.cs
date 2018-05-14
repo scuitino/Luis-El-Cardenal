@@ -23,10 +23,13 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 	private static string canvasName = "DragAndDropCanvas";                   		// Name of canvas
 	private static int canvasSortOrder = 100;										// Sort order for canvas
 
-	/// <summary>
-	/// Awake this instance.
-	/// </summary>
-	void Awake()
+    [SerializeField]
+    int _itemID;                                                                    // to check results on activities
+
+    /// <summary>
+    /// Awake this instance.
+    /// </summary>
+    void Awake()
 	{
 		if (canvas == null)
 		{
@@ -139,4 +142,12 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 	{
 		ResetConditions();
 	}
+
+    /// <summary>
+	/// ID that identifies the item category
+	/// </summary>
+	public int GetItemID()
+    {
+        return _itemID;
+    }
 }
