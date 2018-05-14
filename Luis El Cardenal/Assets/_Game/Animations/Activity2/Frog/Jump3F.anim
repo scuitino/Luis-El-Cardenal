@@ -29,12 +29,12 @@ AnimationClip:
         time: 1.2285714
         value: 884
         inSlope: 0
-        outSlope: 990.1849
+        outSlope: 734.1171
         tangentMode: 1
       - serializedVersion: 2
         time: 1.8857143
         value: 1300
-        inSlope: 237.6042
+        inSlope: 426.9419
         outSlope: 0
         tangentMode: 1
       - serializedVersion: 2
@@ -204,12 +204,12 @@ AnimationClip:
         time: 1.2285714
         value: 884
         inSlope: 0
-        outSlope: 990.1849
+        outSlope: 734.1171
         tangentMode: 1
       - serializedVersion: 2
         time: 1.8857143
         value: 1300
-        inSlope: 237.6042
+        inSlope: 426.9419
         outSlope: 0
         tangentMode: 1
       - serializedVersion: 2
