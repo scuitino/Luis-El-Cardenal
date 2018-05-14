@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc8337ee17e7864c83a0721c3590a3d, type: 3}
+  m_Name: Challenge8
+  m_EditorClassIdentifier: 
+  _item1: {fileID: 122268, guid: b26f73fa8f8299b4bb1fa1eba1e232fc, type: 2}
+  _item2: {fileID: 122268, guid: 0fb37174e9d4e8843a822f799d03ef6c, type: 2}
+  _wasUsed: 0
