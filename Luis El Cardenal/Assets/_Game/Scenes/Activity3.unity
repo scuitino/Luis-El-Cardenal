@@ -436,10 +436,7 @@ MonoBehaviour:
   _option3: {fileID: 1429767800}
   _resultButton: {fileID: 1525959597}
   _rabbitAnimator: {fileID: 1431156629}
-  _instantiatedItems:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _instantiatedItems: []
 --- !u!1 &845905133
 GameObject:
   m_ObjectHideFlags: 0

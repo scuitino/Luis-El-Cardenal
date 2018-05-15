@@ -93,7 +93,6 @@ public class CActivityManager3 : CActivity {
         _instantiatedItems.Add(Instantiate(tSelectedChallengeData._item2).transform);
 
         tReady = false;
-
         while (!tReady) // searching wrong answer
         {
             _extraOption = Random.Range(0, _challengesOnThisLevel.Count);
@@ -105,12 +104,18 @@ public class CActivityManager3 : CActivity {
 
         bool tRandomBool = (Random.Range(0, 2) == 0); // to select a random item from the data
         if (tRandomBool == true)
-        {
-            _instantiatedItems.Add(Instantiate(_challengesOnThisLevel[_extraOption]._item1.transform));
+        { 
+            if (_challengesOnThisLevel[_extraOption]._item1 != _instantiatedItems[0] && _challengesOnThisLevel[_extraOption]._item1 != _instantiatedItems[1]) // to control that the items doesn't repeat
+            {
+                _instantiatedItems.Add(Instantiate(_challengesOnThisLevel[_extraOption]._item1.transform));
+            }            
         }
         else
         {
-            _instantiatedItems.Add(Instantiate(_challengesOnThisLevel[_extraOption]._item2.transform));
+            if (_challengesOnThisLevel[_extraOption]._item1 != _instantiatedItems[0] && _challengesOnThisLevel[_extraOption]._item1 != _instantiatedItems[1]) // same
+            {
+                _instantiatedItems.Add(Instantiate(_challengesOnThisLevel[_extraOption]._item2.transform));
+            }
         }
 
         foreach (Transform tTransform in _instantiatedItems) // selecting slots
@@ -207,6 +212,7 @@ public class CActivityManager3 : CActivity {
                     _successCount++;
                     if (_successCount >= _goodAnswersToWin)
                     {
+                        _win = true;
                         WinGame();
                     }
                     Debug.Log("son iguales");
