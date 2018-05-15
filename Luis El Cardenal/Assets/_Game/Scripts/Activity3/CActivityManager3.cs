@@ -46,6 +46,10 @@ public class CActivityManager3 : CActivity {
     [SerializeField]
     Animator _rabbitAnimator;
 
+    // list of new instantiated items
+    [SerializeField]
+    List<Transform> _instantiatedItems;
+
     private void Awake()
     {
         //Singleton check
@@ -55,29 +59,22 @@ public class CActivityManager3 : CActivity {
             Destroy(gameObject);
     }
 
-    private void OnEnable()
-    {
-        ChangeReady(true);
-    }
-
     private void Start()
-    {
-        PlayChallenge(); 
+    {        
+        StartCoroutine(PlayChallenge()); 
     }
 
     // to control when the player can play
     public override void ChangeReady(bool aOption)
-    {
-        if (!_win)
-        {
-            base.ChangeReady(aOption);
-            _resultButton.DOPlayForward();
-        }
+    {        
+        base.ChangeReady(aOption);
+        _resultButton.DOPlayForward();
     }
 
     // select and play the next challenge
-    public void PlayChallenge()
-    {        
+    public IEnumerator PlayChallenge()
+    {
+        yield return null;
         bool tReady = false;
         while (!tReady) // searching challenge data
         {
@@ -90,12 +87,13 @@ public class CActivityManager3 : CActivity {
         _actualChallenge = _selectedChallenge;
         CActivity3Challenge tSelectedChallengeData = _challengesOnThisLevel[_actualChallenge];
 
-        // instantiate correct answers
-        List<Transform> _instantiatedItems =  new List<Transform>();
+        // instantiate correct answers        
+        _instantiatedItems = new List<Transform>();
         _instantiatedItems.Add(Instantiate(tSelectedChallengeData._item1).transform);
         _instantiatedItems.Add(Instantiate(tSelectedChallengeData._item2).transform);
 
         tReady = false;
+
         while (!tReady) // searching wrong answer
         {
             _extraOption = Random.Range(0, _challengesOnThisLevel.Count);
@@ -103,7 +101,7 @@ public class CActivityManager3 : CActivity {
             {
                 tReady = true;
             }
-        }
+        }        
 
         bool tRandomBool = (Random.Range(0, 2) == 0); // to select a random item from the data
         if (tRandomBool == true)
@@ -116,7 +114,7 @@ public class CActivityManager3 : CActivity {
         }
 
         foreach (Transform tTransform in _instantiatedItems) // selecting slots
-        {
+        {            
             int tRandomSlot;
             tReady = false;
             while (!tReady) // while the slot is not selected
@@ -147,12 +145,52 @@ public class CActivityManager3 : CActivity {
                         break;
                 }
                 // re-size
-                //tTransform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
-                //tTransform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
+                tTransform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
+                tTransform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                 tTransform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
                 tTransform.localScale = Vector3.one;
-            }
+            }               
         }
+        ChangeReady(true);
+    }
+
+    // restart the options and results
+    public void RestartChallenge()
+    {
+        if (!_win)
+        {
+            if (_option1.childCount > 0)
+            {
+                _instantiatedItems.Remove(_option1.GetChild(0));
+                Destroy(_option1.GetChild(0).gameObject);
+            }
+
+            if (_option2.childCount > 0)
+            {
+                _instantiatedItems.Remove(_option2.GetChild(0));
+                Destroy(_option2.GetChild(0).gameObject);
+            }
+
+            if (_option3.childCount > 0)
+            {
+                _instantiatedItems.Remove(_option3.GetChild(0));
+                Destroy(_option3.GetChild(0).gameObject);
+            }
+
+            if (_flower1.transform.childCount > 0)
+            {
+                _instantiatedItems.Remove(_flower1.transform.GetChild(0));
+                Destroy(_flower1.transform.GetChild(0).gameObject);
+            }
+
+            if (_flower2.transform.childCount > 0)
+            {
+                _instantiatedItems.Remove(_flower1.transform.GetChild(0));
+                Destroy(_flower2.transform.GetChild(0).gameObject);
+            }
+
+            StartCoroutine(PlayChallenge());
+        }        
     }
 
     // check result of the actual question
@@ -167,7 +205,7 @@ public class CActivityManager3 : CActivity {
                 {
                     _rabbitAnimator.SetTrigger("Success");
                     _successCount++;
-                    if (_successCount == _goodAnswersToWin)
+                    if (_successCount >= _goodAnswersToWin)
                     {
                         WinGame();
                     }

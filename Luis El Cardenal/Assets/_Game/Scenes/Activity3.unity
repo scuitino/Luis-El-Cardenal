@@ -436,6 +436,10 @@ MonoBehaviour:
   _option3: {fileID: 1429767800}
   _resultButton: {fileID: 1525959597}
   _rabbitAnimator: {fileID: 1431156629}
+  _instantiatedItems:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &845905133
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +954,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22482442, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -14.000011
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 22482442, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
       propertyPath: m_SizeDelta.x
@@ -1036,6 +1040,7 @@ GameObject:
   - component: {fileID: 1431156628}
   - component: {fileID: 1431156627}
   - component: {fileID: 1431156629}
+  - component: {fileID: 1431156630}
   m_Layer: 5
   m_Name: Rabbit
   m_TagString: Untagged
@@ -1112,6 +1117,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1431156630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1431156625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ff2151f412bb44988284a46fb8e98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1525959595
 Prefab:
   m_ObjectHideFlags: 0
@@ -1219,6 +1235,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CheckResult
       objectReference: {fileID: 0}
+    - target: {fileID: 114204455114785904, guid: ca37c980719b0414890d46724b73ce3b,
+        type: 2}
+      propertyPath: autoPlay
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca37c980719b0414890d46724b73ce3b, type: 2}
   m_IsPrefabParent: 0
@@ -1278,7 +1299,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22482442, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -14.000011
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 22482442, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
       propertyPath: m_SizeDelta.x
