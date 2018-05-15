@@ -46,8 +46,9 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 	/// <param name="eventData"></param>
 	public void OnBeginDrag(PointerEventData eventData)
 	{
-		if (dragDisabled == false)
+		if (dragDisabled == false && !CActivityManager3._instance._isGrabbing)
 		{
+            CActivityManager3._instance._isGrabbing = true;
 			sourceCell = GetCell();                       							// Remember source cell
 			draggedItem = this;                                             		// Set as dragged item
 			// Create item's icon
@@ -111,7 +112,8 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 		draggedItem = null;
 		icon = null;
 		sourceCell = null;
-	}
+        CActivityManager3._instance._isGrabbing = false;
+    }
 
 	/// <summary>
 	/// Enable item's raycast.

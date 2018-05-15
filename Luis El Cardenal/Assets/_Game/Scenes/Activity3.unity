@@ -456,7 +456,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bbe0922d040795a4485bc6dac8e1c43d, type: 2}
   - {fileID: 11400000, guid: 2bc9ca8661dd09a41adfb1143efe15c3, type: 2}
   - {fileID: 11400000, guid: 7ebf363a00cc6074b9c48680a108824e, type: 2}
+  - {fileID: 11400000, guid: fc602bc706ecfe74194b3fe9ab1a2a72, type: 2}
+  - {fileID: 11400000, guid: 8b3e06eec7a7cac4d8e44659a5a761b6, type: 2}
   _goodAnswersToWin: 5
+  _isGrabbing: 0
   _flower1: {fileID: 1785850637}
   _flower2: {fileID: 507083643}
   _option1: {fileID: 485020923}
