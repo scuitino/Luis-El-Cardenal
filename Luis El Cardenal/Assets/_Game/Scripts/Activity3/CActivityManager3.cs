@@ -42,6 +42,10 @@ public class CActivityManager3 : CActivity {
     [SerializeField]
     DOTweenAnimation _resultButton;
 
+    // to move options
+    [SerializeField]
+    DOTweenAnimation _optionsContainer;
+
     // to animate the rabbit
     [SerializeField]
     Animator _rabbitAnimator;
@@ -69,6 +73,7 @@ public class CActivityManager3 : CActivity {
     {        
         base.ChangeReady(aOption);
         _resultButton.DOPlayForward();
+        _optionsContainer.DOPlayForward();
     }
 
     // select and play the next challenge
@@ -83,6 +88,7 @@ public class CActivityManager3 : CActivity {
             {
                 tReady = true;
             }
+            yield return null;
         }
         _actualChallenge = _selectedChallenge;
         CActivity3Challenge tSelectedChallengeData = _challengesOnThisLevel[_actualChallenge];
@@ -96,27 +102,26 @@ public class CActivityManager3 : CActivity {
         while (!tReady) // searching wrong answer
         {
             _extraOption = Random.Range(0, _challengesOnThisLevel.Count);
-            if (_extraOption != _actualChallenge)
-            {
-                tReady = true;
-            }
-        }        
 
-        bool tRandomBool = (Random.Range(0, 2) == 0); // to select a random item from the data
-        if (tRandomBool == true)
-        { 
-            if (_challengesOnThisLevel[_extraOption]._item1 != _instantiatedItems[0] && _challengesOnThisLevel[_extraOption]._item1 != _instantiatedItems[1]) // to control that the items doesn't repeat
+            bool tRandomBool = (Random.Range(0, 2) == 0); // to select a random item from the data
+            if (tRandomBool == true)
             {
-                _instantiatedItems.Add(Instantiate(_challengesOnThisLevel[_extraOption]._item1.transform));
-            }            
-        }
-        else
-        {
-            if (_challengesOnThisLevel[_extraOption]._item1 != _instantiatedItems[0] && _challengesOnThisLevel[_extraOption]._item1 != _instantiatedItems[1]) // same
-            {
-                _instantiatedItems.Add(Instantiate(_challengesOnThisLevel[_extraOption]._item2.transform));
+                if (_challengesOnThisLevel[_extraOption]._item1.GetComponent<DragAndDropItem>().GetItemID() != _instantiatedItems[0].GetComponent<DragAndDropItem>().GetItemID()) // to control that the items doesn't repeat
+                {
+                    _instantiatedItems.Add(Instantiate(_challengesOnThisLevel[_extraOption]._item1.transform));
+                    tReady = true;
+                }
             }
-        }
+            else
+            {
+                if (_challengesOnThisLevel[_extraOption]._item2.GetComponent<DragAndDropItem>().GetItemID() != _instantiatedItems[0].GetComponent<DragAndDropItem>().GetItemID()) // same
+                {
+                    _instantiatedItems.Add(Instantiate(_challengesOnThisLevel[_extraOption]._item2.transform));
+                    tReady = true;
+                }
+            }
+            yield return null;
+        }        
 
         foreach (Transform tTransform in _instantiatedItems) // selecting slots
         {            
@@ -154,6 +159,7 @@ public class CActivityManager3 : CActivity {
                 tTransform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                 tTransform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
                 tTransform.localScale = Vector3.one;
+                yield return null;
             }               
         }
         ChangeReady(true);
@@ -206,10 +212,12 @@ public class CActivityManager3 : CActivity {
             if (_flower1.GetItem() != null && _flower2.GetItem() != null) // if both result slots are filled
             {
                 _resultButton.DOPlayBackwards();
+                _optionsContainer.DOPlayBackwards();
                 if (_flower1.GetItem().GetItemID() == _flower2.GetItem().GetItemID()) // if the ids of the answers are the same
                 {
                     _rabbitAnimator.SetTrigger("Success");
                     _successCount++;
+                    _challengesOnThisLevel.RemoveAt(_actualChallenge);
                     if (_successCount >= _goodAnswersToWin)
                     {
                         _win = true;
