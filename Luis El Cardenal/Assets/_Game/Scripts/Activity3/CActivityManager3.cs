@@ -28,9 +28,6 @@ public class CActivityManager3 : CActivity {
     // number of good answers
     int _successCount;
 
-    // to know if the player is grabbing a object
-    public bool _isGrabbing;
-
     // result slots
     [SerializeField, Header("References")]
     DragAndDropCell _flower1;

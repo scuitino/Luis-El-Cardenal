@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc8337ee17e7864c83a0721c3590a3d, type: 3}
   m_Name: Es-6
   m_EditorClassIdentifier: 
-  _item1: {fileID: 122268, guid: ee6d218622b384c42a0eb03d1114e77d, type: 2}
+  _item1: {fileID: 122268, guid: 7a8eae2c5c09773419a349ca63ac81ac, type: 2}
   _item2: {fileID: 122268, guid: 546e7ace66ac9d04a8ce8f3283839a4a, type: 2}

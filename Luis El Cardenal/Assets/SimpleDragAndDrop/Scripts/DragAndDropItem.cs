@@ -26,6 +26,8 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     [SerializeField]
     int _itemID;                                                                    // to check results on activities
 
+    public static bool _isGrabbing;                                                 // to know if the player is grabbing something
+
     /// <summary>
     /// Awake this instance.
     /// </summary>
@@ -46,33 +48,32 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 	/// <param name="eventData"></param>
 	public void OnBeginDrag(PointerEventData eventData)
 	{
-		if (dragDisabled == false && !CActivityManager3._instance._isGrabbing)
-		{
-            CActivityManager3._instance._isGrabbing = true;
-			sourceCell = GetCell();                       							// Remember source cell
-			draggedItem = this;                                             		// Set as dragged item
-			// Create item's icon
-			icon = new GameObject();
-			icon.transform.SetParent(canvas.transform);
-			icon.name = "Icon";
-			Image myImage = GetComponent<Image>();
-			myImage.raycastTarget = false;                                        	// Disable icon's raycast for correct drop handling
-			Image iconImage = icon.AddComponent<Image>();
-			iconImage.raycastTarget = false;
-			iconImage.sprite = myImage.sprite;
-			RectTransform iconRect = icon.GetComponent<RectTransform>();
-			// Set icon's dimensions
-			RectTransform myRect = GetComponent<RectTransform>();
-			iconRect.pivot = new Vector2(0.5f, 0.5f);
-			iconRect.anchorMin = new Vector2(0.5f, 0.5f);
-			iconRect.anchorMax = new Vector2(0.5f, 0.5f);
-			iconRect.sizeDelta = new Vector2(myRect.rect.width, myRect.rect.height);
+        if (dragDisabled == false && !_isGrabbing)
+        {
+            sourceCell = GetCell();                                                 // Remember source cell
+            draggedItem = this;                                                     // Set as dragged item
+                                                                                    // Create item's icon
+            icon = new GameObject();
+            icon.transform.SetParent(canvas.transform);
+            icon.name = "Icon";
+            Image myImage = GetComponent<Image>();
+            myImage.raycastTarget = false;                                          // Disable icon's raycast for correct drop handling
+            Image iconImage = icon.AddComponent<Image>();
+            iconImage.raycastTarget = false;
+            iconImage.sprite = myImage.sprite;
+            RectTransform iconRect = icon.GetComponent<RectTransform>();
+            // Set icon's dimensions
+            RectTransform myRect = GetComponent<RectTransform>();
+            iconRect.pivot = new Vector2(0.5f, 0.5f);
+            iconRect.anchorMin = new Vector2(0.5f, 0.5f);
+            iconRect.anchorMax = new Vector2(0.5f, 0.5f);
+            iconRect.sizeDelta = new Vector2(myRect.rect.width, myRect.rect.height);
 
-			if (OnItemDragStartEvent != null)
-			{
-				OnItemDragStartEvent(this);                                			// Notify all items about drag start for raycast disabling
-			}
-		}
+            if (OnItemDragStartEvent != null)
+            {
+                OnItemDragStartEvent(this);                                         // Notify all items about drag start for raycast disabling
+            }
+        }
 	}
 
 	/// <summary>
@@ -112,7 +113,8 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 		draggedItem = null;
 		icon = null;
 		sourceCell = null;
-        CActivityManager3._instance._isGrabbing = false;
+
+        _isGrabbing = false;
     }
 
 	/// <summary>

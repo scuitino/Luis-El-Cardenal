@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc8337ee17e7864c83a0721c3590a3d, type: 3}
   m_Name: Ca-1
   m_EditorClassIdentifier: 
-  _item1: {fileID: 122268, guid: e2ded8689b4815547835414dd964c62a, type: 2}
-  _item2: {fileID: 122268, guid: 2e8cc95456117064a96faabf1fd33c6b, type: 2}
+  _item1: {fileID: 0}
+  _item2: {fileID: 0}
