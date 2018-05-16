@@ -13,7 +13,8 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
 	public static DragAndDropItem draggedItem;                                      // Item that is dragged now
 	public static GameObject icon;                                                  // Icon of dragged item
-	public static DragAndDropCell sourceCell;                                       // From this cell dragged item is
+    public static GameObject children;                                              // children of dragged item
+    public static DragAndDropCell sourceCell;                                       // From this cell dragged item is
 
 	public delegate void DragEvent(DragAndDropItem item);
 	public static event DragEvent OnItemDragStartEvent;                             // Drag start event
@@ -62,12 +63,29 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             iconImage.raycastTarget = false;
             iconImage.sprite = myImage.sprite;
             RectTransform iconRect = icon.GetComponent<RectTransform>();
+
+            // creating children
+            children = new GameObject();
+            children.transform.SetParent(icon.transform);
+            Image thisChildImage = transform.GetChild(0).GetComponent<Image>();
+            thisChildImage.raycastTarget = false;
+            Image newChildrenImage = children.AddComponent<Image>();
+            newChildrenImage.raycastTarget = false;
+            newChildrenImage.sprite = thisChildImage.sprite;
+            RectTransform newChildRect = newChildrenImage.GetComponent<RectTransform>();
+
             // Set icon's dimensions
             RectTransform myRect = GetComponent<RectTransform>();
             iconRect.pivot = new Vector2(0.5f, 0.5f);
             iconRect.anchorMin = new Vector2(0.5f, 0.5f);
             iconRect.anchorMax = new Vector2(0.5f, 0.5f);
             iconRect.sizeDelta = new Vector2(myRect.rect.width, myRect.rect.height);
+
+            // set new child dimensions
+            newChildRect.pivot = new Vector2(0.5f, 0.5f);
+            newChildRect.anchorMin = new Vector2(0.5f, 0.5f);
+            newChildRect.anchorMax = new Vector2(0.5f, 0.5f);
+            newChildRect.sizeDelta = new Vector2(myRect.rect.width, myRect.rect.height);
 
             if (OnItemDragStartEvent != null)
             {
