@@ -38,10 +38,6 @@ public class CActivityManager4 : CActivity {
     [SerializeField, Header("References")]
     List<Transform> _flowersSlots;
 
-    // to move result button
-    [SerializeField]
-    DOTweenAnimation _resultButton;
-
     private void Awake()
     {
         //Singleton check
@@ -60,7 +56,6 @@ public class CActivityManager4 : CActivity {
     public override void ChangeReady(bool aOption)
     {        
         base.ChangeReady(aOption);
-        _resultButton.DOPlayForward();
     }
 
     // select and play the next challenge
@@ -420,78 +415,5 @@ public class CActivityManager4 : CActivity {
                     break;
             }
         }
-    }
-
-    // restart the options and results
-    public void RestartChallenge()
-    {
-        if (!_win)
-        {
-            //if (_option1.childCount > 0)
-            //{
-            //    _instantiatedItems.Remove(_option1.GetChild(0));
-            //    Destroy(_option1.GetChild(0).gameObject);
-            //}
-
-            //if (_option2.childCount > 0)
-            //{
-            //    _instantiatedItems.Remove(_option2.GetChild(0));
-            //    Destroy(_option2.GetChild(0).gameObject);
-            //}
-
-            //if (_option3.childCount > 0)
-            //{
-            //    _instantiatedItems.Remove(_option3.GetChild(0));
-            //    Destroy(_option3.GetChild(0).gameObject);
-            //}
-
-            //if (_flower1.transform.childCount > 0)
-            //{
-            //    _instantiatedItems.Remove(_flower1.transform.GetChild(0));
-            //    Destroy(_flower1.transform.GetChild(0).gameObject);
-            //}
-
-            //if (_flower2.transform.childCount > 0)
-            //{
-            //    _instantiatedItems.Remove(_flower1.transform.GetChild(0));
-            //    Destroy(_flower2.transform.GetChild(0).gameObject);
-            //}
-
-            StartCoroutine(PlayChallenge());
-        }        
-    }
-
-    // check result of the actual question
-    public void CheckResult()
-    {
-        //if (_readyToPlay)
-        //{
-        //    if (_flower1.GetItem() != null && _flower2.GetItem() != null) // if both result slots are filled
-        //    {
-        //        _resultButton.DOPlayBackwards();
-        //        _optionsContainer.DOPlayBackwards();
-        //        if (_flower1.GetItem().GetItemID() == _flower2.GetItem().GetItemID()) // if the ids of the answers are the same
-        //        {
-        //            _rabbitAnimator.SetTrigger("Success");
-        //            _successCount++;
-        //            //_challengesOnThisLevel.RemoveAt(_actualChallenge);
-        //            if (_successCount >= _goodAnswersToWin)
-        //            {
-        //                _win = true;
-        //                WinGame();
-        //            }
-        //            Debug.Log("son iguales");
-        //        }
-        //        else // if the ids are different
-        //        {
-        //            _rabbitAnimator.SetTrigger("Fail");
-        //            Debug.Log("son diferentes");
-        //        }
-        //    }
-        //    else // if the player doesn't select two items
-        //    {
-        //        Debug.Log("debe poner dos objetos");
-        //    }
-        //}        
-    }
+    }    
 }
