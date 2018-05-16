@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc8337ee17e7864c83a0721c3590a3d, type: 3}
   m_Name: Ga-6
   m_EditorClassIdentifier: 
-  _item1: {fileID: 122268, guid: af76df0c2b9f56f4b87be03bb7c8f45b, type: 2}
-  _item2: {fileID: 122268, guid: 262d42ae276b208478dde89be94a8553, type: 2}
+  _item1: {fileID: 122268, guid: be5cef1c27945b242a86d04da934ce37, type: 2}
+  _item2: {fileID: 122268, guid: af76df0c2b9f56f4b87be03bb7c8f45b, type: 2}
