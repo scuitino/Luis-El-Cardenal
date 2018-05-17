@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da939f57a39b418499aab24d12218148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 2
   empty: {r: 0.8862746, g: 1, b: 0.7568628, a: 0}
   full: {r: 1, g: 0.9568628, b: 0.7568628, a: 0}
   unlimitedSource: 0
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da939f57a39b418499aab24d12218148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 2
   empty: {r: 0.8862746, g: 1, b: 0.7568628, a: 0}
   full: {r: 1, g: 0.9568628, b: 0.7568628, a: 0}
   unlimitedSource: 0
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 804918839}
         m_MethodName: RestartActivity
         m_Mode: 1
         m_Arguments:
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da939f57a39b418499aab24d12218148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 2
   empty: {r: 0.8862746, g: 1, b: 0.7568628, a: 0}
   full: {r: 1, g: 0.9568628, b: 0.7568628, a: 0}
   unlimitedSource: 0
@@ -1415,7 +1415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da939f57a39b418499aab24d12218148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 2
   empty: {r: 0.8862746, g: 1, b: 0.7568628, a: 0}
   full: {r: 1, g: 0.9568628, b: 0.7568628, a: 0}
   unlimitedSource: 0
@@ -1503,7 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da939f57a39b418499aab24d12218148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 2
   empty: {r: 0.8862746, g: 1, b: 0.7568628, a: 0}
   full: {r: 1, g: 0.9568628, b: 0.7568628, a: 0}
   unlimitedSource: 0
@@ -1854,7 +1854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da939f57a39b418499aab24d12218148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 2
   empty: {r: 0.8862746, g: 1, b: 0.7568628, a: 0}
   full: {r: 1, g: 0.9568628, b: 0.7568628, a: 0}
   unlimitedSource: 0
@@ -1911,131 +1911,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1001 &1525959595
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2109500500}
-    m_Modifications:
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 41
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0.8046875
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0.30664062
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0.9091797
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0.48242188
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114582286373127456, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114582286373127456, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CheckResult
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204455114785904, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: autoPlay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204455114785904, guid: ca37c980719b0414890d46724b73ce3b,
-        type: 2}
-      propertyPath: easeType
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ca37c980719b0414890d46724b73ce3b, type: 2}
-  m_IsPrefabParent: 0
---- !u!224 &1525959596 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1525959595}
 --- !u!1 &1643976068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,7 +2094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da939f57a39b418499aab24d12218148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 2
   empty: {r: 0.8862746, g: 1, b: 0.7568628, a: 0}
   full: {r: 1, g: 0.9568628, b: 0.7568628, a: 0}
   unlimitedSource: 0
@@ -2368,7 +2243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da939f57a39b418499aab24d12218148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 2
   empty: {r: 0.8862746, g: 1, b: 0.7568628, a: 0}
   full: {r: 1, g: 0.9568628, b: 0.7568628, a: 0}
   unlimitedSource: 0
@@ -2569,7 +2444,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 804918839}
     - target: {fileID: 114122948685694408, guid: ab21f7d7d112bf04997a406eec9afb95,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -2634,7 +2509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da939f57a39b418499aab24d12218148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 2
   empty: {r: 0.8862746, g: 1, b: 0.7568628, a: 0}
   full: {r: 1, g: 0.9568628, b: 0.7568628, a: 0}
   unlimitedSource: 0
@@ -2722,7 +2597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da939f57a39b418499aab24d12218148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellType: 0
+  cellType: 2
   empty: {r: 0.8862746, g: 1, b: 0.7568628, a: 0}
   full: {r: 1, g: 0.9568628, b: 0.7568628, a: 0}
   unlimitedSource: 0
@@ -2900,7 +2775,6 @@ RectTransform:
   - {fileID: 2030369384}
   - {fileID: 820283173}
   - {fileID: 1441993853}
-  - {fileID: 1525959596}
   m_Father: {fileID: 1134705484}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

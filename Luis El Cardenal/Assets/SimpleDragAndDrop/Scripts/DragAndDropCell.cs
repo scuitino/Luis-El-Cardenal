@@ -176,6 +176,18 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
 								PlaceItem(item);                            // Place dropped item in this cell
                             }
                             break;
+                        case CellType.DragOnly:                             // The item can only be dragged
+                            // Activity 4
+                            if (item.GetItemID() == myDadItem.GetItemID())  // if the player drop id is the correct 
+                            {
+                                // animating deibos
+                                item.transform.parent.GetComponent<Animator>().SetTrigger("GrowUp");
+                                myDadItem.transform.parent.GetComponent<Animator>().SetTrigger("GrowUp");
+                                Destroy(item.gameObject); // Destroy the spawner
+                                DestroyItem(); // Destroy the target
+                                CActivityManager4._instance.Success();
+                            }
+                            break;
                         default:
                             break;
                     }

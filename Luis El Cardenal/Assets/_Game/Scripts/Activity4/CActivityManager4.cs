@@ -58,6 +58,17 @@ public class CActivityManager4 : CActivity {
         base.ChangeReady(aOption);
     }
 
+    // each time a good answer
+    public void Success()
+    {
+        _successCount++;
+        if (_successCount == _goodAnswersToWin) // if the player reach the objective
+        {
+            WinGame();
+            _win = true;
+        }
+    }
+
     // select and play the next challenge
     public IEnumerator PlayChallenge()
     {
@@ -75,7 +86,6 @@ public class CActivityManager4 : CActivity {
             int _tSelectedChallenge;
             int _tSelectedFlower;
             GameObject tSelectedItem;
-            Debug.Log(_selectedChallenges[i] + "selected");
             switch (_selectedChallenges[i]) 
             {
                 case 0: // CA 
@@ -83,7 +93,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot
                     tSelectedItem = Instantiate(_caChallenges[_tSelectedChallenge]._item1); // instantiate item1
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]);
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -96,7 +105,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot
                     tSelectedItem = Instantiate(_caChallenges[_tSelectedChallenge]._item2); // instantiate item2
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -111,7 +119,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot for the first item
                     tSelectedItem = Instantiate(_esChallenges[_tSelectedChallenge]._item1); // instantiate item1
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]);
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -124,7 +131,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot for the second item
                     tSelectedItem = Instantiate(_esChallenges[_tSelectedChallenge]._item2); // instantiate item2
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]);
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -139,7 +145,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot
                     tSelectedItem = Instantiate(_gaChallenges[_tSelectedChallenge]._item1); // instantiate item1
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -152,7 +157,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count);
                     tSelectedItem = Instantiate(_gaChallenges[_tSelectedChallenge]._item2); // instantiate item2
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -167,7 +171,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot
                     tSelectedItem = Instantiate(_laChallenges[_tSelectedChallenge]._item1); // instantiate item1
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -180,7 +183,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count);
                     tSelectedItem = Instantiate(_laChallenges[_tSelectedChallenge]._item2); // instantiate item2
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -195,7 +197,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot
                     tSelectedItem = Instantiate(_leChallenges[_tSelectedChallenge]._item1); // instantiate item1
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -208,7 +209,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count);
                     tSelectedItem = Instantiate(_leChallenges[_tSelectedChallenge]._item2); // instantiate item2
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -223,7 +223,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot
                     tSelectedItem = Instantiate(_maChallenges[_tSelectedChallenge]._item1); // instantiate item1
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -236,7 +235,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count);
                     tSelectedItem = Instantiate(_maChallenges[_tSelectedChallenge]._item2); // instantiate item2
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -251,7 +249,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot
                     tSelectedItem = Instantiate(_moChallenges[_tSelectedChallenge]._item1); // instantiate item1
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -264,7 +261,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count);
                     tSelectedItem = Instantiate(_moChallenges[_tSelectedChallenge]._item2); // instantiate item2
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -279,7 +275,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot
                     tSelectedItem = Instantiate(_oChallenges[_tSelectedChallenge]._item1); // instantiate item1
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -292,7 +287,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count);
                     tSelectedItem = Instantiate(_oChallenges[_tSelectedChallenge]._item2); // instantiate item2
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -307,7 +301,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot
                     tSelectedItem = Instantiate(_raChallenges[_tSelectedChallenge]._item1); // instantiate item1
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -320,7 +313,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count);
                     tSelectedItem = Instantiate(_raChallenges[_tSelectedChallenge]._item2); // instantiate item2
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -335,7 +327,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot
                     tSelectedItem = Instantiate(_reChallenges[_tSelectedChallenge]._item1); // instantiate item1
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -348,7 +339,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count);
                     tSelectedItem = Instantiate(_reChallenges[_tSelectedChallenge]._item2); // instantiate item2
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -363,7 +353,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot
                     tSelectedItem = Instantiate(_teChallenges[_tSelectedChallenge]._item1); // instantiate item1
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -376,7 +365,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count);
                     tSelectedItem = Instantiate(_teChallenges[_tSelectedChallenge]._item2); // instantiate item2
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -391,7 +379,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count); // selecting random slot
                     tSelectedItem = Instantiate(_zaChallenges[_tSelectedChallenge]._item1); // instantiate item1
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
@@ -404,7 +391,6 @@ public class CActivityManager4 : CActivity {
 
                     _tSelectedFlower = Random.Range(0, _flowersSlots.Count);
                     tSelectedItem = Instantiate(_zaChallenges[_tSelectedChallenge]._item2); // instantiate item2
-                    Debug.Log(tSelectedItem.name);
                     // re-size
                     tSelectedItem.transform.SetParent(_flowersSlots[_tSelectedFlower]); // setting parent
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 

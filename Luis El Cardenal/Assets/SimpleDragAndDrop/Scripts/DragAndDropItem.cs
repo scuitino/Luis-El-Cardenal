@@ -25,7 +25,7 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 	private static int canvasSortOrder = 100;										// Sort order for canvas
 
     [SerializeField]
-    int _itemID;                                                                    // to check results on activities
+    int _itemID;                                                                    // to check results on activities    
 
     public static bool _isGrabbing;                                                 // to know if the player is grabbing something
 
@@ -66,13 +66,13 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
             // creating children
             children = new GameObject();
-            children.transform.SetParent(icon.transform);
+            children.transform.SetParent(icon.transform);            
             Image thisChildImage = transform.GetChild(0).GetComponent<Image>();
             thisChildImage.raycastTarget = false;
             Image newChildrenImage = children.AddComponent<Image>();
             newChildrenImage.raycastTarget = false;
             newChildrenImage.sprite = thisChildImage.sprite;
-            RectTransform newChildRect = newChildrenImage.GetComponent<RectTransform>();
+            RectTransform newChildRect = newChildrenImage.GetComponent<RectTransform>();            
 
             // Set icon's dimensions
             RectTransform myRect = GetComponent<RectTransform>();
