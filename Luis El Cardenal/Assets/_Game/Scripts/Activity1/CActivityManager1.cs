@@ -44,6 +44,10 @@ public class CActivityManager1 : CActivity
     float _timer;
     float _timerLimit = 7;
 
+    // to control luis animations
+    [SerializeField]
+    Animator _luisAnimator;
+
     private void Awake()
     {
         //Singleton check
@@ -128,6 +132,7 @@ public class CActivityManager1 : CActivity
             ChangeReady(false);
             if (aAnswer == _correctAnswer) // if the answer is correct
             {
+                _luisAnimator.SetTrigger("Success");
                 _selectedItems[_selectedItemIndex].GetComponent<Animator>().SetTrigger("Play"); // animate word
                 if (_winsCount >= _wordsToWin) // if the player reach the goal
                 {
@@ -142,7 +147,7 @@ public class CActivityManager1 : CActivity
             }
             else
             {
-                PlayWord();
+                _luisAnimator.SetTrigger("Fail");
             }
         }        
     }
