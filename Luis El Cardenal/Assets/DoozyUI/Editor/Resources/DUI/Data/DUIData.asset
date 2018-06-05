@@ -47,11 +47,12 @@ MonoBehaviour:
       - MainMenu
       - PlayMenu
       - StartMenu
+      - WinAnimation
       - WinMenu
       isExpanded:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0
+        m_Value: 1
     - categoryName: MyCategory
       itemNames:
       - One
@@ -132,7 +133,8 @@ MonoBehaviour:
     - Example 3 - Buttons
     - Example 4 - Simple UI
     - Uncategorized
-  DatabaseUICanvases: []
+  DatabaseUICanvases:
+  - MasterCanvas
   DatabaseUISounds:
     sounds:
     - {fileID: 11400000, guid: 59de0091c9523d146a71bf3e2f187753, type: 2}

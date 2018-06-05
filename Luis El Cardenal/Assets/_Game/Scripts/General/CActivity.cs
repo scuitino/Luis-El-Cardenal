@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DoozyUI;
 
 public class CActivity : MonoBehaviour {        
 
@@ -11,21 +12,31 @@ public class CActivity : MonoBehaviour {
     // is the game finished?
     public bool _win;
 
-    // win Panel
+    // to animate win panel
     [SerializeField]
-    GameObject _winPanel;
-    
+    UIElement _winPanel;
+
+    // to control win animation
+    [SerializeField]
+    Animator _winAnimator;
+
     // to control when the player can play
     public virtual void ChangeReady(bool aOption)
     {
         _readyToPlay = aOption;
     }
 
-    // call when the playe win
+    // call when the player win
     public void WinGame()
     {
-        _winPanel.SetActive(true);
+        _winPanel.Show(false);
     }
+
+    // to start win animation
+    public void StartWinAnimation()
+    {
+        _winAnimator.SetTrigger("Win");
+    }   
 
     // restart the activity
     public void RestartActivity()

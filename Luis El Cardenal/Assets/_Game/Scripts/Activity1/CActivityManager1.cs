@@ -46,7 +46,7 @@ public class CActivityManager1 : CActivity
 
     // to control luis animations
     [SerializeField]
-    Animator _luisAnimator;
+    Animator _luisAnimator;    
 
     private void Awake()
     {
@@ -148,6 +148,10 @@ public class CActivityManager1 : CActivity
             else
             {
                 _luisAnimator.SetTrigger("Fail");
+                foreach (GameObject tItem in _selectedItems)
+                {
+                    tItem.GetComponent<AudioSource>().Stop();
+                }
             }
         }        
     }
