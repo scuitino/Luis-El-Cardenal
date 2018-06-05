@@ -138,6 +138,7 @@ MonoBehaviour:
   DatabaseUISounds:
     sounds:
     - {fileID: 11400000, guid: 59de0091c9523d146a71bf3e2f187753, type: 2}
+    - {fileID: 11400000, guid: 01efda1ec172f204b992eae1aff84fe2, type: 2}
     - {fileID: 11400000, guid: 84ea33e22843d7f4d8dd343713bbcba3, type: 2}
     - {fileID: 11400000, guid: a44e410b0b27e2143ad03bc0301bad51, type: 2}
     - {fileID: 11400000, guid: 77711a20c0aa3304a96beb7c113f4326, type: 2}
@@ -161,6 +162,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 35b0e4b3132927a4388a58ab8c7f34ef, type: 2}
     soundNames:
     - ~No Sound~
+    - Camalote
     - Camera Shutter
     - Camera Take Picture
     - Cartoon Squeak
