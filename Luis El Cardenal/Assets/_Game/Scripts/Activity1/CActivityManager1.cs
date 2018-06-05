@@ -57,7 +57,7 @@ public class CActivityManager1 : CActivity
     {
         _audioSource = this.GetComponent<AudioSource>();
         SelectGameWords();
-        //PlayWord();
+        PlayWord();
     }
 
     private void Update()
