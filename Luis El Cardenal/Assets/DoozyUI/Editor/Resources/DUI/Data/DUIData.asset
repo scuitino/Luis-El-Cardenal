@@ -61,6 +61,13 @@ MonoBehaviour:
         m_Target: 0
         speed: 2
         m_Value: 0
+    - categoryName: Uncategorized
+      itemNames:
+      - ~Element Name~
+      isExpanded:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
     categoryNames:
     - ~Custom Name~
     - Example 1 - SimpleScene
@@ -68,6 +75,7 @@ MonoBehaviour:
     - Example 3 - Buttons
     - Example 4 - Simple UI
     - MyCategory
+    - Uncategorized
   DatabaseUIButtons:
     categories:
     - categoryName: Example 1 - SimpleScene
@@ -99,11 +107,20 @@ MonoBehaviour:
     - categoryName: Example 4 - Simple UI
       itemNames:
       - ApplicationQuit
+      - Camalote
       - Continue
       - LoseGame
       - Play
       - Start
+      - TapButton
       - WinGame
+      isExpanded:
+        m_Target: 1
+        speed: 2
+        m_Value: 1
+    - categoryName: Uncategorized
+      itemNames:
+      - ~Button Name~
       isExpanded:
         m_Target: 0
         speed: 2
@@ -114,6 +131,7 @@ MonoBehaviour:
     - Example 2 - OrientationManager
     - Example 3 - Buttons
     - Example 4 - Simple UI
+    - Uncategorized
   DatabaseUICanvases: []
   DatabaseUISounds:
     sounds:
@@ -131,6 +149,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 10ceb2f54a73fb34e8ee852a5aef4858, type: 2}
     - {fileID: 11400000, guid: 694ba4c337c7fc0498d92cc0090bdc0c, type: 2}
     - {fileID: 11400000, guid: 533e255fb4c0f914e9e5990b730ac8b5, type: 2}
+    - {fileID: 11400000, guid: 3d8ede30f80cf2349a295acdcb91bc29, type: 2}
     - {fileID: 11400000, guid: e53c74a5791ac5c4cb57ea75c5d04b54, type: 2}
     - {fileID: 11400000, guid: fd5e319efe0e5944b842a3cd9cb95e33, type: 2}
     - {fileID: 11400000, guid: 572cc5bf0ce59364699798257be44296, type: 2}
@@ -153,6 +172,7 @@ MonoBehaviour:
     - Punch 3
     - Punch 4
     - Shine Ding
+    - Tap
     - Whip Snap
     - Woosh 1
     - Woosh 2
