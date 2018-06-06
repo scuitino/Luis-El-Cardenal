@@ -20,6 +20,9 @@ public class CActivity : MonoBehaviour {
     [SerializeField]
     Animator _winAnimator;
 
+    // to control help animation
+    public Animator _helpAnimator;
+
     // to control when the player can play
     public virtual void ChangeReady(bool aOption)
     {

@@ -62,6 +62,7 @@ public class CActivityManager1 : CActivity
         _audioSource = this.GetComponent<AudioSource>();
         SelectGameWords();
         //PlayWord();
+        _helpAnimator.SetBool("Activity1", true);
     }
 
     private void Update()
@@ -147,6 +148,7 @@ public class CActivityManager1 : CActivity
             }
             else
             {
+                Invoke("PlayWord", 2.5f);
                 _luisAnimator.SetTrigger("Fail");
                 foreach (GameObject tItem in _selectedItems)
                 {

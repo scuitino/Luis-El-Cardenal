@@ -15,6 +15,10 @@ public class CFrog : MonoBehaviour {
     [SerializeField]
     List<AudioClip> _frogSounds;
 
+    //To animate Luis
+    [SerializeField]
+    Animator _luisAnimator;
+
     private void Start()
     {
         _frogASource = this.GetComponent<AudioSource>();
@@ -43,5 +47,17 @@ public class CFrog : MonoBehaviour {
     public void FailJumpCallBack()
     {
         CActivityManager2._instance.StartFailAnimation();
+    }
+
+    // good luis animation
+    public void PlaySuccess()
+    {
+        _luisAnimator.SetTrigger("Success");
+    }
+
+    // bad luis animation
+    public void PlayFail()
+    {
+        _luisAnimator.SetTrigger("Fail");
     }
 }
