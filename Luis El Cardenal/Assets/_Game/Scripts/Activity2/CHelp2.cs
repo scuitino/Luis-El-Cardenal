@@ -15,9 +15,9 @@ public class CHelp2 : MonoBehaviour {
     [SerializeField]
     Animator _luisAnimator;
 
-    // to animate the touched object
+    // to animate the frog
     [SerializeField]
-    Animator _touchedAnimator;
+    Animator _frogAnimator;
 
     private void Start()
     {
@@ -49,10 +49,10 @@ public class CHelp2 : MonoBehaviour {
         _luisAnimator.SetTrigger("Success");
     }
 
-    //  start touched object animation
-    public void StartTouchAnimation()
+    //  start Frog  animation
+    public void StartFrogAnimation()
     {
-        _touchedAnimator.SetTrigger("Play");
+        _frogAnimator.SetTrigger("StartJump");
     }
 
     // to start the game
