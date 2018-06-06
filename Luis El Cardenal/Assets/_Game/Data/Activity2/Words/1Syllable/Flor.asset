@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Flor
   _syllables:
-  - Flor
+  - FLOR
   _images:
   - {fileID: 21300000, guid: e1a7732e7e19e8c4b972682107639988, type: 3}
   _sounds:

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Planta
   _syllables:
-  - Plan
-  - ta
+  - PLAN
+  - TA
   _images:
   - {fileID: 21300000, guid: a9a8e4cb1a6654641bf2caefde7fc0be, type: 3}
   - {fileID: 21300000, guid: a43bb0bd6ea03c04e8a1293ea57942b5, type: 3}

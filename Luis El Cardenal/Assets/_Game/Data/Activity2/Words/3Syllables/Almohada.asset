@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Almohada
   _syllables:
-  - Al
-  - moha
-  - da
+  - AL
+  - MOHA
+  - DA
   _images:
   - {fileID: 21300000, guid: 7647187d6ce376649b187e0d85d228ff, type: 3}
   - {fileID: 21300000, guid: c6ee13f97bd0b944189f9e8df69d9f6b, type: 3}

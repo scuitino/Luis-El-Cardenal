@@ -14,8 +14,8 @@ MonoBehaviour:
   _word: Abeja
   _syllables:
   - A
-  - be
-  - ja
+  - BE
+  - JA
   _images:
   - {fileID: 21300000, guid: 38d354a5a399ed14f936a62ac9ea2b99, type: 3}
   - {fileID: 21300000, guid: ee678b2d46c1276429332f6955e84c1a, type: 3}

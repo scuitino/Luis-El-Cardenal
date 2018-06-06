@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Tenedor
   _syllables:
-  - Te
-  - ne
-  - dor
+  - TE
+  - NE
+  - DOR
   _images:
   - {fileID: 21300000, guid: 8507c985fb13d7d4aaae9761a771024e, type: 3}
   - {fileID: 21300000, guid: ae8e84d52872f134b8fec6fae50f5e2b, type: 3}

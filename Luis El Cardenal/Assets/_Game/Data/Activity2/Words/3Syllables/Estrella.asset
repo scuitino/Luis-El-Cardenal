@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Estrella
   _syllables:
-  - Es
-  - tre
-  - lla
+  - ES
+  - TRE
+  - LLA
   _images:
   - {fileID: 21300000, guid: b3f6b5db67fabc748a2f6661d43ff0a9, type: 3}
   - {fileID: 21300000, guid: 9de2a85147f462348918267835bfefbf, type: 3}
