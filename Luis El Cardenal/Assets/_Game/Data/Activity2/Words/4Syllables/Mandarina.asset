@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Mandarina
   _syllables:
-  - Man
-  - da
-  - ri
-  - na
+  - MAN
+  - DA
+  - RI
+  - NA
   _images:
   - {fileID: 21300000, guid: ff76e627285e5ac41bde17877c57389f, type: 3}
   - {fileID: 21300000, guid: 6f7b63e4b63d8364a9e81be68901685d, type: 3}

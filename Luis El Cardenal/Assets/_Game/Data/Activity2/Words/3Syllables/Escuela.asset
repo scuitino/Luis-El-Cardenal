@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Escuela
   _syllables:
-  - Es
-  - cue
-  - la
+  - ES
+  - CUE
+  - LA
   _images:
   - {fileID: 21300000, guid: 66d2b32a856173a4d9f3aaabe3519c49, type: 3}
   - {fileID: 21300000, guid: 756861db6f2818045a16f78922724c81, type: 3}

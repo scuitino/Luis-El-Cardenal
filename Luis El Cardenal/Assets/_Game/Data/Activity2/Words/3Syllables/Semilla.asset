@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Semilla
   _syllables:
-  - Se
-  - mi
-  - lla
+  - SE
+  - MI
+  - LLA
   _images:
   - {fileID: 21300000, guid: b05f8e957666619429b5f381bc1b4862, type: 3}
   - {fileID: 21300000, guid: 6facfb2afe8581140bcac526033bd88c, type: 3}

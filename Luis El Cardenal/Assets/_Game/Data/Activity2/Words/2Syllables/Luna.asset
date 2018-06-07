@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Luna
   _syllables:
-  - Lu
-  - na
+  - LU
+  - NA
   _images:
   - {fileID: 21300000, guid: 7383c88f919967e4099708f6f5b601b3, type: 3}
   - {fileID: 21300000, guid: 436912112693a06489b155c379d3b37d, type: 3}

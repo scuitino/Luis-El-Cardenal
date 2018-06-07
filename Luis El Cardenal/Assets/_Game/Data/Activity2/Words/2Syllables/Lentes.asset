@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Lentes
   _syllables:
-  - Len
-  - tes
+  - LEN
+  - TES
   _images:
   - {fileID: 21300000, guid: 8efc3497ad2c72e4a8a1ece0d0dd47f9, type: 3}
   - {fileID: 21300000, guid: 42f41bb28aad68646b86974955e506d9, type: 3}

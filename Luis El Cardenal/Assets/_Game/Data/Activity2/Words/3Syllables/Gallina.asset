@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Gallina
   _syllables:
-  - Ga
-  - lli
-  - na
+  - GA
+  - LLI
+  - NA
   _images:
   - {fileID: 21300000, guid: 10b246ed89756ff41924490d556249fa, type: 3}
   - {fileID: 21300000, guid: b19affb00db0e8f4392f08c65591e5c3, type: 3}

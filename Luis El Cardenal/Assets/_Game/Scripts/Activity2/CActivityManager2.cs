@@ -88,7 +88,9 @@ public class CActivityManager2 : CActivity {
         }
 
         // start the game
-        PlayWord();
+        //PlayWord();
+
+        _helpAnimator.SetBool("Activity2", true);
     }
 
     // Play with the next word

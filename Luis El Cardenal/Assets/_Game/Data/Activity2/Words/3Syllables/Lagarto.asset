@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Lagarto
   _syllables:
-  - La
-  - gar
-  - to
+  - LA
+  - GAR
+  - TO
   _images:
   - {fileID: 21300000, guid: 2e4a27873de081b41b063440c2142d98, type: 3}
   - {fileID: 21300000, guid: f4099fe04846c7c43a01d31f91607105, type: 3}
@@ -26,4 +26,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fc4519ecaa17c41468fc978399bf7de4, type: 3}
   - {fileID: 8300000, guid: 38af6483bfb6a634485a3e4103959c1f, type: 3}
   _numberOfSyllables: 3
-  _wasUsed: 1
+  _wasUsed: 0
