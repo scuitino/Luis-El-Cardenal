@@ -19,6 +19,10 @@ public class CHelp2 : MonoBehaviour {
     [SerializeField]
     Animator _frogAnimator;
 
+    // to enable real Frog and toad
+    [SerializeField]
+    GameObject _realFrog, _realToad;
+
     private void Start()
     {
         _helpASource = this.GetComponent<AudioSource>();
@@ -52,6 +56,8 @@ public class CHelp2 : MonoBehaviour {
     //  start Frog  animation
     public void StartFrogAnimation()
     {
+        _frogAnimator.SetBool("Example", true);
+        _frogAnimator.SetInteger("Result", 2);
         _frogAnimator.SetTrigger("StartJump");
     }
 
@@ -59,5 +65,14 @@ public class CHelp2 : MonoBehaviour {
     public void StartTheGame()
     {
         CActivityManager2._instance.PlayWord();
+    }
+
+    // to close help panel
+    public void FinishHelp()
+    {
+        CActivityManager2._instance.PlayWord();
+        _realFrog.SetActive(true);
+        _realToad.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 }

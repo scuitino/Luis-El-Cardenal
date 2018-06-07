@@ -17,7 +17,7 @@ public class CFrog : MonoBehaviour {
 
     //To animate Luis
     [SerializeField]
-    Animator _luisAnimator;
+    Animator _luisAnimator;    
 
     private void Start()
     {
