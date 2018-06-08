@@ -19,6 +19,10 @@ public class CHelp1 : MonoBehaviour {
     [SerializeField]
     Animator _touchedAnimator;
 
+    // to animate the Rabbit in activity 3
+    [SerializeField]
+    Animator _rabbitanimator;
+
     private void Start()
     {
         _helpASource = this.GetComponent<AudioSource>();
@@ -29,7 +33,7 @@ public class CHelp1 : MonoBehaviour {
     {
         _helpASource.clip = _helpSounds[aSound];
         _helpASource.Play();
-    }	
+    }
 
     // start talking animation
     public void StartTalking()
@@ -53,5 +57,17 @@ public class CHelp1 : MonoBehaviour {
     public void StartTouchAnimation()
     {
         _touchedAnimator.SetTrigger("Play");
+    }
+
+    // to animate the rabbit in activity 3
+    public void AnimateRabbit()
+    {
+        _rabbitanimator.SetTrigger("Success");
+    }
+
+    // to close the help panel
+    public void CloseHelp()
+    {
+        this.gameObject.SetActive(false);
     }
 }

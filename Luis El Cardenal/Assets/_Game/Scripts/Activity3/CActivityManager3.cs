@@ -82,7 +82,7 @@ public class CActivityManager3 : CActivity {
 
     private void Start()
     {        
-        StartCoroutine(PlayChallenge()); 
+        //StartCoroutine(PlayChallenge()); 
     }
 
     // to control when the player can play
