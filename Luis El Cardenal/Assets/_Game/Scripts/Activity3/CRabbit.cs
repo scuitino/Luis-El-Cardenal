@@ -9,4 +9,10 @@ public class CRabbit : MonoBehaviour {
     {
         CActivityManager3._instance.RestartChallenge();
     }
+
+    // to change leaf sprite
+    public void EatLeaf()
+    {
+        CActivityManager3._instance.CutLeaf();
+    }
 }

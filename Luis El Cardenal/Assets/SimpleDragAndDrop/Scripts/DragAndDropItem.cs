@@ -24,6 +24,13 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 	private static string canvasName = "DragAndDropCanvas";                   		// Name of canvas
 	private static int canvasSortOrder = 100;										// Sort order for canvas
 
+    // drag and drop sound clips
+    [SerializeField]
+    AudioClip _dragSound, _dropSound;
+
+    // to play d&d sounds
+    AudioSource _aSource;
+
     [SerializeField]
     int _itemID;                                                                    // to check results on activities    
 
@@ -43,14 +50,23 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 		}
 	}
 
-	/// <summary>
-	/// This item started to drag.
-	/// </summary>
-	/// <param name="eventData"></param>
-	public void OnBeginDrag(PointerEventData eventData)
+    private void Start()
+    {
+        _aSource = this.GetComponent<AudioSource>();
+    }
+
+    /// <summary>
+    /// This item started to drag.
+    /// </summary>
+    /// <param name="eventData"></param>
+    public void OnBeginDrag(PointerEventData eventData)
 	{
         if (dragDisabled == false && !_isGrabbing)
         {
+            // play sound
+            _aSource.clip = _dragSound;
+            _aSource.Play();
+
             sourceCell = GetCell();                                                 // Remember source cell
             draggedItem = this;                                                     // Set as dragged item
                                                                                     // Create item's icon
@@ -112,7 +128,10 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 	/// <param name="eventData"></param>
 	public void OnEndDrag(PointerEventData eventData)
 	{
-		ResetConditions();
+        // play sound
+        _aSource.clip = _dropSound;
+        _aSource.Play();
+        ResetConditions();
 	}
 
 	/// <summary>

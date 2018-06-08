@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CActivityManager3 : CActivity {
 
@@ -53,6 +54,22 @@ public class CActivityManager3 : CActivity {
     // list of new instantiated items
     [SerializeField]
     List<Transform> _instantiatedItems;
+
+    // to control luis animations
+    [SerializeField]
+    Animator _luisAnimator;
+
+    // to modify the leaf
+    [SerializeField]
+    List<Sprite> _leafSprites;
+
+    // Image of the leaf
+    [SerializeField]
+    Image _leafImage;
+
+    // current leaf sprite
+    [SerializeField]
+    int _currentLeaf;
 
     private void Awake()
     {
@@ -215,18 +232,20 @@ public class CActivityManager3 : CActivity {
                 _optionsContainer.DOPlayBackwards();
                 if (_flower1.GetItem().GetItemID() == _flower2.GetItem().GetItemID()) // if the ids of the answers are the same
                 {
+                    _luisAnimator.SetTrigger("Success");
                     _rabbitAnimator.SetTrigger("Success");
                     _successCount++;
                     _challengesOnThisLevel.RemoveAt(_actualChallenge);
                     if (_successCount >= _goodAnswersToWin)
                     {
                         _win = true;
-                        WinGame();
+                        Invoke("WinGame", 2);
                     }
                     Debug.Log("son iguales");
                 }
                 else // if the ids are different
                 {
+                    _luisAnimator.SetTrigger("Fail");
                     _rabbitAnimator.SetTrigger("Fail");
                     Debug.Log("son diferentes");
                 }
@@ -236,5 +255,12 @@ public class CActivityManager3 : CActivity {
                 Debug.Log("debe poner dos objetos");
             }
         }        
+    }
+
+    // to change leaf sprite
+    public void CutLeaf()
+    {
+        _currentLeaf += 1;
+        _leafImage.sprite = _leafSprites[_currentLeaf];
     }
 }
