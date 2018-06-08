@@ -29,6 +29,7 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     AudioClip _dragSound, _dropSound;
 
     // to play d&d sounds
+    [SerializeField]
     AudioSource _aSource;
 
     [SerializeField]
@@ -49,11 +50,6 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 			canvas.sortingOrder = canvasSortOrder;
 		}
 	}
-
-    private void Start()
-    {
-        _aSource = this.GetComponent<AudioSource>();
-    }
 
     /// <summary>
     /// This item started to drag.

@@ -70,4 +70,11 @@ public class CHelp1 : MonoBehaviour {
     {
         this.gameObject.SetActive(false);
     }
+
+    // to start activity 4 when the help animation is finished
+    public void StartActivity4()
+    {
+        CActivityManager4._instance.EnableRealFlowers();
+        CActivityManager4._instance.StartGame();
+    }
 }

@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dragSound: {fileID: 8300000, guid: 0ef2df5fd85071947830bbb4ae8bc07f, type: 3}
   _dropSound: {fileID: 8300000, guid: 788bfde9bf4f7d749ae37cde366acfa0, type: 3}
+  _aSource: {fileID: 0}
   _itemID: 6
 --- !u!222 &22227648
 CanvasRenderer:

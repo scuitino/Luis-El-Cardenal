@@ -38,6 +38,10 @@ public class CActivityManager4 : CActivity {
     [SerializeField, Header("References")]
     List<Transform> _flowersSlots;
 
+    // to control luis animations
+    [SerializeField]
+    Animator _luisAnimator;
+
     private void Awake()
     {
         //Singleton check
@@ -48,8 +52,9 @@ public class CActivityManager4 : CActivity {
     }
 
     private void Start()
-    {        
-        StartCoroutine(PlayChallenge()); 
+    {
+        //StartCoroutine(PlayChallenge()); 
+        _helpAnimator.SetBool("Activity4", true);
     }
 
     // to control when the player can play
@@ -62,11 +67,33 @@ public class CActivityManager4 : CActivity {
     public void Success()
     {
         _successCount++;
+        _luisAnimator.SetTrigger("Success");
         if (_successCount == _goodAnswersToWin) // if the player reach the objective
         {
-            WinGame();
+            Invoke("WinGame", 2);
             _win = true;
         }
+    }
+
+    // when the player answer is wrong
+    public void Fail()
+    {
+        _luisAnimator.SetTrigger("Fail");
+    }
+
+    // enable real flowers
+    public void EnableRealFlowers()
+    {
+        foreach (Transform tFlower in _flowersSlots)
+        {
+            tFlower.gameObject.SetActive(true);
+        }
+    }
+
+    // to call the start game coroutine
+    public void StartGame()
+    {
+        StartCoroutine(PlayChallenge());
     }
 
     // select and play the next challenge

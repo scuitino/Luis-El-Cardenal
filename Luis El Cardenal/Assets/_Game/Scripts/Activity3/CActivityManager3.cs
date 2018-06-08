@@ -81,7 +81,8 @@ public class CActivityManager3 : CActivity {
     }
 
     private void Start()
-    {        
+    {
+        _helpAnimator.SetBool("Activity3", true);
         //StartCoroutine(PlayChallenge()); 
     }
 

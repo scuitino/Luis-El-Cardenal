@@ -187,6 +187,10 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
                                 DestroyItem(); // Destroy the target
                                 CActivityManager4._instance.Success();
                             }
+                            else
+                            {
+                                CActivityManager4._instance.Fail();
+                            }
                             break;
                         default:
                             break;

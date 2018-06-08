@@ -58,6 +58,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c67a56d62e94747b8f17db1b0ffc1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dragSound: {fileID: 8300000, guid: 0ef2df5fd85071947830bbb4ae8bc07f, type: 3}
+  _dropSound: {fileID: 8300000, guid: 788bfde9bf4f7d749ae37cde366acfa0, type: 3}
+  _aSource: {fileID: 0}
   _itemID: 2
 --- !u!222 &22227648
 CanvasRenderer:
@@ -122,7 +125,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243757793189242240, guid: 8cf717565783db748b52a2f4c21e7ca5,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: a04b71d51e49543459033b9850d1f817, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 945bc6ab46cefd44d93615a1b3d9299f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
