@@ -111,6 +111,7 @@ public class CActivityManager1 : CActivity
     // to start a new word
 	public void PlayWord()
     {
+        _startFlag.SetActive(true);
         ChangeReady(false);
         if (!_win)
         {            

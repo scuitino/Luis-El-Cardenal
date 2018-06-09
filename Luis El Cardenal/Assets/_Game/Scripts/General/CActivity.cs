@@ -23,6 +23,9 @@ public class CActivity : MonoBehaviour {
     // to control help animation
     public Animator _helpAnimator;
 
+    // placeholder start flag
+    public GameObject _startFlag;
+
     // to control when the player can play
     public virtual void ChangeReady(bool aOption)
     {

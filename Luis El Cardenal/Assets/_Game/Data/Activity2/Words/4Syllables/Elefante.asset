@@ -14,9 +14,9 @@ MonoBehaviour:
   _word: Elefante
   _syllables:
   - E
-  - le
-  - fan
-  - te
+  - LE
+  - FAN
+  - TE
   _images:
   - {fileID: 21300000, guid: 6c2e84793f85dab4188479e7641c4af2, type: 3}
   - {fileID: 21300000, guid: 64cc4f978e2ecf4448467d142a154350, type: 3}

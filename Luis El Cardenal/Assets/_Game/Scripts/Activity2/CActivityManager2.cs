@@ -95,7 +95,8 @@ public class CActivityManager2 : CActivity {
 
     // Play with the next word
     public void PlayWord()
-    {        
+    {
+        _startFlag.SetActive(true);
         if (_syllablesOnThisLevel.Count > 0)
         {
             _readyToPlay = false;

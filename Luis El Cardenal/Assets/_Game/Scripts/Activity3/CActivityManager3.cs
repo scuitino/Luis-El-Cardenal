@@ -97,6 +97,7 @@ public class CActivityManager3 : CActivity {
     // select and play the next challenge
     public IEnumerator PlayChallenge()
     {
+        _startFlag.SetActive(true);
         yield return null;
         bool tReady = false;
         while (!tReady) // searching challenge data

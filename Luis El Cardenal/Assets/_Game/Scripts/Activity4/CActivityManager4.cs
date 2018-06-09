@@ -99,6 +99,7 @@ public class CActivityManager4 : CActivity {
     // select and play the next challenge
     public IEnumerator PlayChallenge()
     {
+        _startFlag.SetActive(true);
         yield return null;
         for (int i = 0; i < _goodAnswersToWin; i++) // selecting challenges types
         {
