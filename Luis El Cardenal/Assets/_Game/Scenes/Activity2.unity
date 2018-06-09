@@ -5033,7 +5033,7 @@ Prefab:
     - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 728.99994
+      value: 729
       objectReference: {fileID: 0}
     - target: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
         type: 2}
@@ -10937,6 +10937,10 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartActivity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553221939942562, guid: 64123d5db0903a443beea9f84f87dce1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64123d5db0903a443beea9f84f87dce1, type: 2}
