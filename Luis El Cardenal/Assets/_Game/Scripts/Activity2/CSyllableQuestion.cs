@@ -66,4 +66,13 @@ public class CSyllableQuestion : MonoBehaviour {
     {
         CActivityManager2._instance.TurnOnLeafSyllable(aIndex);
     }
+
+    //// to fix the alpha bug
+    //public void OnEnable()
+    //{
+    //    foreach (Image tImage in _imagesToFill)
+    //    {
+    //        tImage.color = new Vector4(tImage.color.r, tImage.color.g, tImage.color.b, 255);
+    //    }
+    //}
 }
