@@ -184,11 +184,11 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
                                 case 5:// Activity 5
                                     if (item.GetItemID() == this.GetComponent<CCave>().GetCaveID())
                                     {
-                                        Debug.Log("Bien");
+                                        CActivityManager5._instance.AnimateResult(true, this.GetComponent<CCave>().GetCaveNumber());
                                     }
                                     else
                                     {
-                                        Debug.Log("Mal");
+                                        CActivityManager5._instance.AnimateResult(false, this.GetComponent<CCave>().GetCaveNumber());
                                     }
                                     break;
                                 default:

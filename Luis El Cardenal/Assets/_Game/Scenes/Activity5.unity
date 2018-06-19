@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 1301404}
   - component: {fileID: 1301403}
   - component: {fileID: 1301406}
+  - component: {fileID: 1301407}
   m_Layer: 5
   m_Name: Mulita2
   m_TagString: Untagged
@@ -207,6 +208,24 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!95 &1301407
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1301401}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a27ed1e73bfb10e46a1517427e2877f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &37124653
 Prefab:
   m_ObjectHideFlags: 0
@@ -528,6 +547,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22482442, guid: 209652346e247bf45b578fe0c5906b74,
     type: 2}
   m_PrefabInternal: {fileID: 318337454}
+--- !u!95 &389972663 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95353489453900422, guid: 64123d5db0903a443beea9f84f87dce1,
+    type: 2}
+  m_PrefabInternal: {fileID: 2091336635}
 --- !u!1001 &456704062
 Prefab:
   m_ObjectHideFlags: 0
@@ -856,6 +880,7 @@ GameObject:
   - component: {fileID: 634614515}
   - component: {fileID: 634614517}
   - component: {fileID: 634614518}
+  - component: {fileID: 634614519}
   m_Layer: 5
   m_Name: Mulita1
   m_TagString: Untagged
@@ -938,6 +963,24 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!95 &634614519
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634614513}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a27ed1e73bfb10e46a1517427e2877f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &731993646
 Prefab:
   m_ObjectHideFlags: 0
@@ -1090,6 +1133,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22482442, guid: 209652346e247bf45b578fe0c5906b74,
     type: 2}
   m_PrefabInternal: {fileID: 731993646}
+--- !u!114 &769056267 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114212438131802218, guid: 64123d5db0903a443beea9f84f87dce1,
+    type: 2}
+  m_PrefabInternal: {fileID: 2091336635}
+  m_Script: {fileID: 11500000, guid: abb5c4702c7d6e344b9832a97ae1264d, type: 3}
 --- !u!1 &804918837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,12 +1187,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _readyToPlay: 0
   _win: 0
-  _winPanel: {fileID: 0}
-  _winAnimator: {fileID: 0}
-  _helpAnimator: {fileID: 0}
-  _startFlag: {fileID: 0}
+  _winPanel: {fileID: 769056267}
+  _winAnimator: {fileID: 389972663}
+  _helpAnimator: {fileID: 844004035}
+  _startFlag: {fileID: 905358239}
+  _scoreToWin: 8
   _cave1: {fileID: 1701197037}
   _cave2: {fileID: 1341879641}
+  _mulita1: {fileID: 634614519}
+  _mulita2: {fileID: 1301407}
   _minWordsPerGame: 2
   _maxWordsPerGame: 6
   _group1WordsCount: 0
@@ -1227,6 +1279,7 @@ MonoBehaviour:
   - {fileID: 2058839263}
   - {fileID: 930169193}
   - {fileID: 1475725288}
+  _luisAnimator: {fileID: 2104900586}
 --- !u!1001 &806616520
 Prefab:
   m_ObjectHideFlags: 0
@@ -1312,6 +1365,11 @@ Prefab:
     - {fileID: 114977041746524736, guid: 47af7f2fd8ae15c4cb23e97537301ec0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 47af7f2fd8ae15c4cb23e97537301ec0, type: 2}
   m_IsPrefabParent: 0
+--- !u!95 &844004035 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95935301695897430, guid: 652b49a994cf64a4f9e0cf2f4f91a33d,
+    type: 2}
+  m_PrefabInternal: {fileID: 609946788}
 --- !u!1 &845905133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,6 +2751,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22482442, guid: 209652346e247bf45b578fe0c5906b74,
     type: 2}
   m_PrefabInternal: {fileID: 886886823}
+--- !u!1 &905358239 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1568714629051026, guid: 9c98938322684df4b8b9d3633789292f,
+    type: 2}
+  m_PrefabInternal: {fileID: 37124653}
 --- !u!1 &930169193 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 149246, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
@@ -3529,7 +3592,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12ddfc6465dea1b42bd0c46fc402f7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _caveNumber: 0
+  _caveID: 0
+  _caveNumber: 2
 --- !u!1 &1348712841
 GameObject:
   m_ObjectHideFlags: 0
@@ -4327,7 +4391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12ddfc6465dea1b42bd0c46fc402f7e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _caveNumber: 0
+  _caveID: 0
+  _caveNumber: 1
 --- !u!1001 &1753102018
 Prefab:
   m_ObjectHideFlags: 0
@@ -6608,7 +6673,7 @@ Prefab:
         type: 2}
       propertyPath: OnInAnimationsFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 804918839}
     - target: {fileID: 1553221939942562, guid: 64123d5db0903a443beea9f84f87dce1, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -6617,7 +6682,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 804918839}
     - target: {fileID: 114709282639012220, guid: 64123d5db0903a443beea9f84f87dce1,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -6625,7 +6690,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1130289740790928, guid: 64123d5db0903a443beea9f84f87dce1, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114212438131802218, guid: 64123d5db0903a443beea9f84f87dce1,
+        type: 2}
+      propertyPath: OnInAnimationsFinish.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartWinAnimation
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64123d5db0903a443beea9f84f87dce1, type: 2}

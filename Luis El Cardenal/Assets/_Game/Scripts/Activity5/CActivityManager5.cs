@@ -8,9 +8,20 @@ public class CActivityManager5 : CActivity {
     public static CActivityManager5 _instance = null; //static - the same variable is shared by all instances of the class that are created
     #endregion
 
+    // points to win
+    [SerializeField]
+    int _scoreToWin = 8;
+
+    // actual player points
+    int _playerScore;
+
     // reference to the caves
     [SerializeField]
     CCave _cave1, _cave2;
+
+    // mulitas animators
+    [SerializeField]
+    Animator _mulita1, _mulita2;
 
     // min & max letters of each group on the table
     [SerializeField]
@@ -42,6 +53,10 @@ public class CActivityManager5 : CActivity {
     // slots to place the table words
     [SerializeField]
     List<GameObject> _slots;
+
+    // to control luis animations
+    [SerializeField]
+    Animator _luisAnimator;
 
     private void Awake()
     {
@@ -185,5 +200,52 @@ public class CActivityManager5 : CActivity {
             tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
             tSelectedItem.transform.localScale = Vector3.one;
         }
+    }
+
+    // to animate Luis
+    public void AnimateResult(bool aOption, int aCaveNumber)
+    {
+        if(aOption)
+        {
+            if (aCaveNumber == 1)
+            {
+                _mulita1.SetTrigger("Success");
+            }
+            else
+            {
+                _mulita2.SetTrigger("Success");
+            }
+            Invoke("GoodAnimation", 1);
+
+            _playerScore ++;
+            if (_playerScore == _scoreToWin)
+            {                
+                Invoke("WinGame", 5);
+            }
+        }
+        else
+        {
+            if (aCaveNumber == 1)
+            {
+                _mulita1.SetTrigger("Fail");
+            }
+            else
+            {
+                _mulita2.SetTrigger("Fail");
+            }
+            Invoke("BadAnimation", 1);
+        }
+    }
+
+    // good luis
+    void GoodAnimation()
+    {
+        _luisAnimator.SetTrigger("Success");
+    }
+
+    // bad luis
+    void BadAnimation()
+    {
+        _luisAnimator.SetTrigger("Fail");
     }
 }
