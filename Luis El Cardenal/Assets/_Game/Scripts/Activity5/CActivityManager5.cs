@@ -35,6 +35,9 @@ public class CActivityManager5 : CActivity {
     // ID of first group
     int _group1ID;
 
+    // group letters
+    List<string> _selectedLetters;
+
     // number of words of each group
     [SerializeField]
     int _group1WordsCount, _group2WordsCount;
@@ -75,6 +78,7 @@ public class CActivityManager5 : CActivity {
     private void Start()
     {
         _allSelectedWords = new List<GameObject>();
+        _selectedLetters = new List<string>();
         SelectGameWords();
     }
 
@@ -89,6 +93,7 @@ public class CActivityManager5 : CActivity {
             // selecting random letter
             int tRandomLetterIndex = Random.Range(0, _posibleLetters.Count);
             string tSelectedLetter = _posibleLetters[tRandomLetterIndex];
+            _selectedLetters.Add(tSelectedLetter);
             _posibleLetters.RemoveAt(tRandomLetterIndex);
 
             // adding selected words to the posible words for this game
@@ -222,6 +227,88 @@ public class CActivityManager5 : CActivity {
     // when the player answer is wrong
     public void WrongAnswer(Transform aSlot)
     {
+        // check if there are avaialable words for each group
+
+        bool _g1Available = false;
+        bool _g2Available = false;
+        for (int i = 0; i < _allSelectedWords.Count; i++)
+        {
+            if (_allSelectedWords[i].GetComponent<DragAndDropItem>().GetItemID() == _group1ID)
+            {
+                _g1Available = true;
+            }
+            else
+            {
+                _g2Available = true;
+            }
+        }
+
+        // adding words needed
+        if (!_g1Available)
+        {
+            switch (_selectedLetters[0])
+            {
+                case "A":
+                    for (int i = 0; i < _aWords.Count; i++)
+                    {
+                        _allSelectedWords.Add(_aWords[i]);
+                    }
+                    break;
+                case "O":
+                    for (int i = 0; i < _oWords.Count; i++)
+                    {
+                        _allSelectedWords.Add(_oWords[i]);
+                    }
+                    break;
+                case "N":
+                    for (int i = 0; i < _nWords.Count; i++)
+                    {
+                        _allSelectedWords.Add(_nWords[i]);
+                    }
+                    break;
+                case "R":
+                    for (int i = 0; i < _rWords.Count; i++)
+                    {
+                        _allSelectedWords.Add(_rWords[i]);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        else if (!_g2Available)
+        {
+            switch (_selectedLetters[1])
+            {
+                case "A":
+                    for (int i = 0; i < _aWords.Count; i++)
+                    {
+                        _allSelectedWords.Add(_aWords[i]);
+                    }
+                    break;
+                case "O":
+                    for (int i = 0; i < _oWords.Count; i++)
+                    {
+                        _allSelectedWords.Add(_oWords[i]);
+                    }
+                    break;
+                case "N":
+                    for (int i = 0; i < _nWords.Count; i++)
+                    {
+                        _allSelectedWords.Add(_nWords[i]);
+                    }
+                    break;
+                case "R":
+                    for (int i = 0; i < _rWords.Count; i++)
+                    {
+                        _allSelectedWords.Add(_rWords[i]);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
         // select a new word
         TakeAnotherWord();
 
