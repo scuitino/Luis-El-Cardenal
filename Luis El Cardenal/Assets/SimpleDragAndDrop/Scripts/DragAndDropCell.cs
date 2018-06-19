@@ -184,12 +184,14 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
                                 case 5:// Activity 5
                                     if (item.GetItemID() == this.GetComponent<CCave>().GetCaveID())
                                     {
-                                        CActivityManager5._instance.AnimateResult(true, this.GetComponent<CCave>().GetCaveNumber());
+                                        CActivityManager5._instance.AnimateResult(true, this.GetComponent<CCave>().GetCaveNumber(), item.GetComponent<Image>().sprite);
                                     }
                                     else
                                     {
-                                        CActivityManager5._instance.AnimateResult(false, this.GetComponent<CCave>().GetCaveNumber());
+                                        CActivityManager5._instance.AnimateResult(false, this.GetComponent<CCave>().GetCaveNumber(), item.GetComponent<Image>().sprite);
                                     }
+                                    item.GetComponent<Image>().color = new Vector4(item.GetComponent<Image>().color.r, item.GetComponent<Image>().color.g, item.GetComponent<Image>().color.b, 0);
+                                    item.transform.GetChild(0).GetComponent<Image>().color = new Vector4(item.transform.GetChild(0).GetComponent<Image>().color.r, item.transform.GetChild(0).GetComponent<Image>().color.g, item.transform.GetChild(0).GetComponent<Image>().color.b, 0);
                                     break;
                                 default:
                                     break;

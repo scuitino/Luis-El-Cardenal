@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CActivityManager5 : CActivity {
 
@@ -22,6 +23,10 @@ public class CActivityManager5 : CActivity {
     // mulitas animators
     [SerializeField]
     Animator _mulita1, _mulita2;
+
+    // food for the mulita
+    [SerializeField]
+    Image _food1, _food2;
 
     // min & max letters of each group on the table
     [SerializeField]
@@ -206,19 +211,34 @@ public class CActivityManager5 : CActivity {
     }
 
     // to animate Luis
-    public void AnimateResult(bool aOption, int aCaveNumber)
+    public void AnimateResult(bool aOption, int aCaveNumber, Sprite aFoodSprite)
     {
         NotReady();
         Invoke("SetReady", 4);
-        if (aOption)
+
+        //  setting icon of food 1 and 2
+        if (aCaveNumber == 1) 
+        {
+            _food1.sprite = aFoodSprite;
+            _food1.enabled = true;            
+        }
+        else
+        {
+            _food2.sprite = aFoodSprite;
+            _food2.enabled = true;            
+        }
+
+        if (aOption) // animate good
         {
             if (aCaveNumber == 1)
             {
                 _mulita1.SetTrigger("Success");
+                Invoke("DisableFood1", 1.3f);                
             }
             else
             {
                 _mulita2.SetTrigger("Success");
+                Invoke("DisableFood2", 1.3f);
             }
             Invoke("GoodAnimation", 1);
 
@@ -228,18 +248,32 @@ public class CActivityManager5 : CActivity {
                 Invoke("WinGame", 5);
             }
         }
-        else
+        else //  animate bad
         {
             if (aCaveNumber == 1)
             {
                 _mulita1.SetTrigger("Fail");
+                Invoke("DisableFood1", 3.2f);
             }
             else
             {
-                _mulita2.SetTrigger("Fail");
+                _mulita2.SetTrigger("Fail");                
+                Invoke("DisableFood2", 3.2f);
             }
             Invoke("BadAnimation", 1);
         }
+    }
+
+    // disable food1
+    public void DisableFood1()
+    {
+        _food1.enabled = false;
+    }
+
+    // disable food2
+    public void DisableFood2()
+    {
+        _food2.enabled = false;
     }
 
     // set ready to play true
