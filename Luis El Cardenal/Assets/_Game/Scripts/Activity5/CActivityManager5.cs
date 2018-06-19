@@ -8,13 +8,16 @@ public class CActivityManager5 : CActivity {
     public static CActivityManager5 _instance = null; //static - the same variable is shared by all instances of the class that are created
     #endregion
 
-    // minimun letters of each group on the table
+    // min & max letters of each group on the table
     [SerializeField]
-    int _minWordsPerGame;
+    int _minWordsPerGame, _maxWordsPerGame;
+
+    // ID of first group
+    int _group1ID;
 
     // number of words of each group
     [SerializeField]
-    int _group1Words, _group2Words;
+    int _group1WordsCount, _group2WordsCount;
 
     // letter groups
     [SerializeField]
@@ -29,6 +32,7 @@ public class CActivityManager5 : CActivity {
     List<GameObject> _allSelectedWords;
 
     // words on the table
+    [SerializeField]
     List<GameObject> _wordsOnTheTable;
 
     private void Awake()
@@ -51,7 +55,7 @@ public class CActivityManager5 : CActivity {
     {
         int tSelectedCount = 0; // words needed to start
         bool tReady = false;
-        while (tReady == false) // while all posible words are not selected
+        while (!tReady) // while all posible words are not selected
         {
             // selecting random letter
             int tRandomLetterIndex = Random.Range(0, _posibleLetters.Count);
@@ -93,6 +97,71 @@ public class CActivityManager5 : CActivity {
 
             if (tSelectedCount == 2)
                 tReady = true;
+        }
+
+        // selecting first word
+        int tFirstWordIndex = Random.Range(0, _allSelectedWords.Count);
+        _wordsOnTheTable.Add(_allSelectedWords[tFirstWordIndex]);
+        _group1WordsCount++;
+
+        // setting group 1 ID
+        _group1ID = _allSelectedWords[tFirstWordIndex].GetComponent<DragAndDropItem>().GetItemID();
+
+        // removing first item from the all selected list
+        _allSelectedWords.RemoveAt(tFirstWordIndex);
+
+        // selecting rest of the table words
+        for (int i = 0; i < 7; i++)
+        {
+            int tSelectedWord = Random.Range(0, _allSelectedWords.Count);
+            if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() == _group1ID) // if the selected is of group 1
+            {
+                if (_group1WordsCount + 1 <= _maxWordsPerGame) // if the group 1 is not at max
+                {
+                    _wordsOnTheTable.Add(_allSelectedWords[tSelectedWord]);
+                    _group1WordsCount++;
+                    _allSelectedWords.RemoveAt(tSelectedWord);
+                }
+                else // select group 2
+                {
+                    bool tReady2 = false;
+                    while (!tReady2) // while a group 2 word is not selected
+                    {
+                        tSelectedWord = Random.Range(0, _allSelectedWords.Count);
+                        if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() != _group1ID) // if the selected is of group 2
+                        {
+                            _wordsOnTheTable.Add(_allSelectedWords[tSelectedWord]);
+                            _group2WordsCount++;
+                            _allSelectedWords.RemoveAt(tSelectedWord);
+                            tReady2 = true;
+                        }
+                    }
+                }
+            }
+            else // if the selected is of group 2
+            {
+                if (_group2WordsCount + 1 <= _maxWordsPerGame) // if the group 2 is not at max
+                {
+                    _wordsOnTheTable.Add(_allSelectedWords[tSelectedWord]);
+                    _group2WordsCount++;
+                    _allSelectedWords.RemoveAt(tSelectedWord);
+                }
+                else // select group 1
+                {
+                    bool tReady2 = false;
+                    while (!tReady2)
+                    {
+                        tSelectedWord = Random.Range(0, _allSelectedWords.Count);
+                        if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() == _group1ID) // if the selected is of group 1
+                        {
+                            _wordsOnTheTable.Add(_allSelectedWords[tSelectedWord]);
+                            _group1WordsCount++;
+                            _allSelectedWords.RemoveAt(tSelectedWord);
+                            tReady2 = true;
+                        }
+                    }
+                }
+            }
         }
     }
 }
