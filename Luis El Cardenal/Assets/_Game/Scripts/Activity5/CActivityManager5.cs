@@ -35,6 +35,10 @@ public class CActivityManager5 : CActivity {
     [SerializeField]
     List<GameObject> _wordsOnTheTable;
 
+    // slots to place the table words
+    [SerializeField]
+    List<GameObject> _slots;
+
     private void Awake()
     {
         //Singleton check
@@ -161,7 +165,18 @@ public class CActivityManager5 : CActivity {
                         }
                     }
                 }
-            }
+            }            
+        }
+
+        // place the table objects into the slots
+        for (int i = 0; i < _wordsOnTheTable.Count; i++)
+        {
+            Transform tSelectedItem = Instantiate(_wordsOnTheTable[i]).transform;
+            tSelectedItem.SetParent(_slots[i].transform);
+            tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
+            tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
+            tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
+            tSelectedItem.transform.localScale = Vector3.one;
         }
     }
 }
