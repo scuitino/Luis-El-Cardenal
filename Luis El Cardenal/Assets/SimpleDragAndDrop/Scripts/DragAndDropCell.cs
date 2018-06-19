@@ -179,6 +179,7 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
                             {
 								PlaceItem(item);                            // Place dropped item in this cell
                             }
+
                             switch (_activityNumber)
                             {
                                 case 5:// Activity 5
@@ -189,9 +190,12 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
                                     else
                                     {
                                         CActivityManager5._instance.AnimateResult(false, this.GetComponent<CCave>().GetCaveNumber(), item.GetComponent<Image>().sprite);
-                                    }
-                                    item.GetComponent<Image>().color = new Vector4(item.GetComponent<Image>().color.r, item.GetComponent<Image>().color.g, item.GetComponent<Image>().color.b, 0);
-                                    item.transform.GetChild(0).GetComponent<Image>().color = new Vector4(item.transform.GetChild(0).GetComponent<Image>().color.r, item.transform.GetChild(0).GetComponent<Image>().color.g, item.transform.GetChild(0).GetComponent<Image>().color.b, 0);
+
+                                        // selecting new word
+                                        CActivityManager5._instance.WrongAnswer(sourceCell.transform);
+                                    }                                    
+
+                                    Destroy(item.gameObject);
                                     break;
                                 default:
                                     break;

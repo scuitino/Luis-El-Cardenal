@@ -143,57 +143,7 @@ public class CActivityManager5 : CActivity {
         // selecting rest of the table words
         for (int i = 0; i < 7; i++)
         {
-            int tSelectedWord = Random.Range(0, _allSelectedWords.Count);
-            if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() == _group1ID) // if the selected is of group 1
-            {
-                if (_group1WordsCount + 1 <= _maxWordsPerGame) // if the group 1 is not at max
-                {
-                    _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
-                    _group1WordsCount++;
-                    _allSelectedWords.RemoveAt(tSelectedWord);
-                }
-                else // select group 2
-                {
-                    bool tReady2 = false;
-                    while (!tReady2) // while a group 2 word is not selected
-                    {
-                        tSelectedWord = Random.Range(0, _allSelectedWords.Count);
-                        if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() != _group1ID) // if the selected is of group 2
-                        {
-                            _cave2.SetCaveID(_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID());
-                            _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
-                            _group2WordsCount++;
-                            _allSelectedWords.RemoveAt(tSelectedWord);
-                            tReady2 = true;
-                        }
-                    }
-                }
-            }
-            else // if the selected is of group 2
-            {
-                if (_group2WordsCount + 1 <= _maxWordsPerGame) // if the group 2 is not at max
-                {
-                    _cave2.SetCaveID(_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID());
-                    _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
-                    _group2WordsCount++;
-                    _allSelectedWords.RemoveAt(tSelectedWord);
-                }
-                else // select group 1
-                {
-                    bool tReady2 = false;
-                    while (!tReady2)
-                    {
-                        tSelectedWord = Random.Range(0, _allSelectedWords.Count);
-                        if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() == _group1ID) // if the selected is of group 1
-                        {
-                            _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
-                            _group1WordsCount++;
-                            _allSelectedWords.RemoveAt(tSelectedWord);
-                            tReady2 = true;
-                        }
-                    }
-                }
-            }            
+            TakeAnotherWord();          
         }
 
         // place the table objects into the slots
@@ -207,7 +157,86 @@ public class CActivityManager5 : CActivity {
             tSelectedItem.transform.localScale = Vector3.one;
         }
 
+        // clear the list
+        _wordsForTheTable.Clear();
+
         SetReady();
+    }
+
+    // to select each word
+    public void TakeAnotherWord()
+    {
+        int tSelectedWord = Random.Range(0, _allSelectedWords.Count);
+        if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() == _group1ID) // if the selected is of group 1
+        {
+            if (_group1WordsCount + 1 <= _maxWordsPerGame) // if the group 1 is not at max
+            {
+                _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
+                _group1WordsCount++;
+                _allSelectedWords.RemoveAt(tSelectedWord);
+            }
+            else // select group 2
+            {
+                bool tReady2 = false;
+                while (!tReady2) // while a group 2 word is not selected
+                {
+                    tSelectedWord = Random.Range(0, _allSelectedWords.Count);
+                    if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() != _group1ID) // if the selected is of group 2
+                    {
+                        _cave2.SetCaveID(_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID());
+                        _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
+                        _group2WordsCount++;
+                        _allSelectedWords.RemoveAt(tSelectedWord);
+                        tReady2 = true;
+                    }
+                }
+            }
+        }
+        else // if the selected is of group 2
+        {
+            if (_group2WordsCount + 1 <= _maxWordsPerGame) // if the group 2 is not at max
+            {
+                _cave2.SetCaveID(_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID());
+                _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
+                _group2WordsCount++;
+                _allSelectedWords.RemoveAt(tSelectedWord);
+            }
+            else // select group 1
+            {
+                bool tReady2 = false;
+                while (!tReady2)
+                {
+                    tSelectedWord = Random.Range(0, _allSelectedWords.Count);
+                    if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() == _group1ID) // if the selected is of group 1
+                    {
+                        _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
+                        _group1WordsCount++;
+                        _allSelectedWords.RemoveAt(tSelectedWord);
+                        tReady2 = true;
+                    }
+                }
+            }
+        }
+    }
+
+    // when the player answer is wrong
+    public void WrongAnswer(Transform aSlot)
+    {
+        // select a new word
+        TakeAnotherWord();
+
+        // placing the word on slot
+        Transform tSelectedItem = Instantiate(_wordsForTheTable[0]).transform;
+
+        tSelectedItem.SetParent(aSlot);
+
+        tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
+        tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
+        tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
+        tSelectedItem.transform.localScale = Vector3.one;
+        
+        // clear the list
+        _wordsForTheTable.Clear();
     }
 
     // to animate Luis
