@@ -8,6 +8,10 @@ public class CActivityManager5 : CActivity {
     public static CActivityManager5 _instance = null; //static - the same variable is shared by all instances of the class that are created
     #endregion
 
+    // reference to the caves
+    [SerializeField]
+    CCave _cave1, _cave2;
+
     // min & max letters of each group on the table
     [SerializeField]
     int _minWordsPerGame, _maxWordsPerGame;
@@ -108,8 +112,9 @@ public class CActivityManager5 : CActivity {
         _wordsOnTheTable.Add(_allSelectedWords[tFirstWordIndex]);
         _group1WordsCount++;
 
-        // setting group 1 ID
+        // setting group 1 ID and cave ID
         _group1ID = _allSelectedWords[tFirstWordIndex].GetComponent<DragAndDropItem>().GetItemID();
+        _cave1.SetCaveID(_group1ID);
 
         // removing first item from the all selected list
         _allSelectedWords.RemoveAt(tFirstWordIndex);
@@ -134,6 +139,7 @@ public class CActivityManager5 : CActivity {
                         tSelectedWord = Random.Range(0, _allSelectedWords.Count);
                         if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() != _group1ID) // if the selected is of group 2
                         {
+                            _cave2.SetCaveID(_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID());
                             _wordsOnTheTable.Add(_allSelectedWords[tSelectedWord]);
                             _group2WordsCount++;
                             _allSelectedWords.RemoveAt(tSelectedWord);
@@ -146,6 +152,7 @@ public class CActivityManager5 : CActivity {
             {
                 if (_group2WordsCount + 1 <= _maxWordsPerGame) // if the group 2 is not at max
                 {
+                    _cave2.SetCaveID(_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID());
                     _wordsOnTheTable.Add(_allSelectedWords[tSelectedWord]);
                     _group2WordsCount++;
                     _allSelectedWords.RemoveAt(tSelectedWord);

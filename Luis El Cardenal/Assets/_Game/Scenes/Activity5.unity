@@ -512,6 +512,14 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.999967
       objectReference: {fileID: 0}
+    - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+      propertyPath: cellType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+      propertyPath: _activityNumber
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
   m_IsPrefabParent: 0
@@ -1070,6 +1078,10 @@ Prefab:
       propertyPath: full.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+      propertyPath: cellType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
   m_IsPrefabParent: 0
@@ -1130,6 +1142,8 @@ MonoBehaviour:
   _winAnimator: {fileID: 0}
   _helpAnimator: {fileID: 0}
   _startFlag: {fileID: 0}
+  _cave1: {fileID: 1701197037}
+  _cave2: {fileID: 1341879641}
   _minWordsPerGame: 2
   _maxWordsPerGame: 6
   _group1WordsCount: 0
@@ -2928,6 +2942,10 @@ Prefab:
       propertyPath: full.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+      propertyPath: cellType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
   m_IsPrefabParent: 0
@@ -3174,6 +3192,10 @@ Prefab:
       propertyPath: full.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+      propertyPath: cellType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
   m_IsPrefabParent: 0
@@ -3276,6 +3298,14 @@ Prefab:
     - target: {fileID: 11420388, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
       propertyPath: m_Color.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+      propertyPath: cellType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+      propertyPath: _activityNumber
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
@@ -3484,6 +3514,22 @@ CanvasGroup:
 GameObject:
   m_PrefabParentObject: {fileID: 149246, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
   m_PrefabInternal: {fileID: 731993646}
+--- !u!1 &1341879640 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 149246, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+  m_PrefabInternal: {fileID: 318337454}
+--- !u!114 &1341879641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1341879640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ddfc6465dea1b42bd0c46fc402f7e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _caveNumber: 0
 --- !u!1 &1348712841
 GameObject:
   m_ObjectHideFlags: 0
@@ -3947,6 +3993,10 @@ Prefab:
       propertyPath: full.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+      propertyPath: cellType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
   m_IsPrefabParent: 0
@@ -4094,6 +4144,10 @@ Prefab:
     - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
       propertyPath: full.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+      propertyPath: cellType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
@@ -4258,6 +4312,22 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 149246, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
   m_PrefabInternal: {fileID: 1561594322}
+--- !u!1 &1701197036 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 149246, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+  m_PrefabInternal: {fileID: 1212434799}
+--- !u!114 &1701197037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1701197036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ddfc6465dea1b42bd0c46fc402f7e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _caveNumber: 0
 --- !u!1001 &1753102018
 Prefab:
   m_ObjectHideFlags: 0
@@ -4397,6 +4467,10 @@ Prefab:
     - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
       propertyPath: full.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+      propertyPath: cellType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
@@ -6121,6 +6195,10 @@ Prefab:
       propertyPath: full.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+      propertyPath: cellType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
   m_IsPrefabParent: 0
@@ -6886,6 +6964,10 @@ Prefab:
     - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
       propertyPath: full.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415054, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
+      propertyPath: cellType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 209652346e247bf45b578fe0c5906b74, type: 2}

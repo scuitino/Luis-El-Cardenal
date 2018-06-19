@@ -44,6 +44,10 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
 
 	private DragAndDropItem myDadItem;										// Item of this DaD cell    
 
+    // activity number
+    [SerializeField]
+    int _activityNumber;
+
     void OnEnable()
     {
         DragAndDropItem.OnItemDragStartEvent += OnAnyItemDragStart;         // Handle any item drag start
@@ -175,22 +179,43 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
                             {
 								PlaceItem(item);                            // Place dropped item in this cell
                             }
+                            switch (_activityNumber)
+                            {
+                                case 5:// Activity 5
+                                    if (item.GetItemID() == this.GetComponent<CCave>().GetCaveID())
+                                    {
+                                        Debug.Log("Bien");
+                                    }
+                                    else
+                                    {
+                                        Debug.Log("Mal");
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
                             break;
-                        case CellType.DragOnly:                             // The item can only be dragged
-                            // Activity 4
-                            if (item.GetItemID() == myDadItem.GetItemID())  // if the player drop id is the correct 
+                        case CellType.DragOnly:                             // The item can only be dragged                            
+                            switch (_activityNumber)
                             {
-                                // animating deibos
-                                item.transform.parent.GetComponent<Animator>().SetTrigger("GrowUp");
-                                myDadItem.transform.parent.GetComponent<Animator>().SetTrigger("GrowUp");
-                                Destroy(item.gameObject); // Destroy the spawner
-                                DestroyItem(); // Destroy the target
-                                CActivityManager4._instance.Success();
-                            }
-                            else
-                            {
-                                CActivityManager4._instance.Fail();
-                            }
+                                case 4:// Activity 4
+                                    if (item.GetItemID() == myDadItem.GetItemID())  // if the player drop id is the correct 
+                                    {
+                                        // animating deibos
+                                        item.transform.parent.GetComponent<Animator>().SetTrigger("GrowUp");
+                                        myDadItem.transform.parent.GetComponent<Animator>().SetTrigger("GrowUp");
+                                        Destroy(item.gameObject); // Destroy the spawner
+                                        DestroyItem(); // Destroy the target
+                                        CActivityManager4._instance.Success();
+                                    }
+                                    else
+                                    {
+                                        CActivityManager4._instance.Fail();
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }                            
                             break;
                         default:
                             break;
