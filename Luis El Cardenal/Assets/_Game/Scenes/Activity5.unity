@@ -1191,6 +1191,7 @@ MonoBehaviour:
   _winAnimator: {fileID: 389972663}
   _helpAnimator: {fileID: 844004035}
   _startFlag: {fileID: 905358239}
+  _readyToPlayPanel: {fileID: 1295141693}
   _scoreToWin: 8
   _cave1: {fileID: 1701197037}
   _cave2: {fileID: 1341879641}

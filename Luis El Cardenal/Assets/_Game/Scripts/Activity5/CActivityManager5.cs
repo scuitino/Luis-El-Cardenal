@@ -48,7 +48,7 @@ public class CActivityManager5 : CActivity {
 
     // words on the table
     [SerializeField]
-    List<GameObject> _wordsOnTheTable;
+    List<GameObject> _wordsForTheTable;
 
     // slots to place the table words
     [SerializeField]
@@ -76,6 +76,7 @@ public class CActivityManager5 : CActivity {
     // select all the words for the next game
     public void SelectGameWords()
     {
+        NotReady();
         int tSelectedCount = 0; // words needed to start
         bool tReady = false;
         while (!tReady) // while all posible words are not selected
@@ -124,7 +125,7 @@ public class CActivityManager5 : CActivity {
 
         // selecting first word
         int tFirstWordIndex = Random.Range(0, _allSelectedWords.Count);
-        _wordsOnTheTable.Add(_allSelectedWords[tFirstWordIndex]);
+        _wordsForTheTable.Add(_allSelectedWords[tFirstWordIndex]);
         _group1WordsCount++;
 
         // setting group 1 ID and cave ID
@@ -142,7 +143,7 @@ public class CActivityManager5 : CActivity {
             {
                 if (_group1WordsCount + 1 <= _maxWordsPerGame) // if the group 1 is not at max
                 {
-                    _wordsOnTheTable.Add(_allSelectedWords[tSelectedWord]);
+                    _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
                     _group1WordsCount++;
                     _allSelectedWords.RemoveAt(tSelectedWord);
                 }
@@ -155,7 +156,7 @@ public class CActivityManager5 : CActivity {
                         if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() != _group1ID) // if the selected is of group 2
                         {
                             _cave2.SetCaveID(_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID());
-                            _wordsOnTheTable.Add(_allSelectedWords[tSelectedWord]);
+                            _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
                             _group2WordsCount++;
                             _allSelectedWords.RemoveAt(tSelectedWord);
                             tReady2 = true;
@@ -168,7 +169,7 @@ public class CActivityManager5 : CActivity {
                 if (_group2WordsCount + 1 <= _maxWordsPerGame) // if the group 2 is not at max
                 {
                     _cave2.SetCaveID(_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID());
-                    _wordsOnTheTable.Add(_allSelectedWords[tSelectedWord]);
+                    _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
                     _group2WordsCount++;
                     _allSelectedWords.RemoveAt(tSelectedWord);
                 }
@@ -180,7 +181,7 @@ public class CActivityManager5 : CActivity {
                         tSelectedWord = Random.Range(0, _allSelectedWords.Count);
                         if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() == _group1ID) // if the selected is of group 1
                         {
-                            _wordsOnTheTable.Add(_allSelectedWords[tSelectedWord]);
+                            _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
                             _group1WordsCount++;
                             _allSelectedWords.RemoveAt(tSelectedWord);
                             tReady2 = true;
@@ -191,21 +192,25 @@ public class CActivityManager5 : CActivity {
         }
 
         // place the table objects into the slots
-        for (int i = 0; i < _wordsOnTheTable.Count; i++)
+        for (int i = 0; i < _wordsForTheTable.Count; i++)
         {
-            Transform tSelectedItem = Instantiate(_wordsOnTheTable[i]).transform;
+            Transform tSelectedItem = Instantiate(_wordsForTheTable[i]).transform;
             tSelectedItem.SetParent(_slots[i].transform);
             tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
             tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
             tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
             tSelectedItem.transform.localScale = Vector3.one;
         }
+
+        SetReady();
     }
 
     // to animate Luis
     public void AnimateResult(bool aOption, int aCaveNumber)
     {
-        if(aOption)
+        NotReady();
+        Invoke("SetReady", 4);
+        if (aOption)
         {
             if (aCaveNumber == 1)
             {
@@ -235,6 +240,18 @@ public class CActivityManager5 : CActivity {
             }
             Invoke("BadAnimation", 1);
         }
+    }
+
+    // set ready to play true
+    void SetReady()
+    {
+        DragAndDropItem.dragDisabled = false;
+    }
+
+    // turn of ready
+    void NotReady()
+    {
+        DragAndDropItem.dragDisabled = true;
     }
 
     // good luis
