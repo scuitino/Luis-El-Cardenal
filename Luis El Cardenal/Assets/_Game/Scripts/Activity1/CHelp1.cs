@@ -77,4 +77,10 @@ public class CHelp1 : MonoBehaviour {
         CActivityManager4._instance.EnableRealFlowers();
         CActivityManager4._instance.StartGame();
     }
+
+    // to start activity 5 mulita animation
+    public void StartMulitaAnimation()
+    {
+        CActivityManager5._instance.StartExampleAnimation();
+    }
 }

@@ -66,6 +66,14 @@ public class CActivityManager5 : CActivity {
     [SerializeField]
     Animator _luisAnimator;
 
+    // example sprite to example animation
+    [SerializeField]
+    Sprite _exampleSprite;
+
+    // sprites to turn off when the game starts
+    [SerializeField]
+    GameObject _sprite1, _sprite2;
+
     private void Awake()
     {
         //Singleton check
@@ -77,15 +85,23 @@ public class CActivityManager5 : CActivity {
 
     private void Start()
     {
+        _helpAnimator.SetBool("Activity5", true);
         _allSelectedWords = new List<GameObject>();
         _selectedLetters = new List<string>();
-        SelectGameWords();
+        NotReady();
+        //SelectGameWords();
     }
 
     // select all the words for the next game
     public void SelectGameWords()
     {
-        NotReady();
+        _startFlag.SetActive(true);
+
+        // turn off example sprites
+        _sprite1.SetActive(false);
+        _sprite2.SetActive(false);
+
+        // starting words select
         int tSelectedCount = 0; // words needed to start
         bool tReady = false;
         while (!tReady) // while all posible words are not selected
@@ -378,6 +394,13 @@ public class CActivityManager5 : CActivity {
             }
             Invoke("BadAnimation", 1);
         }
+    }
+
+    // mulita example animation
+    public void StartExampleAnimation()
+    {
+        AnimateResult(true, 2, _exampleSprite);
+        Invoke("SelectGameWords", 5);
     }
 
     // disable food1
