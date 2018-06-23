@@ -40,7 +40,7 @@ public class CCave : MonoBehaviour {
         }
     }
 
-    // return cave number
+    // return cave ID
     public int GetCaveID()
     {
         return _caveID;
