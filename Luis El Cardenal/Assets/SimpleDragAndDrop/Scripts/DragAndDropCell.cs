@@ -182,7 +182,7 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
 
                             switch (_activityNumber)
                             {
-                                case 5:// Activity 5
+                                case 5: // Activity 5
                                     if (item.GetItemID() == this.GetComponent<CCave>().GetCaveID())
                                     {
                                         CActivityManager5._instance.AnimateResult(true, this.GetComponent<CCave>().GetCaveNumber(), item.GetComponent<Image>().sprite);
@@ -194,6 +194,18 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
                                         // selecting new word
                                         CActivityManager5._instance.WrongAnswer(sourceCell.transform);
                                     }                                    
+
+                                    Destroy(item.gameObject);
+                                    break;
+                                case 6: // Activity 6
+                                    if (item.GetItemID() == this.GetComponent<CTrain>().GetTrainID())
+                                    {
+                                        CActivityManager6._instance.AnimateResult(true, this.GetComponent<CTrain>().GetTrainNumber(), item.GetComponent<Image>().sprite);
+                                    }
+                                    else
+                                    {
+                                        CActivityManager6._instance.AnimateResult(false, this.GetComponent<CTrain>().GetTrainNumber(), item.GetComponent<Image>().sprite);
+                                    }
 
                                     Destroy(item.gameObject);
                                     break;

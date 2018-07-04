@@ -9,6 +9,10 @@ public class CTrain : MonoBehaviour {
     [SerializeField]
     int _trainID;
 
+    // to know which box is
+    [SerializeField]
+    int _trainNumber;
+
     // to show the text on the cave
     [SerializeField]
     Text _flagText;
@@ -43,5 +47,11 @@ public class CTrain : MonoBehaviour {
     public int GetTrainID()
     {
         return _trainID;
+    }
+
+    // return train Number
+    public int GetTrainNumber()
+    {
+        return _trainNumber;
     }
 }

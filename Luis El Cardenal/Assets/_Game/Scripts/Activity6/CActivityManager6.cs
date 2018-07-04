@@ -9,6 +9,18 @@ public class CActivityManager6 : CActivity
     public static CActivityManager6 _instance = null; //static - the same variable is shared by all instances of the class that are created
     #endregion
 
+    // to control luis animations
+    [SerializeField]
+    Animator _luisAnimator;
+
+    // train animator
+    [SerializeField]
+    Animator _trainAnimator;
+
+    // actual player option
+    [SerializeField]
+    Transform _option;
+
     // letter groups
     [SerializeField]
     List<string> _posibleLetters;
@@ -22,14 +34,11 @@ public class CActivityManager6 : CActivity
 
     // all selected words
     [SerializeField]
-    List<GameObject> _allSelectedWords;
-
-    // actual player option
-    [SerializeField]
-    Transform _option;
+    List<GameObject> _allSelectedWords;    
 
     // trains reference
-    List<CTrain> _boxes;
+    [SerializeField]
+    List<CTrain> _boxes;    
 
     private void Awake()
     {
@@ -101,14 +110,24 @@ public class CActivityManager6 : CActivity
                 tReady = true;
         }
 
+        // setting up trains
+        TrainsSetUp();
+
+        // selecting next word
+        NextWord();
+    }
+
+    // select next word
+    public void NextWord()
+    {
         // selecting first word
-        int tFirstWordIndex = Random.Range(0, _allSelectedWords.Count);
+        int tNextWord = Random.Range(0, _allSelectedWords.Count);
 
         // instantiate and set player option
-        SettingPlayerOption(_allSelectedWords[tFirstWordIndex]);        
+        SettingPlayerOption(_allSelectedWords[tNextWord]);
 
         // removing first item from the all selected list
-        _allSelectedWords.RemoveAt(tFirstWordIndex);
+        _allSelectedWords.RemoveAt(tNextWord);
 
         SetReady();
     }
@@ -143,5 +162,37 @@ public class CActivityManager6 : CActivity
     void NotReady()
     {
         DragAndDropItem.dragDisabled = true;
+    }
+
+    // to animate Luis
+    public void AnimateResult(bool aOption, int aTrainNumber, Sprite aFoodSprite)
+    {
+        NotReady();     
+        
+        if (aOption) // animate good
+        {
+            _trainAnimator.SetTrigger("Success");
+            GoodAnimation();
+            Invoke("NextWord", 2);
+            Invoke("SetReady", 2);
+        }
+        else // animate bad
+        {
+            BadAnimation();
+            Invoke("NextWord", 1);
+            Invoke("SetReady", 1);
+        }
+    }
+
+    // good luis
+    void GoodAnimation()
+    {
+        _luisAnimator.SetTrigger("Success");
+    }
+
+    // bad luis
+    void BadAnimation()
+    {
+        _luisAnimator.SetTrigger("Fail");
     }
 }
