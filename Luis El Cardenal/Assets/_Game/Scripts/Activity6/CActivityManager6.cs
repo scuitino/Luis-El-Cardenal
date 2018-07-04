@@ -9,6 +9,13 @@ public class CActivityManager6 : CActivity
     public static CActivityManager6 _instance = null; //static - the same variable is shared by all instances of the class that are created
     #endregion
 
+    // points to win
+    [SerializeField]
+    int _scoreToWin;
+
+    // actual player points
+    int _playerScore;
+
     // to control luis animations
     [SerializeField]
     Animator _luisAnimator;
@@ -171,16 +178,29 @@ public class CActivityManager6 : CActivity
         
         if (aOption) // animate good
         {
+            // animate train and luis
             _trainAnimator.SetTrigger("Success");
-            GoodAnimation();
-            Invoke("NextWord", 2);
-            Invoke("SetReady", 2);
+            GoodAnimation();         
+            
+            // check score
+            _playerScore++;
+            if (_playerScore == _scoreToWin)
+            {
+                Invoke("WinGame", 7);
+                _trainAnimator.SetTrigger("Win");
+            }
+            else
+            {
+                Invoke("NextWord", 2);
+                Invoke("SetReady", 2);
+            }
         }
         else // animate bad
         {
+            // animate train and luis
             BadAnimation();
-            Invoke("NextWord", 1);
-            Invoke("SetReady", 1);
+            Invoke("NextWord", 2);
+            Invoke("SetReady", 2);
         }
     }
 

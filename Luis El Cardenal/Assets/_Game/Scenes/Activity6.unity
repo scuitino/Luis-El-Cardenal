@@ -704,6 +704,7 @@ MonoBehaviour:
   _winAnimator: {fileID: 799454038}
   _helpAnimator: {fileID: 844004035}
   _startFlag: {fileID: 2105206739}
+  _scoreToWin: 5
   _luisAnimator: {fileID: 2104900586}
   _trainAnimator: {fileID: 1804984982}
   _option: {fileID: 1753102019}
@@ -4698,7 +4699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1895779079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4952,7 +4953,7 @@ Prefab:
         type: 2}
       propertyPath: OnInAnimationsFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 804918839}
     - target: {fileID: 1553221939942562, guid: 64123d5db0903a443beea9f84f87dce1, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -4961,7 +4962,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 804918839}
     - target: {fileID: 114709282639012220, guid: 64123d5db0903a443beea9f84f87dce1,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
