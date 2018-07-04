@@ -43,7 +43,8 @@ public class CActivityManager6 : CActivity
     private void Start()
     {
         _helpAnimator.SetBool("Activity6", true);
-
+        _allSelectedWords = new List<GameObject>();
+        _selectedLetters = new List<string>();
         SelectGameWords();
     }
 
