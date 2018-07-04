@@ -40,8 +40,11 @@ public class CActivityManager6 : CActivity
     List<GameObject> _aWords, _lWords, _mWords, _sWords;
 
     // all selected words
+    List<GameObject> _allSelectedWords;
+
+    // playing words
     [SerializeField]
-    List<GameObject> _allSelectedWords;    
+    List<GameObject> _playingWords;
 
     // trains reference
     [SerializeField]
@@ -60,6 +63,7 @@ public class CActivityManager6 : CActivity
     {
         _helpAnimator.SetBool("Activity6", true);
         _allSelectedWords = new List<GameObject>();
+        _playingWords = new List<GameObject>();
         _selectedLetters = new List<string>();
         SelectGameWords();
     }
@@ -87,24 +91,28 @@ public class CActivityManager6 : CActivity
                     for (int i = 0; i < _aWords.Count; i++)
                     {
                         _allSelectedWords.Add(_aWords[i]);
+                        _playingWords.Add(_aWords[i]);
                     }
                     break;
                 case "L":
                     for (int i = 0; i < _lWords.Count; i++)
                     {
                         _allSelectedWords.Add(_lWords[i]);
+                        _playingWords.Add(_lWords[i]);
                     }
                     break;
                 case "M":
                     for (int i = 0; i < _mWords.Count; i++)
                     {
                         _allSelectedWords.Add(_mWords[i]);
+                        _playingWords.Add(_mWords[i]);
                     }
                     break;
                 case "S":
                     for (int i = 0; i < _sWords.Count; i++)
                     {
                         _allSelectedWords.Add(_sWords[i]);
+                        _playingWords.Add(_sWords[i]);
                     }
                     break;
                 default:
@@ -127,14 +135,22 @@ public class CActivityManager6 : CActivity
     // select next word
     public void NextWord()
     {
+        if (_playingWords.Count == 0)
+        {
+            for (int i = 0; i < _allSelectedWords.Count; i++)
+            {
+                _playingWords.Add(_allSelectedWords[i]);
+            }
+        }
+
         // selecting first word
-        int tNextWord = Random.Range(0, _allSelectedWords.Count);
+        int tNextWord = Random.Range(0, _playingWords.Count);
 
         // instantiate and set player option
-        SettingPlayerOption(_allSelectedWords[tNextWord]);
+        SettingPlayerOption(_playingWords[tNextWord]);
 
         // removing first item from the all selected list
-        _allSelectedWords.RemoveAt(tNextWord);
+        _playingWords.RemoveAt(tNextWord);
 
         SetReady();
     }
