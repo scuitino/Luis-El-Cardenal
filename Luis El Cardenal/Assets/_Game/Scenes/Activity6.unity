@@ -222,10 +222,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224878718856648380, guid: 9c98938322684df4b8b9d3633789292f,
     type: 2}
   m_PrefabInternal: {fileID: 37124653}
---- !u!1 &147678941 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 149246, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
-  m_PrefabInternal: {fileID: 1753102018}
 --- !u!1001 &318337454
 Prefab:
   m_ObjectHideFlags: 0
@@ -349,11 +345,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22482442, guid: 209652346e247bf45b578fe0c5906b74,
     type: 2}
   m_PrefabInternal: {fileID: 318337454}
---- !u!95 &389972663 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95353489453900422, guid: 64123d5db0903a443beea9f84f87dce1,
-    type: 2}
-  m_PrefabInternal: {fileID: 2091336635}
 --- !u!1 &408668212
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,12 +573,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &769056267 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114212438131802218, guid: 64123d5db0903a443beea9f84f87dce1,
-    type: 2}
-  m_PrefabInternal: {fileID: 2091336635}
-  m_Script: {fileID: 11500000, guid: abb5c4702c7d6e344b9832a97ae1264d, type: 3}
 --- !u!1 &804918837
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,109 +616,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 804918837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7169807bc128e1c4ba99537abb654788, type: 3}
+  m_Script: {fileID: 11500000, guid: 19303a7590d2b5248954822021991821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _readyToPlay: 0
   _win: 0
-  _winPanel: {fileID: 769056267}
-  _winAnimator: {fileID: 389972663}
-  _helpAnimator: {fileID: 844004035}
-  _startFlag: {fileID: 905358239}
-  _scoreToWin: 9
-  _cave1: {fileID: 1701197037}
-  _cave2: {fileID: 1341879641}
-  _mulita1: {fileID: 0}
-  _mulita2: {fileID: 0}
-  _food1: {fileID: 0}
-  _food2: {fileID: 0}
-  _minWordsPerGame: 2
-  _maxWordsPerGame: 6
-  _group1WordsCount: 0
-  _group2WordsCount: 0
-  _posibleLetters:
-  - A
-  - O
-  - N
-  - R
-  _aWords:
-  - {fileID: 122268, guid: 4ca20ac3f8a320e4a88d968b1ce6c58e, type: 2}
-  - {fileID: 122268, guid: d3ee6fb470009914489ec618237c12a7, type: 2}
-  - {fileID: 122268, guid: 38a5537261aafc0428b36cef58773402, type: 2}
-  - {fileID: 122268, guid: 83de648ceec69354c87feef9b15b90e9, type: 2}
-  - {fileID: 122268, guid: b86abc97f73e98f49927c1be64d06a32, type: 2}
-  - {fileID: 122268, guid: e934534e0b5574240bbd283e9ce0f7d1, type: 2}
-  - {fileID: 122268, guid: 52502af0399651947ac620e8f6bde500, type: 2}
-  - {fileID: 122268, guid: b1bf78921e3835b4b8ae18f7a1a80ba6, type: 2}
-  - {fileID: 122268, guid: d00ce5730d07a98469ccb91548693f07, type: 2}
-  - {fileID: 122268, guid: e8d52855f934e24459eadb271cf574b7, type: 2}
-  - {fileID: 122268, guid: 4581ceef09c58514a9cb61c5f350cafa, type: 2}
-  - {fileID: 122268, guid: 960ef6d405e8fd04a940cbb4c71c49f5, type: 2}
-  - {fileID: 122268, guid: 9ed65038361af61449be4dc88a7c2104, type: 2}
-  - {fileID: 122268, guid: 52ba610bc193fb14c9b260573c41e0cb, type: 2}
-  - {fileID: 122268, guid: 1edb5bce69583ec4499f582fe713d00b, type: 2}
-  - {fileID: 122268, guid: 797e41191bd566747afea93bb329568e, type: 2}
-  - {fileID: 122268, guid: 76c36630321b47941be70ebc7f22c31b, type: 2}
-  - {fileID: 122268, guid: 922d65bf45da111419c3b2eede61804c, type: 2}
-  _oWords:
-  - {fileID: 122268, guid: 14095102776a15c439372da848738a4d, type: 2}
-  - {fileID: 122268, guid: 3da5dee0529c02c488af33595dbcf9ea, type: 2}
-  - {fileID: 122268, guid: 0b414f16622e9c2478daaf496e28c50c, type: 2}
-  - {fileID: 122268, guid: 53f2eda647621314eb39df32fbb2d9ef, type: 2}
-  - {fileID: 122268, guid: b2a2882a465c30a419f9d3a4972765eb, type: 2}
-  - {fileID: 122268, guid: de2e52344a3bfa746a7c0039d1cca52b, type: 2}
-  - {fileID: 122268, guid: bd35ac3832c04104d91c8c7ebcb37a1d, type: 2}
-  - {fileID: 122268, guid: f50888cbd03c56c49ad2c5764c46895b, type: 2}
-  - {fileID: 122268, guid: eab3cd45fb650a64d93dce5280c45f21, type: 2}
-  - {fileID: 122268, guid: 9e6e9960e0845984490f78c0de1ea57e, type: 2}
-  - {fileID: 122268, guid: 67b118e1a01c3774b97dc3c3e2a3c334, type: 2}
-  - {fileID: 122268, guid: 080818935a7608741ad8dfebebf00eeb, type: 2}
-  - {fileID: 122268, guid: f906a8066999a1942b96c17bd20797d1, type: 2}
-  - {fileID: 122268, guid: 0f7dfc78fd11e3a4a823e483049ea5ca, type: 2}
-  - {fileID: 122268, guid: 3e0af1f54aee4744f93a6ac8f0040b7a, type: 2}
-  - {fileID: 122268, guid: 3e25ad278a0f9f04085bd09ca868583f, type: 2}
-  - {fileID: 122268, guid: 5200b6063e926e04bb565bfcfcf7edce, type: 2}
-  - {fileID: 122268, guid: 3afa7235f4d42c04f84ed130676e2b8d, type: 2}
-  - {fileID: 122268, guid: 5254321cefc9647468499d1261ac46ac, type: 2}
-  - {fileID: 122268, guid: d6454f714d92992409f699d081e36775, type: 2}
-  - {fileID: 122268, guid: a37d1bf7c59ad8e40945ea35a7545fe9, type: 2}
-  - {fileID: 122268, guid: 1a0886f33591c544582107aa06162dc0, type: 2}
-  - {fileID: 122268, guid: 6ed14160352b17a4188ed3091844aaf2, type: 2}
-  _nWords:
-  - {fileID: 122268, guid: 810fc4e35930eb04786af79771acd4dd, type: 2}
-  - {fileID: 122268, guid: 26283dbefeacc944cbc9ed259cab6568, type: 2}
-  - {fileID: 122268, guid: 4fa1f48ceed8f594189aa68b437992d0, type: 2}
-  - {fileID: 122268, guid: 03ad721543838c547b20433f7ba05530, type: 2}
-  - {fileID: 122268, guid: 6cbfe04dc4b9dd3409d2b83975961335, type: 2}
-  - {fileID: 122268, guid: 58fc538f7056491428e7667b3d12f29e, type: 2}
-  - {fileID: 122268, guid: 3a45363fc46a0754c9c26f8ef4e0d42c, type: 2}
-  - {fileID: 122268, guid: b9639137a7a8b6546af960f9c462d1b1, type: 2}
-  - {fileID: 122268, guid: 4941534d803e7cc44a3d8152b50fb46a, type: 2}
-  - {fileID: 122268, guid: a640018e9fa11dc4d992530cee49145e, type: 2}
-  _rWords:
-  - {fileID: 122268, guid: 4ba3685bdca08ec44b4c9acd39405c34, type: 2}
-  - {fileID: 122268, guid: 3f5af68ec7d305649a548b9d4a25d306, type: 2}
-  - {fileID: 122268, guid: 40a477d8e0f657647858dd9ff5e903ac, type: 2}
-  - {fileID: 122268, guid: 7b4f70c6a532f684fa01486a24230dd6, type: 2}
-  - {fileID: 122268, guid: fa67742a5e1ac7642a42368aa8d4c830, type: 2}
-  - {fileID: 122268, guid: 22ce8177fa250294d9475b0c215c2e87, type: 2}
-  - {fileID: 122268, guid: f6c3859f57a26f241aea4e905b6849fb, type: 2}
-  - {fileID: 122268, guid: 280f4b959aba76348a21eb41e234a5ed, type: 2}
+  _winPanel: {fileID: 0}
+  _winAnimator: {fileID: 0}
+  _helpAnimator: {fileID: 0}
+  _startFlag: {fileID: 0}
+  _posibleLetters: []
+  _aWords: []
+  _lWords: []
+  _mWords: []
+  _sWords: []
   _allSelectedWords: []
-  _wordsForTheTable: []
-  _slots:
-  - {fileID: 147678941}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _luisAnimator: {fileID: 2104900586}
-  _exampleSprite: {fileID: 21300000, guid: 215c73b7a76b885449c9fe48205a5bc9, type: 3}
-  _sprite1: {fileID: 0}
-  _sprite2: {fileID: 0}
+  _option: {fileID: 0}
 --- !u!95 &844004035
 Animator:
   serializedVersion: 3
@@ -1985,11 +1883,6 @@ MonoBehaviour:
   onClickKeyCodeAlt: 32
   onClickVirtualButtonName: Submit
   onClickVirtualButtonNameAlt: Jump
---- !u!1 &905358239 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1568714629051026, guid: 9c98938322684df4b8b9d3633789292f,
-    type: 2}
-  m_PrefabInternal: {fileID: 37124653}
 --- !u!1001 &980954048
 Prefab:
   m_ObjectHideFlags: 0
@@ -2443,11 +2336,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1255109046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12ddfc6465dea1b42bd0c46fc402f7e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 068eb0015d77f704796e5eb56b331648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _caveID: 0
-  _caveNumber: 2
+  _trainID: 0
+  _trainNumber: 3
   _flagText: {fileID: 0}
 --- !u!1 &1341879640 stripped
 GameObject:
@@ -2461,11 +2354,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1341879640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12ddfc6465dea1b42bd0c46fc402f7e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 068eb0015d77f704796e5eb56b331648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _caveID: 0
-  _caveNumber: 2
+  _trainID: 0
+  _trainNumber: 2
   _flagText: {fileID: 0}
 --- !u!1 &1348712841
 GameObject:
@@ -2791,11 +2684,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1701197036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12ddfc6465dea1b42bd0c46fc402f7e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 068eb0015d77f704796e5eb56b331648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _caveID: 0
-  _caveNumber: 1
+  _trainID: 0
+  _trainNumber: 1
   _flagText: {fileID: 0}
 --- !u!1001 &1753102018
 Prefab:
@@ -3146,7 +3039,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 804918839}
+      objectReference: {fileID: 0}
     - target: {fileID: 114122948685694408, guid: ab21f7d7d112bf04997a406eec9afb95,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -4651,7 +4544,7 @@ Prefab:
         type: 2}
       propertyPath: OnInAnimationsFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 804918839}
+      objectReference: {fileID: 0}
     - target: {fileID: 1553221939942562, guid: 64123d5db0903a443beea9f84f87dce1, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -4660,7 +4553,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 804918839}
+      objectReference: {fileID: 0}
     - target: {fileID: 114709282639012220, guid: 64123d5db0903a443beea9f84f87dce1,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

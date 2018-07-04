@@ -35,7 +35,7 @@ public class CActivityManager5 : CActivity {
     // ID of first group
     int _group1ID;
 
-    // group letters
+    // selected letters group 
     List<string> _selectedLetters;
 
     // number of words of each group
