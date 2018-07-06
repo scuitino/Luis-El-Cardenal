@@ -220,6 +220,13 @@ public class CActivityManager6 : CActivity
         }
     }
 
+    // Enable Option and train
+    public void EnableChallenges()
+    {
+        _option.gameObject.SetActive(true);
+        _trainAnimator.gameObject.SetActive(true);
+    }
+
     // good luis
     void GoodAnimation()
     {

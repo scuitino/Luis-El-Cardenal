@@ -83,4 +83,11 @@ public class CHelp1 : MonoBehaviour {
     {
         CActivityManager5._instance.StartExampleAnimation();
     }
+
+    // to start activity 6 when the help animation is finished
+    public void StartActivity6()
+    {
+        CActivityManager6._instance.EnableChallenges();
+        CloseHelp();
+    }
 }
