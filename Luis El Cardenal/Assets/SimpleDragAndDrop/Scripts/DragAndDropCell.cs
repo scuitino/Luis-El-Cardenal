@@ -200,11 +200,11 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
                                 case 6: // Activity 6
                                     if (item.GetItemID() == this.GetComponent<CTrain>().GetTrainID())
                                     {
-                                        CActivityManager6._instance.AnimateResult(true, this.GetComponent<CTrain>().GetTrainNumber(), item.GetComponent<Image>().sprite);
+                                        CActivityManager6._instance.AnimateResult(true, this.GetComponent<CTrain>().GetTrainNumber(), item.transform.GetChild(0).GetComponent<Image>().sprite);
                                     }
                                     else
                                     {
-                                        CActivityManager6._instance.AnimateResult(false, this.GetComponent<CTrain>().GetTrainNumber(), item.GetComponent<Image>().sprite);
+                                        CActivityManager6._instance.AnimateResult(false, this.GetComponent<CTrain>().GetTrainNumber(), item.transform.GetChild(0).GetComponent<Image>().sprite);
                                     }
 
                                     Destroy(item.gameObject);

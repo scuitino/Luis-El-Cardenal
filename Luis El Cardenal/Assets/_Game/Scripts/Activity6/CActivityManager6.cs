@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CActivityManager6 : CActivity
 {
@@ -28,6 +29,14 @@ public class CActivityManager6 : CActivity
     [SerializeField]
     Transform _option;
 
+    // to animate results
+    [SerializeField]
+    List<Animator> _resultAnimators;
+
+    // to change the sprite of the result
+    [SerializeField]
+    List<Image> _resultImages;
+
     // letter groups
     [SerializeField]
     List<string> _posibleLetters;
@@ -48,7 +57,7 @@ public class CActivityManager6 : CActivity
 
     // trains reference
     [SerializeField]
-    List<CTrain> _boxes;    
+    List<CTrain> _boxes;
 
     private void Awake()
     {
@@ -188,7 +197,7 @@ public class CActivityManager6 : CActivity
     }
 
     // to animate Luis
-    public void AnimateResult(bool aOption, int aTrainNumber, Sprite aFoodSprite)
+    public void AnimateResult(bool aOption, int aTrainNumber, Sprite aItemSprite)
     {
         NotReady();     
         
@@ -196,7 +205,11 @@ public class CActivityManager6 : CActivity
         {
             // animate train and luis
             _trainAnimator.SetTrigger("Success");
-            GoodAnimation();         
+            GoodAnimation();
+
+            // animate result
+            _resultImages[aTrainNumber].sprite = aItemSprite;
+            _resultAnimators[aTrainNumber].SetTrigger("Good");
             
             // check score
             _playerScore++;
@@ -207,6 +220,7 @@ public class CActivityManager6 : CActivity
             }
             else
             {
+                // invoke next word
                 Invoke("NextWord", 2);
                 Invoke("SetReady", 2);
             }
@@ -215,6 +229,12 @@ public class CActivityManager6 : CActivity
         {
             // animate train and luis
             BadAnimation();
+
+            // animate results
+            _resultImages[aTrainNumber].sprite = aItemSprite;
+            _resultAnimators[aTrainNumber].SetTrigger("Bad");
+
+            // invote next word
             Invoke("NextWord", 2);
             Invoke("SetReady", 2);
         }
