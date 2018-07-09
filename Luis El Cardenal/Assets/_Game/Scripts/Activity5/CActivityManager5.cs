@@ -365,12 +365,12 @@ public class CActivityManager5 : CActivity {
             if (aCaveNumber == 1)
             {
                 _mulita1.SetTrigger("Success");
-                Invoke("DisableFood1", 1.3f);                
+                Invoke("DisableFood1", 1.2f);                
             }
             else
             {
                 _mulita2.SetTrigger("Success");
-                Invoke("DisableFood2", 1.3f);
+                Invoke("DisableFood2", 1.2f);
             }
             Invoke("GoodAnimation", 1);
 
