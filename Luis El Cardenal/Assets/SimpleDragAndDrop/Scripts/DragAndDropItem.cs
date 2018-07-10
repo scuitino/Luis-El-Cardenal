@@ -63,6 +63,7 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 	{
         if (dragDisabled == false && !_isGrabbing)
         {
+            _isGrabbing = true;
             // play sound
             _aSource.clip = _dragSound;
             _aSource.Play();
