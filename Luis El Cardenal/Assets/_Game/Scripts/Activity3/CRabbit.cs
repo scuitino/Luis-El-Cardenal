@@ -22,10 +22,10 @@ public class CRabbit : MonoBehaviour {
         CActivityManager3._instance.RestartChallenge();
     }
 
-    // to change leaf sprite
-    public void EatLeaf()
+    // To animate berries
+    public void CutBerry()
     {
-        CActivityManager3._instance.CutLeaf();
+        CActivityManager3._instance.CutBerry();
     }
 
     // to play on animations

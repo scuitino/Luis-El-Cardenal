@@ -59,17 +59,8 @@ public class CActivityManager3 : CActivity {
     [SerializeField]
     Animator _luisAnimator;
 
-    // to modify the leaf
     [SerializeField]
-    List<Sprite> _leafSprites;
-
-    // Image of the leaf
-    [SerializeField]
-    Image _leafImage;
-
-    // current leaf sprite
-    [SerializeField]
-    int _currentLeaf;
+    Animator _berriesAnimator;
 
     private void Awake()
     {
@@ -243,26 +234,22 @@ public class CActivityManager3 : CActivity {
                         _win = true;
                         Invoke("WinGame", 2);
                     }
-                    Debug.Log("son iguales");
                 }
                 else // if the ids are different
                 {
                     _luisAnimator.SetTrigger("Fail");
                     _rabbitAnimator.SetTrigger("Fail");
-                    Debug.Log("son diferentes");
                 }
             }
             else // if the player doesn't select two items
             {
-                Debug.Log("debe poner dos objetos");
             }
         }        
     }
 
-    // to change leaf sprite
-    public void CutLeaf()
+    // to remove one berry
+    public void CutBerry()
     {
-        _currentLeaf += 1;
-        _leafImage.sprite = _leafSprites[_currentLeaf];
+        _berriesAnimator.SetTrigger("Eat");
     }
 }
