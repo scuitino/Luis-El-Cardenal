@@ -126,7 +126,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); // removing selected slot
 
                     yield return null;
@@ -138,7 +138,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); 
                     break;
 
@@ -152,7 +152,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); // removing selected slot
 
                     yield return null;
@@ -164,7 +164,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower);
                     break;
 
@@ -178,7 +178,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); // removing selected slot
 
                     yield return null;
@@ -190,7 +190,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower);
                     break;
 
@@ -204,7 +204,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); // removing selected slot
 
                     yield return null;
@@ -216,7 +216,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower);
                     break;
 
@@ -230,7 +230,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); // removing selected slot
 
                     yield return null;
@@ -242,7 +242,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower);
                     break;
 
@@ -256,7 +256,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); // removing selected slot
 
                     yield return null;
@@ -268,7 +268,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower);
                     break;
 
@@ -282,7 +282,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); // removing selected slot
 
                     yield return null;
@@ -294,7 +294,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower);
                     break;
 
@@ -308,7 +308,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); // removing selected slot
 
                     yield return null;
@@ -320,7 +320,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower);
                     break;
 
@@ -334,7 +334,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); // removing selected slot
 
                     yield return null;
@@ -346,7 +346,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower);
                     break;
 
@@ -360,7 +360,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); // removing selected slot
 
                     yield return null;
@@ -372,7 +372,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower);
                     break;
 
@@ -386,7 +386,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); // removing selected slot
 
                     yield return null;
@@ -398,7 +398,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower);
                     break;
 
@@ -412,7 +412,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower); // removing selected slot
 
                     yield return null;
@@ -424,7 +424,7 @@ public class CActivityManager4 : CActivity {
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMin = new Vector2(0, 0); // new Vector2(left, bottom); 
                     tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
                     tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
-                    tSelectedItem.transform.localScale = Vector3.one;
+                    tSelectedItem.transform.localScale = new Vector3(1.5f, 1.5f, 1);
                     _flowersSlots.RemoveAt(_tSelectedFlower);
                     break;
             }
