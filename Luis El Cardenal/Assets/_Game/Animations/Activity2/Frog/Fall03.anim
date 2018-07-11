@@ -150,6 +150,8 @@ AnimationClip:
       value: {fileID: 21300000, guid: 75e52f5ce46277b4c9244367e1ed438c, type: 3}
     - time: 2.0444446
       value: {fileID: 21300000, guid: 36aca7c928ee9ed47bccd1511c729cd6, type: 3}
+    - time: 2.0777779
+      value: {fileID: 21300000, guid: fab080dedd68e9245b6b74dbe24d4d13, type: 3}
     attribute: m_Sprite
     path: Frog
     classID: 114
@@ -203,12 +205,13 @@ AnimationClip:
     - {fileID: 21300000, guid: fc7d043005213a947b1e5553edbc3c20, type: 3}
     - {fileID: 21300000, guid: 75e52f5ce46277b4c9244367e1ed438c, type: 3}
     - {fileID: 21300000, guid: 36aca7c928ee9ed47bccd1511c729cd6, type: 3}
+    - {fileID: 21300000, guid: fab080dedd68e9245b6b74dbe24d4d13, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2.0555556
+    m_StopTime: 2.088889
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
