@@ -781,7 +781,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22459494, guid: 5dcb37162ad5fd5458c2e516fdd779a4, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.25
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11440904, guid: 5dcb37162ad5fd5458c2e516fdd779a4, type: 2}
@@ -2676,7 +2676,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22459494, guid: 5e20d495a5631884d8d1a52dfb824939, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.25
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11440904, guid: 5e20d495a5631884d8d1a52dfb824939, type: 2}
@@ -4285,7 +4285,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22459494, guid: 691423408a3fa0842bb0eb8cd0ae245a, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.25
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11440904, guid: 691423408a3fa0842bb0eb8cd0ae245a, type: 2}
@@ -6540,7 +6540,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22459494, guid: 7a8eae2c5c09773419a349ca63ac81ac, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.25
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11440904, guid: 7a8eae2c5c09773419a349ca63ac81ac, type: 2}
@@ -6680,7 +6680,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22459494, guid: 9146e39a32e5e07478def92ea2fa8ad1, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.25
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11440904, guid: 9146e39a32e5e07478def92ea2fa8ad1, type: 2}
@@ -7082,7 +7082,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22459494, guid: e2ded8689b4815547835414dd964c62a, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.25
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11440904, guid: e2ded8689b4815547835414dd964c62a, type: 2}
@@ -7184,7 +7184,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22459494, guid: a8cfb55f786a4d74cb9e5d03f43996df, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.25
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 224539783364157646, guid: a8cfb55f786a4d74cb9e5d03f43996df,
         type: 2}
