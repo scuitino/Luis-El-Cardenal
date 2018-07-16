@@ -1646,7 +1646,7 @@ MonoBehaviour:
   _winAnimator: {fileID: 799454038}
   _helpAnimator: {fileID: 844004035}
   _startFlag: {fileID: 2105206739}
-  _skipButton: {fileID: 0}
+  _skipButton: {fileID: 1350431854}
   _scoreToWin: 5
   _luisAnimator: {fileID: 2104900586}
   _trainAnimator: {fileID: 1804984982}
