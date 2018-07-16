@@ -80,7 +80,7 @@ public class CActivityManager1 : CActivity
 
     // select all the words for the next game
     public void SelectGameWords()
-    {
+    {        
         for (int i = 0; i < _itemsOnScreen; i++) // selecting words
         {
             int tSelectedItem = Random.Range(0, _allItems.Count);
@@ -111,6 +111,7 @@ public class CActivityManager1 : CActivity
     // to start a new word
 	public void PlayWord()
     {
+        TurnOffSkipButton();
         _startFlag.SetActive(true);
         ChangeReady(false);
         if (!_win)

@@ -26,6 +26,10 @@ public class CActivity : MonoBehaviour {
     // placeholder start flag
     public GameObject _startFlag;
 
+    // skip button
+    [SerializeField]
+    GameObject _skipButton;
+
     // to control when the player can play
     public virtual void ChangeReady(bool aOption)
     {
@@ -54,5 +58,10 @@ public class CActivity : MonoBehaviour {
     public void GoToMainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void TurnOffSkipButton()
+    {
+        _skipButton.SetActive(false);
     }
 }

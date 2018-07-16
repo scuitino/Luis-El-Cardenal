@@ -79,7 +79,7 @@ public class CActivityManager6 : CActivity
 
     // select all the words for the next game
     public void SelectGameWords()
-    {
+    {        
         _startFlag.SetActive(true);
 
         // starting words select
@@ -243,6 +243,7 @@ public class CActivityManager6 : CActivity
     // Enable Option and train
     public void EnableChallenges()
     {
+        TurnOffSkipButton();
         _option.gameObject.SetActive(true);
         _trainAnimator.gameObject.SetActive(true);
     }

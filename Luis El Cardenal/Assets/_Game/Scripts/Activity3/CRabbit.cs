@@ -25,7 +25,12 @@ public class CRabbit : MonoBehaviour {
     // To animate berries
     public void CutBerry()
     {
-        CActivityManager3._instance.CutBerry();
+        CActivityManager3._instance.CutBerry(false);
+    }
+
+    public void CutBerryTutorial()
+    {
+        CActivityManager3._instance.CutBerry(true);
     }
 
     // to play on animations

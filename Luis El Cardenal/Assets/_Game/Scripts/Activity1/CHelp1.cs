@@ -62,7 +62,7 @@ public class CHelp1 : MonoBehaviour {
     // to animate the rabbit in activity 3
     public void AnimateRabbit()
     {
-        _rabbitanimator.SetTrigger("Success");
+        _rabbitanimator.SetTrigger("Tutorial");
     }
 
     // to close the help panel

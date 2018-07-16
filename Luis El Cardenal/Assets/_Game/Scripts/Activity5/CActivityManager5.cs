@@ -95,6 +95,7 @@ public class CActivityManager5 : CActivity {
     // select all the words for the next game
     public void SelectGameWords()
     {
+        TurnOffSkipButton();
         _startFlag.SetActive(true);
 
         // turn off example sprites
@@ -401,6 +402,11 @@ public class CActivityManager5 : CActivity {
     {
         AnimateResult(true, 2, _exampleSprite);
         Invoke("SelectGameWords", 5);
+    }
+
+    public void StopExampleAnimation()
+    {
+        CancelInvoke();
     }
 
     // disable food1

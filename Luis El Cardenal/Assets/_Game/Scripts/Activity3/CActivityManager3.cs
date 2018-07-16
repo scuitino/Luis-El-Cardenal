@@ -88,6 +88,7 @@ public class CActivityManager3 : CActivity {
     // select and play the next challenge
     public IEnumerator PlayChallenge()
     {
+        TurnOffSkipButton();
         _startFlag.SetActive(true);
         yield return null;
         bool tReady = false;
@@ -248,8 +249,15 @@ public class CActivityManager3 : CActivity {
     }
 
     // to remove one berry
-    public void CutBerry()
+    public void CutBerry(bool aTutorial)
     {
-        _berriesAnimator.SetTrigger("Eat");
+        if (aTutorial)
+        {
+            _berriesAnimator.SetTrigger("EatTutorial");
+        }
+        else
+        {
+            _berriesAnimator.SetTrigger("Eat");
+        }        
     }
 }
