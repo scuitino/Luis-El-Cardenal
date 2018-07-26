@@ -17,6 +17,14 @@ public class CTrain : MonoBehaviour {
     [SerializeField]
     Text _flagText;
 
+    // letter sounds
+    [SerializeField]
+    List<AudioClip> _soundLetters;
+
+    // to play letters sound
+    [SerializeField]
+    AudioSource _letterAudioSource;
+
     // set Train ID
     public void SetTrainID(string aTrainLetter)
     {        
@@ -25,18 +33,22 @@ public class CTrain : MonoBehaviour {
             case "A":
                 _trainID = 0;
                 _flagText.text = "A";
+                _letterAudioSource.clip = _soundLetters[0];
                 break;
             case "L":
                 _trainID = 1;
                 _flagText.text = "L";
+                _letterAudioSource.clip = _soundLetters[1];
                 break;
             case "M":
                 _trainID = 2;
                 _flagText.text = "M";
+                _letterAudioSource.clip = _soundLetters[2];
                 break;
             case "S":
                 _trainID = 3;
                 _flagText.text = "S";
+                _letterAudioSource.clip = _soundLetters[3];
                 break;
             default:
                 break;
