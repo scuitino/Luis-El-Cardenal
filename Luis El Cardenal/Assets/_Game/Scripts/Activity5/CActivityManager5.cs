@@ -26,7 +26,7 @@ public class CActivityManager5 : CActivity {
 
     // food for the mulita
     [SerializeField]
-    Image _food1, _food2;
+    Image _food1, _food2;    
 
     // min & max letters of each group on the table
     [SerializeField]

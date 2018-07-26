@@ -17,6 +17,14 @@ public class CCave : MonoBehaviour {
     [SerializeField]
     Text _flagText;
 
+    // letter sounds
+    [SerializeField]
+    List<AudioClip> _soundLetters;
+
+    // to play letters sound
+    [SerializeField]
+    AudioSource _letterAudioSource;
+
     // set Cave ID
     public void SetCaveID(int aCaveID)
     {
@@ -25,15 +33,19 @@ public class CCave : MonoBehaviour {
         {
             case 0:
                 _flagText.text = "A";
+                _letterAudioSource.clip = _soundLetters[0];
                 break;
             case 1:
                 _flagText.text = "O";
+                _letterAudioSource.clip = _soundLetters[1];
                 break;
             case 2:
                 _flagText.text = "N";
+                _letterAudioSource.clip = _soundLetters[2];
                 break;
             case 3:
                 _flagText.text = "R";
+                _letterAudioSource.clip = _soundLetters[3];
                 break;
             default:
                 break;
