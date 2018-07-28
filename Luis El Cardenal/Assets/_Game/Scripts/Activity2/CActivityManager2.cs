@@ -100,8 +100,7 @@ public class CActivityManager2 : CActivity {
     // Play with the next word
     public void PlayWord()
     {
-        TurnOffSkipButton();
-        _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
+        TurnOffSkipButton();        
         _startFlag.SetActive(true);
         if (_syllablesOnThisLevel.Count > 0)
         {
@@ -252,6 +251,7 @@ public class CActivityManager2 : CActivity {
     {
         if (!_win)
         {
+            _luisAnimator.gameObject.GetComponent<Button>().enabled = aOption;
             base.ChangeReady(aOption);
             _resultButton.DOPlayForward();
         }
@@ -340,7 +340,11 @@ public class CActivityManager2 : CActivity {
         _replayTutorialASource.Play();
         PauseGameplay(false);
         _skipReplayButton.SetActive(true);
-        StartCoroutine(StopTalking(_replayTutorialASource.clip.length));
+        if (_stopTalkingCo != null)
+        {
+            StopCoroutine(_stopTalkingCo);
+        }
+        _stopTalkingCo = StartCoroutine(StopTalking(_replayTutorialASource.clip.length));
     }
 
     // when the player skip the tutorial replay
@@ -350,6 +354,7 @@ public class CActivityManager2 : CActivity {
         _replayTutorialASource.Stop();
         PauseGameplay(true);
         _skipReplayButton.SetActive(false);
+        StopCoroutine(_stopTalkingCo);
     }
 
     // to pause gameplay

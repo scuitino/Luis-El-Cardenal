@@ -47,7 +47,7 @@ public class CActivityManager1 : CActivity
 
     // to control luis animations
     [SerializeField]
-    Animator _luisAnimator;        
+    Animator _luisAnimator;    
 
     private void Awake()
     {
@@ -186,7 +186,11 @@ public class CActivityManager1 : CActivity
         _replayTutorialASource.Play();
         ChangeReady(false);
         _skipReplayButton.SetActive(true);
-        StartCoroutine(StopTalking(_replayTutorialASource.clip.length));
+        if (_stopTalkingCo != null)
+        {
+            StopCoroutine(_stopTalkingCo);
+        }
+        _stopTalkingCo = StartCoroutine(StopTalking(_replayTutorialASource.clip.length));
     }
 
     // when the player skip the tutorial replay
@@ -196,6 +200,7 @@ public class CActivityManager1 : CActivity
         _replayTutorialASource.Stop();
         ChangeReady(true);
         _skipReplayButton.SetActive(false);
+        StopCoroutine(_stopTalkingCo);
     }
 
     // stop talking when replay ends

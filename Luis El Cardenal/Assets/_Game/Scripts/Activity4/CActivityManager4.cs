@@ -441,7 +441,11 @@ public class CActivityManager4 : CActivity {
         _replayTutorialASource.Play();
         PauseGameplay(false);
         _skipReplayButton.SetActive(true);
-        StartCoroutine(StopTalking(_replayTutorialASource.clip.length));
+        if (_stopTalkingCo != null)
+        {
+            StopCoroutine(_stopTalkingCo);
+        }
+        _stopTalkingCo = StartCoroutine(StopTalking(_replayTutorialASource.clip.length));
     }
 
     // when the player skip the tutorial replay
@@ -451,6 +455,7 @@ public class CActivityManager4 : CActivity {
         _replayTutorialASource.Stop();
         PauseGameplay(true);
         _skipReplayButton.SetActive(false);
+        StopCoroutine(_stopTalkingCo);
     }
 
     // to pause gameplay

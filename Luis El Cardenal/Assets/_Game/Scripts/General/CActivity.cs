@@ -30,7 +30,11 @@ public class CActivity : MonoBehaviour {
     [SerializeField]
     GameObject _skipButton;
 
+    // to skip replay tutorial
     public GameObject _skipReplayButton;
+
+    // to stop skip replay coroutine
+    public Coroutine _stopTalkingCo;
 
     // audio source to replay tutorial
     public AudioSource _replayTutorialASource;
