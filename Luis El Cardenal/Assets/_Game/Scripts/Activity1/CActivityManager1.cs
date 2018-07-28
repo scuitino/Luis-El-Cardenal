@@ -186,6 +186,7 @@ public class CActivityManager1 : CActivity
         _replayTutorialASource.Play();
         ChangeReady(false);
         _skipReplayButton.SetActive(true);
+        StartCoroutine(StopTalking(_replayTutorialASource.clip.length));
     }
 
     // when the player skip the tutorial replay
@@ -195,5 +196,12 @@ public class CActivityManager1 : CActivity
         _replayTutorialASource.Stop();
         ChangeReady(true);
         _skipReplayButton.SetActive(false);
+    }
+
+    // stop talking when replay ends
+    IEnumerator StopTalking(float aDelay)
+    {
+        yield return new WaitForSeconds(aDelay);
+        SkipReTutorial();
     }
 }

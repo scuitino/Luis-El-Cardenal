@@ -1450,6 +1450,11 @@ CanvasRenderer:
 GameObject:
   m_PrefabParentObject: {fileID: 149246, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
   m_PrefabInternal: {fileID: 1549306901}
+--- !u!1 &542699097 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1221733007944708, guid: a9eac315964dfc84d800ed0d2500a9a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 702153724}
 --- !u!1 &603111046 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 149246, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
@@ -2130,8 +2135,8 @@ MonoBehaviour:
   _helpAnimator: {fileID: 844004035}
   _startFlag: {fileID: 905358239}
   _skipButton: {fileID: 365934036}
-  _skipReplayButton: {fileID: 0}
-  _replayTutorialASource: {fileID: 0}
+  _skipReplayButton: {fileID: 542699097}
+  _replayTutorialASource: {fileID: 1478886521}
   _scoreToWin: 9
   _cave1: {fileID: 1701197037}
   _cave2: {fileID: 1341879641}
@@ -5534,6 +5539,11 @@ CanvasRenderer:
 GameObject:
   m_PrefabParentObject: {fileID: 149246, guid: 209652346e247bf45b578fe0c5906b74, type: 2}
   m_PrefabInternal: {fileID: 1194655866}
+--- !u!82 &1478886521 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82554641881806484, guid: f0c626a1d3adbfc4fa685f628ac60f7c,
+    type: 2}
+  m_PrefabInternal: {fileID: 2067818706}
 --- !u!1001 &1549306901
 Prefab:
   m_ObjectHideFlags: 0

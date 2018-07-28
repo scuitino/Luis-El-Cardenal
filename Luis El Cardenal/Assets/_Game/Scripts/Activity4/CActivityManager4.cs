@@ -441,6 +441,7 @@ public class CActivityManager4 : CActivity {
         _replayTutorialASource.Play();
         PauseGameplay(false);
         _skipReplayButton.SetActive(true);
+        StartCoroutine(StopTalking(_replayTutorialASource.clip.length));
     }
 
     // when the player skip the tutorial replay
@@ -457,5 +458,12 @@ public class CActivityManager4 : CActivity {
     {
         _readyToPlay = aOption;
         DragAndDropItem.dragDisabled = !aOption;
+    }
+
+
+    IEnumerator StopTalking(float aDelay)
+    {
+        yield return new WaitForSeconds(aDelay);
+        SkipReTutorial();
     }
 }
