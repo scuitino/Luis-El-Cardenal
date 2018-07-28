@@ -96,6 +96,7 @@ public class CActivityManager5 : CActivity {
     public void SelectGameWords()
     {
         TurnOffSkipButton();
+        _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
         _startFlag.SetActive(true);
 
         // turn off example sprites
@@ -443,5 +444,30 @@ public class CActivityManager5 : CActivity {
     void BadAnimation()
     {
         _luisAnimator.SetTrigger("Fail");
+    }
+
+    // when the player press luis button
+    public void ReplayTutorial()
+    {
+        _luisAnimator.SetBool("Talking", true);
+        _replayTutorialASource.Play();
+        PauseGameplay(false);
+        _skipReplayButton.SetActive(true);
+    }
+
+    // when the player skip the tutorial replay
+    public void SkipReTutorial()
+    {
+        _luisAnimator.SetBool("Talking", false);
+        _replayTutorialASource.Stop();
+        PauseGameplay(true);
+        _skipReplayButton.SetActive(false);
+    }
+
+    // to pause gameplay
+    public void PauseGameplay(bool aOption)
+    {
+        _readyToPlay = aOption;
+        DragAndDropItem.dragDisabled = !aOption;
     }
 }
