@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CActivityManager4 : CActivity {
 
@@ -100,6 +101,7 @@ public class CActivityManager4 : CActivity {
     public IEnumerator PlayChallenge()
     {
         TurnOffSkipButton();
+        _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
         _startFlag.SetActive(true);
         yield return null;
         for (int i = 0; i < _goodAnswersToWin; i++) // selecting challenges types
@@ -430,5 +432,30 @@ public class CActivityManager4 : CActivity {
                     break;
             }
         }
-    }    
+    }
+
+    // when the player press luis button
+    public void ReplayTutorial()
+    {
+        _luisAnimator.SetBool("Talking", true);
+        _replayTutorialASource.Play();
+        PauseGameplay(false);
+        _skipReplayButton.SetActive(true);
+    }
+
+    // when the player skip the tutorial replay
+    public void SkipReTutorial()
+    {
+        _luisAnimator.SetBool("Talking", false);
+        _replayTutorialASource.Stop();
+        PauseGameplay(true);
+        _skipReplayButton.SetActive(false);
+    }
+
+    // to pause gameplay
+    public void PauseGameplay(bool aOption)
+    {
+        _readyToPlay = aOption;
+        DragAndDropItem.dragDisabled = !aOption;
+    }
 }
