@@ -272,32 +272,32 @@ Prefab:
     - target: {fileID: 224878718856648380, guid: 9c98938322684df4b8b9d3633789292f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 771
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224878718856648380, guid: 9c98938322684df4b8b9d3633789292f,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 142.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224878718856648380, guid: 9c98938322684df4b8b9d3633789292f,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224878718856648380, guid: 9c98938322684df4b8b9d3633789292f,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224878718856648380, guid: 9c98938322684df4b8b9d3633789292f,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224878718856648380, guid: 9c98938322684df4b8b9d3633789292f,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224878718856648380, guid: 9c98938322684df4b8b9d3633789292f,
         type: 2}
@@ -7904,7 +7904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1895779079
 MonoBehaviour:
   m_ObjectHideFlags: 0

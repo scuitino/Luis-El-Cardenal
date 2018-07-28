@@ -79,9 +79,7 @@ public class CActivityManager6 : CActivity
 
     // select all the words for the next game
     public void SelectGameWords()
-    {        
-        _startFlag.SetActive(true);
-
+    {     
         // starting words select
         int tSelectedCount = 0; // words needed to start
         bool tReady = false;
@@ -243,6 +241,7 @@ public class CActivityManager6 : CActivity
     // Enable Option and train
     public void EnableChallenges()
     {
+        _startFlag.SetActive(true);
         TurnOffSkipButton();
         _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
         _option.gameObject.SetActive(true);
