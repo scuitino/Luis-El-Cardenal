@@ -58,6 +58,10 @@ public class CActivityManager2 : CActivity {
     [SerializeField]
     List<Text> _leafTexts;
 
+    // to control luis animations
+    [SerializeField]
+    Animator _luisAnimator;
+
     private void Awake()
     {
         //Singleton check
@@ -97,6 +101,7 @@ public class CActivityManager2 : CActivity {
     public void PlayWord()
     {
         TurnOffSkipButton();
+        _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
         _startFlag.SetActive(true);
         if (_syllablesOnThisLevel.Count > 0)
         {
@@ -250,7 +255,7 @@ public class CActivityManager2 : CActivity {
             base.ChangeReady(aOption);
             _resultButton.DOPlayForward();
         }
-    }
+    }    
 
     //start syllables success animation
     public void StartSyllablesAnimation()
@@ -326,5 +331,29 @@ public class CActivityManager2 : CActivity {
     public void ChangeRepeatButtonState(bool aState)
     {
         _repeatSoundButton.SetActive(aState);
+    }
+
+    // when the player press luis button
+    public void ReplayTutorial()
+    {
+        _luisAnimator.SetBool("Talking", true);
+        _replayTutorialASource.Play();
+        PauseGameplay(false);
+        _skipReplayButton.SetActive(true);
+    }
+
+    // when the player skip the tutorial replay
+    public void SkipReTutorial()
+    {
+        _luisAnimator.SetBool("Talking", false);
+        _replayTutorialASource.Stop();
+        PauseGameplay(true);
+        _skipReplayButton.SetActive(false);
+    }
+
+    // to pause gameplay
+    public void PauseGameplay(bool aOption)
+    {
+        _readyToPlay = aOption;
     }
 }
