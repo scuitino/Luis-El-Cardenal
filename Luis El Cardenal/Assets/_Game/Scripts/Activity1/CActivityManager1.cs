@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CActivityManager1 : CActivity
 {
@@ -46,7 +47,7 @@ public class CActivityManager1 : CActivity
 
     // to control luis animations
     [SerializeField]
-    Animator _luisAnimator;    
+    Animator _luisAnimator;        
 
     private void Awake()
     {
@@ -112,6 +113,7 @@ public class CActivityManager1 : CActivity
 	public void PlayWord()
     {
         TurnOffSkipButton();
+        _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
         _startFlag.SetActive(true);
         ChangeReady(false);
         if (!_win)
@@ -175,5 +177,23 @@ public class CActivityManager1 : CActivity
         yield return new WaitForSeconds(aDelay);
         WinGame();
         yield return null;
+    }
+
+    // when the player press luis button
+    public void ReplayTutorial()
+    {
+        _luisAnimator.SetBool("Talking", true);
+        _replayTutorialASource.Play();
+        ChangeReady(false);
+        _skipReplayButton.SetActive(true);
+    }
+
+    // when the player skip the tutorial replay
+    public void SkipReTutorial()
+    {
+        _luisAnimator.SetBool("Talking", false);
+        _replayTutorialASource.Stop();
+        ChangeReady(true);
+        _skipReplayButton.SetActive(false);
     }
 }

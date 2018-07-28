@@ -26,9 +26,15 @@ public class CActivity : MonoBehaviour {
     // placeholder start flag
     public GameObject _startFlag;
 
-    // skip button
+    // skips button
     [SerializeField]
     GameObject _skipButton;
+
+    public GameObject _skipReplayButton;
+
+    // audio source to replay tutorial
+    public AudioSource _replayTutorialASource;
+
 
     // to control when the player can play
     public virtual void ChangeReady(bool aOption)
