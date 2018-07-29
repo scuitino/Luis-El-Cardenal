@@ -198,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 2
   _playButton: {fileID: 1684555434}
+  _tutorial: 1
 --- !u!95 &14949672
 Animator:
   serializedVersion: 3
@@ -518,6 +519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 10
   _playButton: {fileID: 1357420050}
+  _tutorial: 0
 --- !u!95 &77375651
 Animator:
   serializedVersion: 3
@@ -3301,6 +3303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 12
   _playButton: {fileID: 1055276268}
+  _tutorial: 0
 --- !u!95 &254421829
 Animator:
   serializedVersion: 3
@@ -7314,6 +7317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 3
   _playButton: {fileID: 982830021}
+  _tutorial: 0
 --- !u!95 &554660207
 Animator:
   serializedVersion: 3
@@ -9986,6 +9990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 13
   _playButton: {fileID: 412968003}
+  _tutorial: 0
 --- !u!95 &663680553
 Animator:
   serializedVersion: 3
@@ -10196,6 +10201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 1
   _playButton: {fileID: 354542186}
+  _tutorial: 0
 --- !u!95 &666317803
 Animator:
   serializedVersion: 3
@@ -14636,6 +14642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 9
   _playButton: {fileID: 589586224}
+  _tutorial: 0
 --- !u!95 &1053007866
 Animator:
   serializedVersion: 3
@@ -16276,6 +16283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 4
   _playButton: {fileID: 337347021}
+  _tutorial: 0
 --- !u!95 &1151165817
 Animator:
   serializedVersion: 3
@@ -16549,6 +16557,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 5e8e11c366758f84da7acaa5e444c3f1,
         type: 3}
+    - target: {fileID: 114056386046166296, guid: b0437d06adcef874ca991d0dff103858,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DelayPlay
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0437d06adcef874ca991d0dff103858, type: 2}
   m_IsPrefabParent: 0
@@ -16642,6 +16655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 14
   _playButton: {fileID: 932017707}
+  _tutorial: 0
 --- !u!95 &1208896233
 Animator:
   serializedVersion: 3
@@ -18280,6 +18294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 0
   _playButton: {fileID: 84818840}
+  _tutorial: 0
 --- !u!95 &1640144772
 Animator:
   serializedVersion: 3
@@ -18490,6 +18505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 7
   _playButton: {fileID: 2112514418}
+  _tutorial: 0
 --- !u!95 &1645194937
 Animator:
   serializedVersion: 3
@@ -18700,6 +18716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 6
   _playButton: {fileID: 1772501211}
+  _tutorial: 0
 --- !u!95 &1653250673
 Animator:
   serializedVersion: 3
@@ -20151,6 +20168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 8
   _playButton: {fileID: 749340388}
+  _tutorial: 0
 --- !u!95 &1726038574
 Animator:
   serializedVersion: 3
@@ -22823,6 +22841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 5
   _playButton: {fileID: 1752839936}
+  _tutorial: 0
 --- !u!95 &1794055999
 Animator:
   serializedVersion: 3
@@ -23047,7 +23066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1814458145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23313,6 +23332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemID: 11
   _playButton: {fileID: 617524200}
+  _tutorial: 0
 --- !u!95 &1922631851
 Animator:
   serializedVersion: 3

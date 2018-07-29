@@ -133,10 +133,7 @@ public class CActivityManager6 : CActivity
         }
 
         // setting up trains
-        TrainsSetUp();
-
-        // selecting next word
-        NextWord();
+        TrainsSetUp();        
     }
 
     // select next word
@@ -241,6 +238,9 @@ public class CActivityManager6 : CActivity
     // Enable Option and train
     public void EnableChallenges()
     {
+        // selecting next word
+        Invoke("NextWord", 1.5f);
+
         _startFlag.SetActive(true);
         TurnOffSkipButton();
         _luisAnimator.gameObject.GetComponent<Button>().enabled = true;

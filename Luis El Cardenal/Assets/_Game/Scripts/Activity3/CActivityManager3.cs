@@ -62,6 +62,9 @@ public class CActivityManager3 : CActivity {
     [SerializeField]
     Animator _berriesAnimator;
 
+    // tutorial time
+    bool _isTutorial;
+
     private void Awake()
     {
         //Singleton check
@@ -73,6 +76,7 @@ public class CActivityManager3 : CActivity {
 
     private void Start()
     {
+        _isTutorial = true;
         _helpAnimator.SetBool("Activity3", true);
         //StartCoroutine(PlayChallenge()); 
     }
@@ -88,9 +92,14 @@ public class CActivityManager3 : CActivity {
     // select and play the next challenge
     public IEnumerator PlayChallenge()
     {
+        if (_isTutorial)
+        {
+            _startFlag.SetActive(true);
+            _isTutorial = false;
+        }
+
         TurnOffSkipButton();
-        _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
-        _startFlag.SetActive(true);
+        _luisAnimator.gameObject.GetComponent<Button>().enabled = true;        
         yield return null;
         bool tReady = false;
         while (!tReady) // searching challenge data

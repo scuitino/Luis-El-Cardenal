@@ -62,6 +62,9 @@ public class CActivityManager2 : CActivity {
     [SerializeField]
     Animator _luisAnimator;
 
+    // tutorial time
+    bool _isTutorial;
+
     private void Awake()
     {
         //Singleton check
@@ -73,6 +76,8 @@ public class CActivityManager2 : CActivity {
 
     private void Start()
     {
+        _isTutorial = true;
+
         // making all the words availables
         foreach(CWordA2 tWord in _1SWordsList)
         {
@@ -100,8 +105,13 @@ public class CActivityManager2 : CActivity {
     // Play with the next word
     public void PlayWord()
     {
-        TurnOffSkipButton();        
-        _startFlag.SetActive(true);
+        if (_isTutorial)
+        {
+            _startFlag.SetActive(true);
+            _isTutorial = false;
+        }            
+
+        TurnOffSkipButton();                
         if (_syllablesOnThisLevel.Count > 0)
         {
             _readyToPlay = false;

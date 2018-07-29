@@ -14,7 +14,7 @@ MonoBehaviour:
   _word: Televisor
   _syllables:
   - TE
-  - LE
+  - "L\xC9"
   - FO
   - NO
   _images:

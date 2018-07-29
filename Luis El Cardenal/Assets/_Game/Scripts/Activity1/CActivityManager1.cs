@@ -111,10 +111,8 @@ public class CActivityManager1 : CActivity
 
     // to start a new word
 	public void PlayWord()
-    {
-        TurnOffSkipButton();
-        _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
-        _startFlag.SetActive(true);
+    {        
+        _luisAnimator.gameObject.GetComponent<Button>().enabled = true;        
         ChangeReady(false);
         if (!_win)
         {            
@@ -208,5 +206,13 @@ public class CActivityManager1 : CActivity
     {
         yield return new WaitForSeconds(aDelay);
         SkipReTutorial();
+    }
+
+    // delay on the start of activity 1
+    public void DelayPlay()
+    {
+        TurnOffSkipButton();
+        _startFlag.SetActive(true);
+        Invoke("PlayWord",2);
     }
 }

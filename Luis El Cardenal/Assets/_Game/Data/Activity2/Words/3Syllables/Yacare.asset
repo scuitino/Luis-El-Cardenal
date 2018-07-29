@@ -15,7 +15,7 @@ MonoBehaviour:
   _syllables:
   - YA
   - CA
-  - RE
+  - "R\xC9"
   _images:
   - {fileID: 21300000, guid: eeafafffc4c02cc40b939354c65f575e, type: 3}
   - {fileID: 21300000, guid: 76dfe301ac9ff224f8d3df0145fdc6a3, type: 3}
