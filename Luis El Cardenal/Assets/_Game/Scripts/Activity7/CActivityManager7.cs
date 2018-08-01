@@ -29,10 +29,26 @@ public class CActivityManager7 : CActivity
     [SerializeField]
     List<CEgg> _eggs;
 
+    private void Awake()
+    {
+        //Singleton check
+        if (_instance == null)
+            _instance = this;
+        else if (_instance != this)
+            Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        NextChallenge();
+    }
+
     // play next challenge
     public void NextChallenge()
     {
         _correctAnswer = Random.Range(0,_numberPerType.Count);
+
+        _readyToPlay = true;
     }
 
     // to add 1 to word count
@@ -40,7 +56,6 @@ public class CActivityManager7 : CActivity
     {
         if (_readyToPlay && !_win)
         {
-            //_whiteButtons[aButtonNumber].DORestart();
             _playerAnswer++;
         }
     }
@@ -50,7 +65,6 @@ public class CActivityManager7 : CActivity
     {
         if (_readyToPlay && !_win)
         {
-            //_whiteButtons[aButtonNumber].DOPlayBackwards();
             _playerAnswer--;
         }
     }
