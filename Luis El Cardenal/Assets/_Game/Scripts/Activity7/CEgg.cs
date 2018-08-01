@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class CEgg : MonoBehaviour {
 
     // egg state
-    bool _isPressed;
+    public bool _isPressed;
 
-    // to modify the egg sprite
-    Image _eggImage;
+    // to modify the egg animations
+    public Animator _eggAnimator;
 
     // egg sprites
     [SerializeField]
@@ -17,7 +17,7 @@ public class CEgg : MonoBehaviour {
 
     private void Start()
     {
-        _eggImage = GetComponent<Image>();
+        _eggAnimator = GetComponent<Animator>();
     }
 
     // when the player touch the egg
@@ -28,13 +28,13 @@ public class CEgg : MonoBehaviour {
             if (!_isPressed)
             {
                 CActivityManager7._instance.AddWordCount();
-                _eggImage.sprite = _selected;
+                _eggAnimator.SetTrigger("Press");
                 _isPressed = true;
             }
             else
             {
                 CActivityManager7._instance.RemoveWordCount();
-                _eggImage.sprite = _unselected;
+                _eggAnimator.SetTrigger("Unpress");
                 _isPressed = false;
             }
         }        
