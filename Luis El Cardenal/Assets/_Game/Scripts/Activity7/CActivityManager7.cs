@@ -48,6 +48,9 @@ public class CActivityManager7 : CActivity
     [SerializeField]
     Animator _chickenAnimator;
 
+    // player score
+    int _score;
+
     private void Awake()
     {
         //Singleton check
@@ -70,63 +73,70 @@ public class CActivityManager7 : CActivity
     // play next challenge
     public void NextChallenge()
     {
-        // reseting game
-        _playerAnswer = 0;
-        for (int i = 0; i < _eggs.Count; i++)
+        if (!_win)
         {
-            _eggs[i]._isPressed = false;
-            _eggs[i]._eggAnimator.SetTrigger("Return");
-        }
-        _chickenAnimator.SetTrigger("Return");
+            // reseting game
+            _playerAnswer = 0;
+            for (int i = 0; i < _eggs.Count; i++)
+            {
+                _eggs[i]._isPressed = false;
+                _eggs[i]._eggAnimator.SetTrigger("Return");
+            }
+            _chickenAnimator.SetTrigger("Return");
 
-        // first 5 challenges or not?
-        if (_firstChallenges.Count > 0)
-        {
-            int tSelectedChallenge = Random.Range(0, _firstChallenges.Count);
-            _correctAnswer = _firstChallenges[tSelectedChallenge];
-            _firstChallenges.RemoveAt(tSelectedChallenge);
+            // first 5 challenges or not?
+            if (_firstChallenges.Count > 0)
+            {
+                int tSelectedChallenge = Random.Range(0, _firstChallenges.Count);
+                _correctAnswer = _firstChallenges[tSelectedChallenge];
+                _firstChallenges.RemoveAt(tSelectedChallenge);
+            }
+            else
+            {
+                _correctAnswer = _allChallengesTypes[Random.Range(0, _allChallengesTypes.Count)];
+            }
+
+            // taking challenge
+            switch (_correctAnswer)
+            {
+                case 2:
+                    if (_2WordsAvailable.Count > 0)
+                    {
+                        _answerIndex = Random.Range(0, _2WordsAvailable.Count);
+                        _aSource.clip = _2WordsAvailable[_answerIndex];
+                    }
+                    break;
+                case 3:
+                    if (_3WordsAvailable.Count > 0)
+                    {
+                        _answerIndex = Random.Range(0, _3WordsAvailable.Count);
+                        _aSource.clip = _3WordsAvailable[_answerIndex];
+                    }
+                    break;
+                case 4:
+                    if (_4WordsAvailable.Count > 0)
+                    {
+                        _answerIndex = Random.Range(0, _4WordsAvailable.Count);
+                        _aSource.clip = _4WordsAvailable[_answerIndex];
+                    }
+                    break;
+                case 5:
+                    if (_5WordsAvailable.Count > 0)
+                    {
+                        _answerIndex = Random.Range(0, _5WordsAvailable.Count);
+                        _aSource.clip = _5WordsAvailable[_answerIndex];
+                    }
+                    break;
+            }
+
+            _aSource.Play();
+            _readyToPlay = true;
+            _resultButton.DOPlayForward();
         }
         else
         {
-            _correctAnswer = _allChallengesTypes[Random.Range(0, _allChallengesTypes.Count)];
+            WinGame();
         }
-
-        // taking challenge
-        switch (_correctAnswer)
-        {
-            case 2:
-                if(_2WordsAvailable.Count > 0)
-                {
-                    _answerIndex = Random.Range(0, _2WordsAvailable.Count);
-                    _aSource.clip = _2WordsAvailable[_answerIndex];
-                }
-                break;
-            case 3:
-                if (_3WordsAvailable.Count > 0)
-                {
-                    _answerIndex = Random.Range(0, _3WordsAvailable.Count);
-                    _aSource.clip = _3WordsAvailable[_answerIndex];
-                }
-                break;
-            case 4:
-                if (_4WordsAvailable.Count > 0)
-                {
-                    _answerIndex = Random.Range(0, _4WordsAvailable.Count);
-                    _aSource.clip = _4WordsAvailable[_answerIndex];
-                }
-                break;
-            case 5:
-                if (_5WordsAvailable.Count > 0)
-                {
-                    _answerIndex = Random.Range(0, _5WordsAvailable.Count);
-                    _aSource.clip = _5WordsAvailable[_answerIndex];
-                }
-                break;
-        }
-
-        _aSource.Play();
-        _readyToPlay = true;
-        _resultButton.DOPlayForward();
     }
 
     // to add 1 to word count
@@ -156,8 +166,15 @@ public class CActivityManager7 : CActivity
             {
                 _readyToPlay = false;
                 _resultButton.DOPlayBackwards();
-                if (_playerAnswer == _correctAnswer) // win
+                if (_playerAnswer == _correctAnswer) // success
                 {
+                    _score++;
+                    if (_score == 5) // check if the player won
+                    {
+                        _win = true;
+                    }
+
+                    // animations
                     for (int i = 0; i < _eggs.Count; i++)
                     {
                         if(_eggs[i]._isPressed)
@@ -166,6 +183,7 @@ public class CActivityManager7 : CActivity
                             _eggs[i]._eggAnimator.SetTrigger("Success");                            
                         }
                     }
+                    // remove used sentence
                     switch (_correctAnswer)
                     {
                         case 2:
@@ -184,6 +202,7 @@ public class CActivityManager7 : CActivity
                 }
                 else // lose
                 {
+                    // animations
                     for (int i = 0; i < _eggs.Count; i++)
                     {
                         if (_eggs[i]._isPressed)
@@ -192,6 +211,7 @@ public class CActivityManager7 : CActivity
                             _eggs[i]._eggAnimator.SetTrigger("Fail");                            
                         }
                     }
+                    // regrouping sentences
                     switch (_correctAnswer)
                     {
                         case 2:

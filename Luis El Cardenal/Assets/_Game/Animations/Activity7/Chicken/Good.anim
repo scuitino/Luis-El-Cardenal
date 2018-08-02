@@ -44,13 +44,13 @@ AnimationClip:
       value: {fileID: 21300000, guid: 44bca517073ed4241bc9a4feda9fc152, type: 3}
     - time: 1.7
       value: {fileID: 21300000, guid: 12c312a2854ed5746accceeb1339c59c, type: 3}
-    - time: 1.8
+    - time: 2.3666666
       value: {fileID: 21300000, guid: 0cd3009a3032faf41880c2ba8e9a2c0f, type: 3}
-    - time: 1.9
+    - time: 2.4666667
       value: {fileID: 21300000, guid: df93b2e880bf9d2458807f827ef1155e, type: 3}
-    - time: 2
+    - time: 2.5666666
       value: {fileID: 21300000, guid: 436bfcbb04159a84eb2cbd4e52c8f755, type: 3}
-    - time: 2.1
+    - time: 2.6666667
       value: {fileID: 21300000, guid: e5faf25022ddbee4e853310dd7c7a9ca, type: 3}
     attribute: m_Sprite
     path: 

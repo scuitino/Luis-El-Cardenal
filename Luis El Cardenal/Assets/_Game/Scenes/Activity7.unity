@@ -1478,6 +1478,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &104217973 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1221733007944708, guid: a9eac315964dfc84d800ed0d2500a9a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 11461362}
 --- !u!1001 &133383031
 Prefab:
   m_ObjectHideFlags: 0
@@ -2244,7 +2249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &273856990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6705,13 +6710,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _readyToPlay: 0
   _win: 0
-  _winPanel: {fileID: 0}
-  _winAnimator: {fileID: 0}
-  _helpAnimator: {fileID: 0}
-  _startFlag: {fileID: 0}
-  _skipButton: {fileID: 0}
-  _skipReplayButton: {fileID: 0}
-  _replayTutorialASource: {fileID: 0}
+  _winPanel: {fileID: 1629159215}
+  _winAnimator: {fileID: 988995361}
+  _helpAnimator: {fileID: 1568431771}
+  _startFlag: {fileID: 956481869}
+  _skipButton: {fileID: 1078532942}
+  _skipReplayButton: {fileID: 104217973}
+  _replayTutorialASource: {fileID: 933617505}
   _playerAnswer: 0
   _correctAnswer: 0
   _firstChallenges: 0200000003000000030000000400000005000000
@@ -9679,6 +9684,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 926737540}
+--- !u!82 &933617505 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82554641881806484, guid: f0c626a1d3adbfc4fa685f628ac60f7c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1806577804}
 --- !u!1 &939841531
 GameObject:
   m_ObjectHideFlags: 0
@@ -12436,7 +12446,7 @@ Prefab:
         type: 2}
       propertyPath: OnInAnimationsFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 804918839}
     - target: {fileID: 114212438131802218, guid: 64123d5db0903a443beea9f84f87dce1,
         type: 2}
       propertyPath: OnInAnimationsFinish.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -12480,7 +12490,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 512fb966cdd73f1449d0612163a22161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activityNumber: 2
+  _activityNumber: 7
+--- !u!95 &988995361 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95353489453900422, guid: 64123d5db0903a443beea9f84f87dce1,
+    type: 2}
+  m_PrefabInternal: {fileID: 988995355}
 --- !u!1 &1031333253
 GameObject:
   m_ObjectHideFlags: 0
@@ -18812,6 +18827,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1574148198}
+--- !u!114 &1629159215 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114212438131802218, guid: 64123d5db0903a443beea9f84f87dce1,
+    type: 2}
+  m_PrefabInternal: {fileID: 988995355}
+  m_Script: {fileID: 11500000, guid: abb5c4702c7d6e344b9832a97ae1264d, type: 3}
 --- !u!1 &1637558866
 GameObject:
   m_ObjectHideFlags: 0
