@@ -59,6 +59,10 @@ public class CActivityManager7 : CActivity
 
     private void Start()
     {
+        _2WordsFail = new List<AudioClip>();
+        _3WordsFail = new List<AudioClip>();
+        _4WordsFail = new List<AudioClip>();
+        _5WordsFail = new List<AudioClip>();
         _aSource = this.GetComponent<AudioSource>();
         NextChallenge();
     }
@@ -66,6 +70,15 @@ public class CActivityManager7 : CActivity
     // play next challenge
     public void NextChallenge()
     {
+        // reseting game
+        _playerAnswer = 0;
+        for (int i = 0; i < _eggs.Count; i++)
+        {
+            _eggs[i]._isPressed = false;
+            _eggs[i]._eggAnimator.SetTrigger("Return");
+        }
+        _chickenAnimator.SetTrigger("Return");
+
         // first 5 challenges or not?
         if (_firstChallenges.Count > 0)
         {
@@ -150,8 +163,23 @@ public class CActivityManager7 : CActivity
                         if(_eggs[i]._isPressed)
                         {
                             _chickenAnimator.SetTrigger("Success");
-                            _eggs[i]._eggAnimator.SetTrigger("Success");
+                            _eggs[i]._eggAnimator.SetTrigger("Success");                            
                         }
+                    }
+                    switch (_correctAnswer)
+                    {
+                        case 2:
+                            _2WordsAvailable.RemoveAt(_answerIndex);
+                            break;
+                        case 3:
+                            _3WordsAvailable.RemoveAt(_answerIndex);
+                            break;
+                        case 4:
+                            _4WordsAvailable.RemoveAt(_answerIndex);
+                            break;
+                        case 5:
+                            _5WordsAvailable.RemoveAt(_answerIndex);
+                            break;
                     }
                 }
                 else // lose
@@ -161,8 +189,79 @@ public class CActivityManager7 : CActivity
                         if (_eggs[i]._isPressed)
                         {
                             _chickenAnimator.SetTrigger("Fail");
-                            _eggs[i]._eggAnimator.SetTrigger("Fail");
+                            _eggs[i]._eggAnimator.SetTrigger("Fail");                            
                         }
+                    }
+                    switch (_correctAnswer)
+                    {
+                        case 2:
+                            if(_2WordsAvailable.Count == 1) // if is the last word of this group, reload the list
+                            {
+                                for (int i = 0; i < _2WordsFail.Count; i++)
+                                {
+                                    _2WordsAvailable.Add(_2WordsFail[i]);
+                                }
+                                _2WordsFail.Clear();
+                                _2WordsFail.Add(_2WordsAvailable[0]);
+                                _2WordsAvailable.RemoveAt(_answerIndex);
+                            }
+                            else
+                            {
+                                _2WordsFail.Add(_2WordsAvailable[_answerIndex]);
+                                _2WordsAvailable.RemoveAt(_answerIndex);
+                            }                            
+                            break;
+                        case 3:
+                            if (_3WordsAvailable.Count == 1)
+                            {
+                                for (int i = 0; i < _3WordsFail.Count; i++)
+                                {
+                                    _3WordsAvailable.Add(_3WordsFail[i]);
+                                }
+                                _3WordsFail.Clear();
+                                _3WordsFail.Add(_3WordsAvailable[0]);
+                                _3WordsAvailable.RemoveAt(_answerIndex);
+                            }
+                            else
+                            {
+                                _3WordsFail.Add(_3WordsAvailable[_answerIndex]);
+                                _3WordsAvailable.RemoveAt(_answerIndex);
+                            }
+                            break;
+                        case 4:
+                            if (_4WordsAvailable.Count == 1)
+                            {
+                                for (int i = 0; i < _4WordsFail.Count; i++)
+                                {
+                                    _4WordsAvailable.Add(_4WordsFail[i]);
+                                }
+                                _4WordsFail.Clear();
+                                _4WordsFail.Add(_4WordsAvailable[0]);
+                                _4WordsAvailable.RemoveAt(_answerIndex);
+                            }
+                            else
+                            {
+                                _4WordsFail.Add(_4WordsAvailable[_answerIndex]);
+                                _4WordsAvailable.RemoveAt(_answerIndex);
+                            }
+                            break;
+                        case 5:
+                            if (_5WordsAvailable.Count == 1)
+                            {
+                                for (int i = 0; i < _5WordsFail.Count; i++)
+                                {
+                                    _5WordsAvailable.Add(_5WordsFail[i]);
+                                }
+                                _5WordsFail.Clear();
+                                _5WordsFail.Add(_5WordsAvailable[0]);
+                                _5WordsAvailable.RemoveAt(_answerIndex);
+                            }
+                            else
+                            {
+                                _5WordsFail.Add(_5WordsAvailable[_answerIndex]);
+                                _5WordsAvailable.RemoveAt(_answerIndex);
+                            }
+                            break;
                     }
                 }
             }

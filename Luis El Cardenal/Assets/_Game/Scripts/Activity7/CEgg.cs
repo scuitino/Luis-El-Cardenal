@@ -15,7 +15,7 @@ public class CEgg : MonoBehaviour {
     [SerializeField]
     Sprite _selected, _unselected;
 
-    private void Start()
+    private void Awake()
     {
         _eggAnimator = GetComponent<Animator>();
     }
