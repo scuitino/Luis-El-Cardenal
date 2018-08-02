@@ -23,6 +23,10 @@ public class CHelp2 : MonoBehaviour {
     [SerializeField]
     GameObject _realFrog, _realToad;
 
+    // chicken animator for activity 7
+    [SerializeField]
+    Animator _chickenAnimator;
+
     private void Start()
     {
         _helpASource = this.GetComponent<AudioSource>();
@@ -73,6 +77,22 @@ public class CHelp2 : MonoBehaviour {
         CActivityManager2._instance.PlayWord();
         _realFrog.SetActive(true);
         _realToad.SetActive(true);
+        this.gameObject.SetActive(false);
+    }
+
+    // only for activity 7
+    public void AnimateChicken()
+    {
+        _chickenAnimator.SetTrigger("Success");
+    }
+
+    public void ReturnChicken()
+    {
+        _chickenAnimator.SetTrigger("Return");
+    }
+
+    public void A7CloseHelp()
+    {
         this.gameObject.SetActive(false);
     }
 }

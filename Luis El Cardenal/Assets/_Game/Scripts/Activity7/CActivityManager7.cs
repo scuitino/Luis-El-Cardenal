@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CActivityManager7 : CActivity
 {
@@ -48,6 +49,13 @@ public class CActivityManager7 : CActivity
     [SerializeField]
     Animator _chickenAnimator;
 
+    // replay sentence button
+    [SerializeField]
+    GameObject _replayButton;
+
+    // tutorial time
+    bool _isTutorial;
+
     // player score
     int _score;
 
@@ -67,12 +75,26 @@ public class CActivityManager7 : CActivity
         _4WordsFail = new List<AudioClip>();
         _5WordsFail = new List<AudioClip>();
         _aSource = this.GetComponent<AudioSource>();
-        NextChallenge();
+        _helpAnimator.SetBool("Activity7", true);
+        _isTutorial = true;
+        //NextChallenge();
+    }
+
+    // Play Sentence
+    public void PlaySentence()
+    {
+        _aSource.Play();
     }
 
     // play next challenge
     public void NextChallenge()
     {
+        if (_isTutorial)
+        {
+            _startFlag.SetActive(true);
+            _isTutorial = false;
+        }
+
         if (!_win)
         {
             // reseting game
@@ -129,7 +151,8 @@ public class CActivityManager7 : CActivity
                     break;
             }
 
-            _aSource.Play();
+            _replayButton.GetComponent<Button>().interactable = true;
+            PlaySentence();
             _readyToPlay = true;
             _resultButton.DOPlayForward();
         }
