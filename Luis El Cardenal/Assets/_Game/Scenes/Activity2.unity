@@ -20859,6 +20859,7 @@ MonoBehaviour:
   _frogAnimator: {fileID: 1279840764}
   _realFrog: {fileID: 1205460199}
   _realToad: {fileID: 1339759953}
+  _chickenAnimator: {fileID: 0}
 --- !u!1 &1574148198
 GameObject:
   m_ObjectHideFlags: 0

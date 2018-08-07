@@ -95,4 +95,9 @@ public class CHelp2 : MonoBehaviour {
     {
         this.gameObject.SetActive(false);
     }
+
+    public void SkipA7Tutorial()
+    {      
+        this.gameObject.SetActive(false);        
+    }
 }
