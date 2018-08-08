@@ -2101,7 +2101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &273856990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2277,7 +2277,7 @@ Animator:
   m_GameObject: {fileID: 364344510}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 712eb7fecd0736a4fbec78039579b59b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2383,7 +2383,7 @@ Animator:
   m_GameObject: {fileID: 493118058}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 712eb7fecd0736a4fbec78039579b59b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4067,7 +4067,7 @@ Animator:
   m_GameObject: {fileID: 743915688}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 712eb7fecd0736a4fbec78039579b59b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9604,7 +9604,7 @@ Prefab:
         type: 2}
       propertyPath: OnInAnimationsFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 804918839}
     - target: {fileID: 114212438131802218, guid: 64123d5db0903a443beea9f84f87dce1,
         type: 2}
       propertyPath: OnInAnimationsFinish.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -9657,7 +9657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 512fb966cdd73f1449d0612163a22161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _activityNumber: 7
+  _activityNumber: 8
 --- !u!114 &988995360 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114212438131802218, guid: 64123d5db0903a443beea9f84f87dce1,
@@ -14167,7 +14167,7 @@ Animator:
   m_GameObject: {fileID: 1640024899}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 712eb7fecd0736a4fbec78039579b59b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14223,6 +14223,7 @@ GameObject:
   - component: {fileID: 1788764123}
   - component: {fileID: 1788764122}
   - component: {fileID: 1788764125}
+  - component: {fileID: 1788764126}
   m_Layer: 5
   m_Name: Molino
   m_TagString: Untagged
@@ -14310,6 +14311,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1788764126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1788764120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e288c8ff1c75da4dac2b34f0764d23c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1790922788
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14372,7 +14384,7 @@ Animator:
   m_GameObject: {fileID: 1790922791}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 712eb7fecd0736a4fbec78039579b59b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -16223,7 +16235,7 @@ Animator:
   m_GameObject: {fileID: 2090849426}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 712eb7fecd0736a4fbec78039579b59b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -33,7 +33,7 @@ public class CFinalAnimation : MonoBehaviour {
                 CActivityManager7._instance.RestartActivity();
                 break;
             case 8:
-                //CActivityManager8._instance.RestartActivity();
+                CActivityManager8._instance.RestartActivity();
                 break;
         }
     }
