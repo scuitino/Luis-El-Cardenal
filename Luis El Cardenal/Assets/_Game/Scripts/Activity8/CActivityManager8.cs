@@ -35,6 +35,13 @@ public class CActivityManager8 : CActivity {
     [SerializeField]
     List<CAnswer> _slots;
 
+    // try error sound
+    [SerializeField]
+    AudioSource _errorSound;
+
+    //errors count per challenge
+    int _errorsCount;
+
     private void Awake()
     {
         //Singleton check
@@ -48,7 +55,7 @@ public class CActivityManager8 : CActivity {
     {
         _isTutorial = true;
         _aSource = this.GetComponent<AudioSource>();
-        //_helpAnimator.SetBool("Activity8", true);
+        _helpAnimator.SetBool("Activity8", true);
         StartCoroutine("NextChallenge");
     }
 
@@ -131,6 +138,7 @@ public class CActivityManager8 : CActivity {
         _replayButton.GetComponent<Button>().interactable = false;
 
         // play animatios
+        _luisAnimator.SetTrigger("Success");
         _molinoAnimator.SetTrigger("Success");
         if (_licuadoraAnimator.isActiveAndEnabled)
             _licuadoraAnimator.SetTrigger("Play");
@@ -143,6 +151,7 @@ public class CActivityManager8 : CActivity {
         }
 
         _score++;
+        _errorsCount = 0;
         if (_score == 5)
         {
             _win = true;
@@ -152,7 +161,21 @@ public class CActivityManager8 : CActivity {
     // call when the player answer is wrong
     public void IncorrectAnswer()
     {
-        Debug.Log("Erraste");
+        _errorsCount++;
+        if (_errorsCount < 3)
+        {
+            _errorSound.Play();
+        }
+        else
+        {
+            for (int i = 0; i < _slots.Count; i++)
+            {
+                _slots[i].GetComponent<Animator>().SetTrigger("Hide");
+            }
+            _luisAnimator.SetTrigger("Fail");
+            StartCoroutine("NextChallenge");
+            _errorsCount = 0;
+        }
     }
 
     // shufle List
