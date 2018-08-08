@@ -214,7 +214,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 804918839}
+      objectReference: {fileID: 0}
     - target: {fileID: 114400122680857800, guid: a9eac315964dfc84d800ed0d2500a9a2,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1487,8 +1487,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 364344511}
-        m_MethodName: PressEgg
+      - m_Target: {fileID: 1790922792}
+        m_MethodName: CheckResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1548,16 +1548,11 @@ RectTransform:
   m_Father: {fileID: 2109500500}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.12368164, y: 0.51521486}
-  m_AnchorMax: {x: 0.22397462, y: 0.6489583}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchorMin: {x: 0.118652344, y: 0.51432294}
+  m_AnchorMax: {x: 0.21923828, y: 0.6484375}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &104217973 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1221733007944708, guid: a9eac315964dfc84d800ed0d2500a9a2,
-    type: 2}
-  m_PrefabInternal: {fileID: 11461362}
 --- !u!1 &131709282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +1743,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 804918839}
+      objectReference: {fileID: 0}
     - target: {fileID: 114122948685694408, guid: ab21f7d7d112bf04997a406eec9afb95,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -1996,7 +1991,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 804918839}
+      - m_Target: {fileID: 0}
         m_MethodName: ReplayTutorial
         m_Mode: 1
         m_Arguments:
@@ -2246,8 +2241,8 @@ GameObject:
   - component: {fileID: 364344507}
   - component: {fileID: 364344520}
   - component: {fileID: 364344519}
-  - component: {fileID: 364344511}
   - component: {fileID: 364344512}
+  - component: {fileID: 364344511}
   m_Layer: 5
   m_Name: Button5
   m_TagString: Untagged
@@ -2263,13 +2258,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 364344510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2954700cd7e7cc547b0e11f488d824f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 72b349a03f701454d909320db5bc812f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isPressed: 0
-  _eggAnimator: {fileID: 0}
-  _selected: {fileID: 21300000, guid: 80c48b6c317e4b046b9cb6bd52830b52, type: 3}
-  _unselected: {fileID: 21300000, guid: 320d92f3cc36d3348964ab8bae07cd6b, type: 3}
+  _correctAnswer: 0
+  _text: {fileID: 131709284}
 --- !u!95 &364344512
 Animator:
   serializedVersion: 3
@@ -2279,7 +2272,7 @@ Animator:
   m_GameObject: {fileID: 364344510}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6a44cf85a397f3945ad11ef67f65592a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2334,8 +2327,8 @@ GameObject:
   - component: {fileID: 493118059}
   - component: {fileID: 493118063}
   - component: {fileID: 493118062}
-  - component: {fileID: 493118060}
   - component: {fileID: 493118061}
+  - component: {fileID: 493118060}
   m_Layer: 5
   m_Name: Button3
   m_TagString: Untagged
@@ -2371,13 +2364,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 493118058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2954700cd7e7cc547b0e11f488d824f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 72b349a03f701454d909320db5bc812f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isPressed: 0
-  _eggAnimator: {fileID: 0}
-  _selected: {fileID: 21300000, guid: 80c48b6c317e4b046b9cb6bd52830b52, type: 3}
-  _unselected: {fileID: 21300000, guid: 320d92f3cc36d3348964ab8bae07cd6b, type: 3}
+  _correctAnswer: 0
+  _text: {fileID: 82657441}
 --- !u!95 &493118061
 Animator:
   serializedVersion: 3
@@ -2387,7 +2378,7 @@ Animator:
   m_GameObject: {fileID: 493118058}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6a44cf85a397f3945ad11ef67f65592a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3696,7 +3687,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2090849427}
-        m_MethodName: PressEgg
+        m_MethodName: CheckResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3842,7 +3833,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 804918839}
+      objectReference: {fileID: 0}
     - target: {fileID: 114732723529252084, guid: ca37c980719b0414890d46724b73ce3b,
         type: 2}
       propertyPath: m_Sprite
@@ -4040,8 +4031,8 @@ GameObject:
   - component: {fileID: 743915685}
   - component: {fileID: 743915698}
   - component: {fileID: 743915697}
-  - component: {fileID: 743915689}
   - component: {fileID: 743915690}
+  - component: {fileID: 743915689}
   m_Layer: 5
   m_Name: Button2
   m_TagString: Untagged
@@ -4057,13 +4048,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 743915688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2954700cd7e7cc547b0e11f488d824f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 72b349a03f701454d909320db5bc812f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isPressed: 0
-  _eggAnimator: {fileID: 0}
-  _selected: {fileID: 21300000, guid: 80c48b6c317e4b046b9cb6bd52830b52, type: 3}
-  _unselected: {fileID: 21300000, guid: 320d92f3cc36d3348964ab8bae07cd6b, type: 3}
+  _correctAnswer: 0
+  _text: {fileID: 1629342461}
 --- !u!95 &743915690
 Animator:
   serializedVersion: 3
@@ -4073,7 +4062,7 @@ Animator:
   m_GameObject: {fileID: 743915688}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6a44cf85a397f3945ad11ef67f65592a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4232,76 +4221,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 804918837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad43d4014ed10f845ad70adca9b360cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c6c347bff59c8a44b5f813b51d76d46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _readyToPlay: 0
   _win: 0
-  _winPanel: {fileID: 1629159215}
-  _winAnimator: {fileID: 988995361}
-  _helpAnimator: {fileID: 1568431771}
-  _startFlag: {fileID: 956481869}
-  _skipButton: {fileID: 1078532942}
-  _skipReplayButton: {fileID: 104217973}
-  _replayTutorialASource: {fileID: 933617505}
-  _playerAnswer: 0
-  _correctAnswer: 0
-  _firstChallenges: 0200000003000000030000000400000005000000
-  _allChallengesTypes: 02000000030000000400000005000000
-  _2WordsAvailable:
-  - {fileID: 8300000, guid: 49aa95865e186134b91e2e73844df258, type: 3}
-  - {fileID: 8300000, guid: d0e7cf88c7f4dc743a55cbec92591428, type: 3}
-  - {fileID: 8300000, guid: 1c0de411ee872f94296e5520f9afd094, type: 3}
-  - {fileID: 8300000, guid: 2879f8edfe597b34db6d886ccfcbdeac, type: 3}
-  - {fileID: 8300000, guid: 981798fcfe90b874281458e31de37a92, type: 3}
-  - {fileID: 8300000, guid: 660d9a1f614e782478e60d4bf654a4ee, type: 3}
-  - {fileID: 8300000, guid: c6d1669f057c84a43a7d04d1a5b85ff3, type: 3}
-  - {fileID: 8300000, guid: 3e80e74a2c7e6714fa457f9b226af4fd, type: 3}
-  - {fileID: 8300000, guid: b779db57ce1ce194bbac1cb412610fce, type: 3}
-  _3WordsAvailable:
-  - {fileID: 8300000, guid: f53fb0941df555543ad9a976b633567a, type: 3}
-  - {fileID: 8300000, guid: 06f581b0c2f98f744a624a1e814db12c, type: 3}
-  - {fileID: 8300000, guid: ebf5746f2083e7c42ad920f6afbb6eec, type: 3}
-  - {fileID: 8300000, guid: 6eaf9b53d1b2b004782c2ca41acb02fb, type: 3}
-  - {fileID: 8300000, guid: e676b13e2eba22443a26ccb7b20d580b, type: 3}
-  - {fileID: 8300000, guid: 7c0599c0e57a00641845092cf6837438, type: 3}
-  - {fileID: 8300000, guid: dbc766413cb99a2428de277f69070f40, type: 3}
-  - {fileID: 8300000, guid: 4e1ec18152f3f1f4d81ac1acec65bf33, type: 3}
-  - {fileID: 8300000, guid: 38ed96e54ea3a134db11839c5b7cd0b4, type: 3}
-  - {fileID: 8300000, guid: e1968338dc101654c8f9908edb807b9b, type: 3}
-  - {fileID: 8300000, guid: 0f6f7a193b32e104eb086acb19bfad9d, type: 3}
-  _4WordsAvailable:
-  - {fileID: 8300000, guid: babefa61905b1294fa35c9a4dc2e753a, type: 3}
-  - {fileID: 8300000, guid: 3f04fd5ae94666343a64c7144c6cbad0, type: 3}
-  - {fileID: 8300000, guid: bf4cd20225bdefd4c8c356574290adde, type: 3}
-  - {fileID: 8300000, guid: 72fb11036f3af5b49b6df26e605bc8d0, type: 3}
-  - {fileID: 8300000, guid: a4df04c234aef0a49b97e0a216367053, type: 3}
-  - {fileID: 8300000, guid: 11e4b2c8dc749154abd6204f4d6ed403, type: 3}
-  - {fileID: 8300000, guid: e572c1ef1f95cf148b6551cd0d38dd62, type: 3}
-  - {fileID: 8300000, guid: ca69bb5389321bd45be9476dc8094b19, type: 3}
-  _5WordsAvailable:
-  - {fileID: 8300000, guid: 60fda4e365715964baf846659a925cc3, type: 3}
-  - {fileID: 8300000, guid: b07e4252d74b38a4eb1b6bf06f794cf9, type: 3}
-  - {fileID: 8300000, guid: 3af58d07f21024a4d946e6b49c9e614e, type: 3}
-  - {fileID: 8300000, guid: 7248c8d15910b864e8bd73a9723be97e, type: 3}
-  - {fileID: 8300000, guid: 0944efedc4187fa428ea26e63bbed4cd, type: 3}
-  - {fileID: 8300000, guid: e41b9cd16df58e64a9e659ca3f17b3ee, type: 3}
-  - {fileID: 8300000, guid: 2c1328bfcf82095449f3600a6982200f, type: 3}
-  _2WordsFail: []
-  _3WordsFail: []
-  _4WordsFail: []
-  _5WordsFail: []
-  _eggs:
-  - {fileID: 2090849427}
+  _winPanel: {fileID: 0}
+  _winAnimator: {fileID: 0}
+  _helpAnimator: {fileID: 0}
+  _startFlag: {fileID: 0}
+  _skipButton: {fileID: 0}
+  _skipReplayButton: {fileID: 0}
+  _replayTutorialASource: {fileID: 0}
+  _replayButton: {fileID: 0}
+  _luisAnimator: {fileID: 0}
+  _availableChallenges:
+  - {fileID: 11400000, guid: 0dadd221586e2714298badb359e00ea5, type: 2}
+  - {fileID: 11400000, guid: 7d18c893569b3194ca4507ad217e1ae3, type: 2}
+  - {fileID: 11400000, guid: b1c078d382852954182353778c1a2d42, type: 2}
+  - {fileID: 11400000, guid: 23183951e0b2e694ba42d1fb93fc7959, type: 2}
+  - {fileID: 11400000, guid: 2bda14590cc7a5f4f918a0a5730f31f1, type: 2}
+  - {fileID: 11400000, guid: 27accd987f781744a95c13bfaf2ea4d7, type: 2}
+  _slots:
+  - {fileID: 1640024900}
+  - {fileID: 743915689}
+  - {fileID: 493118060}
   - {fileID: 1790922792}
   - {fileID: 364344511}
-  - {fileID: 493118060}
-  - {fileID: 743915689}
-  - {fileID: 1640024900}
-  _resultButton: {fileID: 1952594273}
-  _chickenAnimator: {fileID: 1788764125}
-  _replayButton: {fileID: 1102450031}
-  _luisAnimator: {fileID: 229920187}
+  - {fileID: 2090849427}
 --- !u!82 &804918840
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6895,8 +6842,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1790922792}
-        m_MethodName: PressEgg
+      - m_Target: {fileID: 364344511}
+        m_MethodName: CheckResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6941,11 +6888,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 917932845}
---- !u!82 &933617505 stripped
-AudioSource:
-  m_PrefabParentObject: {fileID: 82554641881806484, guid: f0c626a1d3adbfc4fa685f628ac60f7c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1806577804}
 --- !u!1 &939841531
 GameObject:
   m_ObjectHideFlags: 0
@@ -6978,8 +6920,8 @@ RectTransform:
   m_Father: {fileID: 2109500500}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.123535156, y: 0.51497394}
-  m_AnchorMax: {x: 0.2241211, y: 0.6484375}
+  m_AnchorMin: {x: 0.118652344, y: 0.51432294}
+  m_AnchorMax: {x: 0.21923828, y: 0.6477865}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8132,7 +8074,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1640024900}
-        m_MethodName: PressEgg
+        m_MethodName: CheckResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9489,7 +9431,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 743915689}
-        m_MethodName: PressEgg
+        m_MethodName: CheckResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9635,7 +9577,7 @@ Prefab:
         type: 2}
       propertyPath: OnInAnimationsFinish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 804918839}
+      objectReference: {fileID: 0}
     - target: {fileID: 114212438131802218, guid: 64123d5db0903a443beea9f84f87dce1,
         type: 2}
       propertyPath: OnInAnimationsFinish.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -9684,11 +9626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _activityNumber: 7
---- !u!95 &988995361 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95353489453900422, guid: 64123d5db0903a443beea9f84f87dce1,
-    type: 2}
-  m_PrefabInternal: {fileID: 988995355}
 --- !u!1001 &1078532940
 Prefab:
   m_ObjectHideFlags: 0
@@ -9805,7 +9742,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 804918839}
+      objectReference: {fileID: 0}
     - target: {fileID: 114056386046166296, guid: b0437d06adcef874ca991d0dff103858,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -10019,7 +9956,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 804918839}
+      objectReference: {fileID: 0}
     - target: {fileID: 114122948685694408, guid: ab21f7d7d112bf04997a406eec9afb95,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -13969,12 +13906,6 @@ MonoBehaviour:
   _realFrog: {fileID: 0}
   _realToad: {fileID: 0}
   _chickenAnimator: {fileID: 1788764125}
---- !u!114 &1629159215 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114212438131802218, guid: 64123d5db0903a443beea9f84f87dce1,
-    type: 2}
-  m_PrefabInternal: {fileID: 988995355}
-  m_Script: {fileID: 11500000, guid: abb5c4702c7d6e344b9832a97ae1264d, type: 3}
 --- !u!1 &1629342459
 GameObject:
   m_ObjectHideFlags: 0
@@ -14148,8 +14079,8 @@ GameObject:
   - component: {fileID: 101599284}
   - component: {fileID: 1640024903}
   - component: {fileID: 1640024902}
-  - component: {fileID: 1640024900}
   - component: {fileID: 1640024901}
+  - component: {fileID: 1640024900}
   m_Layer: 5
   m_Name: Button1
   m_TagString: Untagged
@@ -14165,13 +14096,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1640024899}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2954700cd7e7cc547b0e11f488d824f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 72b349a03f701454d909320db5bc812f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isPressed: 0
-  _eggAnimator: {fileID: 0}
-  _selected: {fileID: 21300000, guid: 80c48b6c317e4b046b9cb6bd52830b52, type: 3}
-  _unselected: {fileID: 21300000, guid: 320d92f3cc36d3348964ab8bae07cd6b, type: 3}
+  _correctAnswer: 0
+  _text: {fileID: 240469775}
 --- !u!95 &1640024901
 Animator:
   serializedVersion: 3
@@ -14181,7 +14110,7 @@ Animator:
   m_GameObject: {fileID: 1640024899}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6a44cf85a397f3945ad11ef67f65592a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14315,7 +14244,7 @@ Animator:
   m_GameObject: {fileID: 1788764120}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4f4bf4937885c144185b752bde4afaae, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14355,8 +14284,8 @@ GameObject:
   - component: {fileID: 1790922788}
   - component: {fileID: 1790922801}
   - component: {fileID: 1790922800}
-  - component: {fileID: 1790922792}
   - component: {fileID: 1790922793}
+  - component: {fileID: 1790922792}
   m_Layer: 5
   m_Name: Button4
   m_TagString: Untagged
@@ -14372,13 +14301,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1790922791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2954700cd7e7cc547b0e11f488d824f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 72b349a03f701454d909320db5bc812f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isPressed: 0
-  _eggAnimator: {fileID: 0}
-  _selected: {fileID: 21300000, guid: 80c48b6c317e4b046b9cb6bd52830b52, type: 3}
-  _unselected: {fileID: 21300000, guid: 320d92f3cc36d3348964ab8bae07cd6b, type: 3}
+  _correctAnswer: 0
+  _text: {fileID: 596700980}
 --- !u!95 &1790922793
 Animator:
   serializedVersion: 3
@@ -14388,7 +14315,7 @@ Animator:
   m_GameObject: {fileID: 1790922791}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6a44cf85a397f3945ad11ef67f65592a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -15809,7 +15736,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 493118060}
-        m_MethodName: PressEgg
+        m_MethodName: CheckResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16038,12 +15965,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224001276767833636, guid: ca37c980719b0414890d46724b73ce3b,
     type: 2}
   m_PrefabInternal: {fileID: 699251559}
---- !u!114 &1952594273 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114204455114785904, guid: ca37c980719b0414890d46724b73ce3b,
-    type: 2}
-  m_PrefabInternal: {fileID: 699251559}
-  m_Script: {fileID: 11500000, guid: 4d0390bd8b8ffd640b34fe25065ff1df, type: 3}
 --- !u!1 &1974292595
 GameObject:
   m_ObjectHideFlags: 0
@@ -16195,7 +16116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.116845705, y: 0.30422202}
   m_AnchorMax: {x: 0.21713868, y: 0.4379655}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2090849426
@@ -16209,8 +16130,8 @@ GameObject:
   - component: {fileID: 2090849423}
   - component: {fileID: 2090849436}
   - component: {fileID: 2090849435}
-  - component: {fileID: 2090849427}
   - component: {fileID: 2090849428}
+  - component: {fileID: 2090849427}
   m_Layer: 5
   m_Name: Button6
   m_TagString: Untagged
@@ -16226,13 +16147,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2090849426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2954700cd7e7cc547b0e11f488d824f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 72b349a03f701454d909320db5bc812f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isPressed: 0
-  _eggAnimator: {fileID: 0}
-  _selected: {fileID: 21300000, guid: 80c48b6c317e4b046b9cb6bd52830b52, type: 3}
-  _unselected: {fileID: 21300000, guid: 320d92f3cc36d3348964ab8bae07cd6b, type: 3}
+  _correctAnswer: 0
+  _text: {fileID: 144503154}
 --- !u!95 &2090849428
 Animator:
   serializedVersion: 3
@@ -16242,7 +16161,7 @@ Animator:
   m_GameObject: {fileID: 2090849426}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6a44cf85a397f3945ad11ef67f65592a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
