@@ -56,12 +56,22 @@ public class CActivityManager8 : CActivity {
         _isTutorial = true;
         _aSource = this.GetComponent<AudioSource>();
         _helpAnimator.SetBool("Activity8", true);
+        //StartCoroutine("NextChallenge");
+    }
+
+    public void StartActivity()
+    {
+        _startFlag.SetActive(true);
         StartCoroutine("NextChallenge");
     }
 
     // change challenge
     public IEnumerator NextChallenge()
     {
+        if (_isTutorial)
+        {
+            yield return new WaitForSeconds(2);
+        }
         if (!_win)
         {
             // Reset Challenge
@@ -70,16 +80,19 @@ public class CActivityManager8 : CActivity {
                 _slots[i]._correctAnswer = false;
             }
 
-            if (_lampAnimator.isActiveAndEnabled)
+            if (!_isTutorial)
             {
-                _lampAnimator.gameObject.SetActive(false);
-                _licuadoraAnimator.gameObject.SetActive(true);
-            }
-            else
-            {
-                _licuadoraAnimator.gameObject.SetActive(false);
-                _lampAnimator.gameObject.SetActive(true);
-            }
+                if (_lampAnimator.isActiveAndEnabled)
+                {
+                    _lampAnimator.gameObject.SetActive(false);
+                    _licuadoraAnimator.gameObject.SetActive(true);
+                }
+                else
+                {
+                    _licuadoraAnimator.gameObject.SetActive(false);
+                    _lampAnimator.gameObject.SetActive(true);
+                }
+            }            
 
             int tSelectedChallengeIndex = Random.Range(0, _availableChallenges.Count);
             // save selected
@@ -112,10 +125,7 @@ public class CActivityManager8 : CActivity {
                     _slots[i]._text.text = _availableChallenges[tTemp]._letter;
                     tTemp++;
                 }
-                if (!_isTutorial)
-                {
-                    _slots[i].GetComponent<Animator>().SetTrigger("Show");                   
-                }
+                _slots[i].GetComponent<Animator>().SetTrigger("Show");                   
             }
 
             if (_isTutorial)

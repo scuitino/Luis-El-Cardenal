@@ -100,4 +100,11 @@ public class CHelp2 : MonoBehaviour {
     {      
         this.gameObject.SetActive(false);        
     }
+
+    // only for Activity 8
+    public void CloseHelp8()
+    {
+        CActivityManager8._instance.StartActivity();
+        this.gameObject.SetActive(false);
+    }
 }
