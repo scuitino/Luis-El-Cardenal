@@ -21,9 +21,9 @@ public class CActivityManager8 : CActivity {
     // player score
     int _score;
 
-    // to control luis animations
+    // to control animations
     [SerializeField]
-    Animator _luisAnimator;
+    Animator _luisAnimator, _lampAnimator, _licuadoraAnimator, _molinoAnimator;
 
     // to manage the challenges
     [SerializeField]
@@ -96,6 +96,12 @@ public class CActivityManager8 : CActivity {
     // call when the player answer is correct
     public void CorrectAnswer()
     {
+        // play animatios
+        _molinoAnimator.SetTrigger("Success");
+        if (_licuadoraAnimator.isActiveAndEnabled)
+            _licuadoraAnimator.SetTrigger("Play");
+        if (_lampAnimator.isActiveAndEnabled)
+            _lampAnimator.SetTrigger("Play");
         Debug.Log("Acertaste");
     }
 

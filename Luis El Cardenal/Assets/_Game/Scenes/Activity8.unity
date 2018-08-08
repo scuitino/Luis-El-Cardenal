@@ -4240,6 +4240,9 @@ MonoBehaviour:
   _replayTutorialASource: {fileID: 1806577806}
   _replayButton: {fileID: 1102450031}
   _luisAnimator: {fileID: 229920187}
+  _lampAnimator: {fileID: 1385223872}
+  _licuadoraAnimator: {fileID: 816619532}
+  _molinoAnimator: {fileID: 1788764125}
   _availableChallenges:
   - {fileID: 11400000, guid: 0dadd221586e2714298badb359e00ea5, type: 2}
   - {fileID: 11400000, guid: 7d18c893569b3194ca4507ad217e1ae3, type: 2}
