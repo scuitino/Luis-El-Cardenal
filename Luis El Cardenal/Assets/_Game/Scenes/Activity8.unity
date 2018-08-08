@@ -228,6 +228,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224844736845856946, guid: a9eac315964dfc84d800ed0d2500a9a2,
     type: 2}
   m_PrefabInternal: {fileID: 11461362}
+--- !u!1 &11461364 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1221733007944708, guid: a9eac315964dfc84d800ed0d2500a9a2,
+    type: 2}
+  m_PrefabInternal: {fileID: 11461362}
 --- !u!1 &82657439
 GameObject:
   m_ObjectHideFlags: 0
@@ -4226,15 +4231,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _readyToPlay: 0
   _win: 0
-  _winPanel: {fileID: 0}
-  _winAnimator: {fileID: 0}
-  _helpAnimator: {fileID: 0}
-  _startFlag: {fileID: 0}
-  _skipButton: {fileID: 0}
-  _skipReplayButton: {fileID: 0}
-  _replayTutorialASource: {fileID: 0}
-  _replayButton: {fileID: 0}
-  _luisAnimator: {fileID: 0}
+  _winPanel: {fileID: 988995360}
+  _winAnimator: {fileID: 988995357}
+  _helpAnimator: {fileID: 1568431771}
+  _startFlag: {fileID: 956481869}
+  _skipButton: {fileID: 1078532942}
+  _skipReplayButton: {fileID: 11461364}
+  _replayTutorialASource: {fileID: 1806577806}
+  _replayButton: {fileID: 1102450031}
+  _luisAnimator: {fileID: 229920187}
   _availableChallenges:
   - {fileID: 11400000, guid: 0dadd221586e2714298badb359e00ea5, type: 2}
   - {fileID: 11400000, guid: 7d18c893569b3194ca4507ad217e1ae3, type: 2}
@@ -4356,13 +4361,14 @@ GameObject:
   - component: {fileID: 816619530}
   - component: {fileID: 816619529}
   - component: {fileID: 816619531}
+  - component: {fileID: 816619532}
   m_Layer: 5
   m_Name: Licuadora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &816619528
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4425,6 +4431,24 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!95 &816619532
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 816619527}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0283caf5d11c33b4785254e964f5bd2b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &845905133
 GameObject:
   m_ObjectHideFlags: 0
@@ -9609,6 +9633,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224664504678495122, guid: 64123d5db0903a443beea9f84f87dce1,
     type: 2}
   m_PrefabInternal: {fileID: 988995355}
+--- !u!95 &988995357 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95353489453900422, guid: 64123d5db0903a443beea9f84f87dce1,
+    type: 2}
+  m_PrefabInternal: {fileID: 988995355}
 --- !u!1 &988995358 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1171027157595588, guid: 64123d5db0903a443beea9f84f87dce1,
@@ -9626,6 +9655,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _activityNumber: 7
+--- !u!114 &988995360 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114212438131802218, guid: 64123d5db0903a443beea9f84f87dce1,
+    type: 2}
+  m_PrefabInternal: {fileID: 988995355}
+  m_Script: {fileID: 11500000, guid: abb5c4702c7d6e344b9832a97ae1264d, type: 3}
 --- !u!1001 &1078532940
 Prefab:
   m_ObjectHideFlags: 0
@@ -12423,13 +12458,14 @@ GameObject:
   - component: {fileID: 1385223871}
   - component: {fileID: 1385223870}
   - component: {fileID: 1385223869}
+  - component: {fileID: 1385223872}
   m_Layer: 5
   m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1385223868
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12478,7 +12514,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 11152f7a262583842a33792c0b2d0986, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c2068fa769b6254eb7a4688e17f8370, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12492,6 +12528,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1385223867}
+--- !u!95 &1385223872
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1385223867}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c99f1d75b4baeb48bcc29f2a1a41071, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1389151277
 GameObject:
   m_ObjectHideFlags: 0
@@ -14244,7 +14298,7 @@ Animator:
   m_GameObject: {fileID: 1788764120}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 34ab078c15b118545b3c45b327c8277e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14548,6 +14602,11 @@ Prefab:
 --- !u!224 &1806577805 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224054680222844482, guid: f0c626a1d3adbfc4fa685f628ac60f7c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1806577804}
+--- !u!82 &1806577806 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82554641881806484, guid: f0c626a1d3adbfc4fa685f628ac60f7c,
     type: 2}
   m_PrefabInternal: {fileID: 1806577804}
 --- !u!1 &1808780625
