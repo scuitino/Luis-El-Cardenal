@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CActivityManager8 : CActivity {
 
@@ -116,6 +117,7 @@ public class CActivityManager8 : CActivity {
             }
 
             _aSource.Play();
+            _replayButton.GetComponent<Button>().interactable = true;
         }
         else
         {
@@ -126,6 +128,8 @@ public class CActivityManager8 : CActivity {
     // call when the player answer is correct
     public void CorrectAnswer()
     {
+        _replayButton.GetComponent<Button>().interactable = false;
+
         // play animatios
         _molinoAnimator.SetTrigger("Success");
         if (_licuadoraAnimator.isActiveAndEnabled)
@@ -163,5 +167,11 @@ public class CActivityManager8 : CActivity {
             aList[j] = tTemp;
         }
         yield return null;
+    }
+
+    // Play Sentence
+    public void PlaySentence()
+    {
+        _aSource.Play();
     }
 }
