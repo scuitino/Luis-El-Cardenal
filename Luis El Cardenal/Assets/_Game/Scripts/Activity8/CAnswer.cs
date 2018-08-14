@@ -9,6 +9,8 @@ public class CAnswer : MonoBehaviour {
     public bool _correctAnswer;
 
     public Text _text;
+
+    public Button _button;
     
     // config the answer
     public void SetAnswer(bool aIsCorrect, string aText)
@@ -30,4 +32,14 @@ public class CAnswer : MonoBehaviour {
         }
         
     }
+
+    public void EnableButton()
+    {
+        _button.enabled = true;
+    }
+
+    public void DisableButton()
+    {
+        _button.enabled = false;
+    }    
 }

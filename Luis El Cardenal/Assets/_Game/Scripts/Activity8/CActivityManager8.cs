@@ -70,6 +70,7 @@ public class CActivityManager8 : CActivity {
     {
         if (_isTutorial)
         {
+            TurnOffSkipButton();
             yield return new WaitForSeconds(2);
         }
         if (!_win)
@@ -135,6 +136,7 @@ public class CActivityManager8 : CActivity {
 
             _aSource.Play();
             _replayButton.GetComponent<Button>().interactable = true;
+            _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
         }
         else
         {
@@ -145,6 +147,7 @@ public class CActivityManager8 : CActivity {
     // call when the player answer is correct
     public void CorrectAnswer()
     {
+        _luisAnimator.gameObject.GetComponent<Button>().enabled = false;
         _replayButton.GetComponent<Button>().interactable = false;
 
         // play animatios
@@ -156,7 +159,7 @@ public class CActivityManager8 : CActivity {
             _lampAnimator.SetTrigger("Play");
 
         for (int i = 0; i < _slots.Count; i++)
-        {
+        {            
             _slots[i].GetComponent<Animator>().SetTrigger("Hide");
         }
 
@@ -183,9 +186,15 @@ public class CActivityManager8 : CActivity {
                 _slots[i].GetComponent<Animator>().SetTrigger("Hide");
             }
             _luisAnimator.SetTrigger("Fail");
-            StartCoroutine("NextChallenge");
+            Invoke("InvokeNext",2);
             _errorsCount = 0;
         }
+    }
+
+    // to delay the next challenge
+    public void InvokeNext()
+    {
+        StartCoroutine("NextChallenge");
     }
 
     // shufle List
@@ -206,5 +215,53 @@ public class CActivityManager8 : CActivity {
     public void PlaySentence()
     {
         _aSource.Play();
+    }
+
+    // when the player press luis button
+    public void ReplayTutorial()
+    {
+        for (int i = 0; i < _slots.Count; i++)
+        {
+            _slots[i].GetComponent<Animator>().SetTrigger("Hide");
+        }
+        _replayButton.GetComponent<Button>().interactable = false;
+        _aSource.Stop();
+        _luisAnimator.SetBool("Talking", true);
+        _replayTutorialASource.Play();
+        PauseGameplay(false);
+        _skipReplayButton.SetActive(true);
+        if (_stopTalkingCo != null)
+        {
+            StopCoroutine(_stopTalkingCo);
+        }
+        _stopTalkingCo = StartCoroutine(StopTalking(_replayTutorialASource.clip.length));
+    }
+
+    // when the player skip the tutorial replay
+    public void SkipReTutorial()
+    {
+        for (int i = 0; i < _slots.Count; i++)
+        {
+            _slots[i].GetComponent<Animator>().SetTrigger("Show");
+        }
+        _replayButton.GetComponent<Button>().interactable = true;
+        _luisAnimator.SetBool("Talking", false);
+        _replayTutorialASource.Stop();
+        PauseGameplay(true);
+        _skipReplayButton.SetActive(false);
+        StopCoroutine(_stopTalkingCo);
+    }
+
+    // to pause gameplay
+    public void PauseGameplay(bool aOption)
+    {
+        _readyToPlay = aOption;
+    }
+
+    // stop talking when replay ends
+    IEnumerator StopTalking(float aDelay)
+    {
+        yield return new WaitForSeconds(aDelay);
+        SkipReTutorial();
     }
 }
