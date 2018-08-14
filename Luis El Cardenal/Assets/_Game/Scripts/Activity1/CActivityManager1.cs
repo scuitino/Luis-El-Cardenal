@@ -47,7 +47,10 @@ public class CActivityManager1 : CActivity
 
     // to control luis animations
     [SerializeField]
-    Animator _luisAnimator;    
+    Animator _luisAnimator;
+
+    // tutorial time
+    bool _isTutorial;
 
     private void Awake()
     {
@@ -60,6 +63,7 @@ public class CActivityManager1 : CActivity
 
     private void Start()
     {
+        _isTutorial = true;
         _audioSource = this.GetComponent<AudioSource>();
         SelectGameWords();
         //PlayWord();
@@ -212,7 +216,11 @@ public class CActivityManager1 : CActivity
     public void DelayPlay()
     {
         TurnOffSkipButton();
-        _startFlag.SetActive(true);
+        if (_isTutorial)
+        {
+            _isTutorial = false;
+            _startFlag.SetActive(true);
+        }        
         Invoke("PlayWord",2);
     }
 }
