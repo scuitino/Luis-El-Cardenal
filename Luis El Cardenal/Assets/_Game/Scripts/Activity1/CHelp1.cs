@@ -71,6 +71,22 @@ public class CHelp1 : MonoBehaviour {
         this.gameObject.SetActive(false);
     }
 
+    // only for world
+    [SerializeField]
+    List<Animator> _examplesAnimators;
+
+    // to animate examples
+    public void AnimateExample(int aNumber)
+    {
+        _examplesAnimators[aNumber].SetTrigger("Play");
+    }
+
+    // turn off the example items
+    public void CloseWorldHelp()
+    {
+        CMainMenu._instance.CloseHelp();
+    }
+
     // to start activity 4 when the help animation is finished
     public void StartActivity4()
     {

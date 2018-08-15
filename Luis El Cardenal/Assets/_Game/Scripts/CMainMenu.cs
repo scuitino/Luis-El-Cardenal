@@ -22,6 +22,14 @@ public class CMainMenu : MonoBehaviour {
     [SerializeField]
     GameObject _flag1, _flag2, _flag3, _flag4, _flag5, _flag6, _flag7, _flag8;
 
+    [SerializeField]
+    Animator _helpAnimator;
+
+    [SerializeField]
+    Animator _luisAnimator;
+
+    public GameObject _exampleItemsContainer;
+
     private void Awake()
     {
         //Singleton check
@@ -35,6 +43,7 @@ public class CMainMenu : MonoBehaviour {
 
     private void Start()
     {
+        _helpAnimator.SetBool("World", true);
         CLevelsManager._instance.CheckLevelsState();
     }
 
@@ -75,6 +84,14 @@ public class CMainMenu : MonoBehaviour {
                 _flag8.SetActive(true);
                 break;
         }
+    }
+
+    // to disable example items
+    public void CloseHelp()
+    {
+        _exampleItemsContainer.SetActive(false);
+        _helpAnimator.gameObject.SetActive(false);
+        _luisAnimator.SetBool("Talking",false);
     }
 
     // applicaton quit
