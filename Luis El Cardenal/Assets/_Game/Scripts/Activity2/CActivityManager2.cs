@@ -248,7 +248,7 @@ public class CActivityManager2 : CActivity {
                     _frogAnimator.SetTrigger("Fall");
                 }
                 else
-                {
+                {                    
                     _syllablesOnThisLevel.RemoveAt(_actualQuestion); // remove the actual question
                     _actualWord._wasUsed = true; // label the word as used
                 }

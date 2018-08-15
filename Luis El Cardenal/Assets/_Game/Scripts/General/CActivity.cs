@@ -39,6 +39,8 @@ public class CActivity : MonoBehaviour {
     // audio source to replay tutorial
     public AudioSource _replayTutorialASource;
 
+    // worms container
+    public GameObject _wormsContainer;
 
     // to control when the player can play
     public virtual void ChangeReady(bool aOption)

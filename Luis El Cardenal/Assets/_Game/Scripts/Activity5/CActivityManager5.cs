@@ -376,8 +376,8 @@ public class CActivityManager5 : CActivity {
                 Invoke("DisableFood2", 1.2f);
             }
             Invoke("GoodAnimation", 1);
-
-            _playerScore ++;
+            
+            _playerScore ++;            
             if (_playerScore == _scoreToWin)
             {                
                 Invoke("WinGame", 5);

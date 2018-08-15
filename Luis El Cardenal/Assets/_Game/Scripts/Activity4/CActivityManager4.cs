@@ -68,6 +68,7 @@ public class CActivityManager4 : CActivity {
     public void Success()
     {
         _successCount++;
+        CWormsManager._instance.Collect();
         _luisAnimator.SetTrigger("Success");
         if (_successCount == _goodAnswersToWin) // if the player reach the objective
         {

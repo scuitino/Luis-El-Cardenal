@@ -40,6 +40,7 @@ public class CFrog : MonoBehaviour {
     // notify the manager that the jump animation is finished
     public void LastJumpCallBack()
     {
+        CWormsManager._instance.Collect();
         CActivityManager2._instance.StartSyllablesAnimation();
     }
 

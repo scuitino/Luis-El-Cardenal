@@ -164,6 +164,7 @@ public class CActivityManager8 : CActivity {
         }
 
         _score++;
+        CWormsManager._instance.Collect();
         _errorsCount = 0;
         if (_score == 5)
         {

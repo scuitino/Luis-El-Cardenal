@@ -208,6 +208,7 @@ public class CActivityManager6 : CActivity
             
             // check score
             _playerScore++;
+            CWormsManager._instance.Collect();
             if (_playerScore == _scoreToWin)
             {
                 Invoke("WinGame", 7);

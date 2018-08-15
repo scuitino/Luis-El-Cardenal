@@ -222,6 +222,7 @@ public class CActivityManager1 : CActivity
         {
             _isTutorial = false;
             _startFlag.SetActive(true);
+            //_wormsContainer.SetActive(true);
         }        
         Invoke("PlayWord",2);
     }

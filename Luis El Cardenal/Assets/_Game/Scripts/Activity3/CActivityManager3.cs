@@ -236,6 +236,7 @@ public class CActivityManager3 : CActivity {
                 _optionsContainer.DOPlayBackwards();
                 if (_flower1.GetItem().GetItemID() == _flower2.GetItem().GetItemID()) // if the ids of the answers are the same
                 {
+                    CWormsManager._instance.Collect();
                     _luisAnimator.SetTrigger("Success");
                     _rabbitAnimator.SetTrigger("Success");
                     _successCount++;

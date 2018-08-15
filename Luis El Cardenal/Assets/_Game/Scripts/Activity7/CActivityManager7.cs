@@ -206,6 +206,7 @@ public class CActivityManager7 : CActivity
                 if (_playerAnswer == _correctAnswer) // success
                 {
                     _score++;
+                    CWormsManager._instance.Collect();
                     if (_score == 5) // check if the player won
                     {
                         _win = true;
