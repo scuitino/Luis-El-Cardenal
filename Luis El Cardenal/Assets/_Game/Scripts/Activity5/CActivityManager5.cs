@@ -14,6 +14,7 @@ public class CActivityManager5 : CActivity {
     int _scoreToWin = 8;
 
     // actual player points
+    [SerializeField]
     int _playerScore;
 
     // reference to the caves
@@ -407,7 +408,8 @@ public class CActivityManager5 : CActivity {
 
     public void StopExampleAnimation()
     {
-        CancelInvoke();
+        _playerScore++;
+        CancelInvoke(); // cancel all invokes
     }
 
     // disable food1

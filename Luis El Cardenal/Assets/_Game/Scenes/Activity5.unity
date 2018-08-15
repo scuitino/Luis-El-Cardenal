@@ -2138,6 +2138,7 @@ MonoBehaviour:
   _skipReplayButton: {fileID: 542699097}
   _replayTutorialASource: {fileID: 1478886521}
   _scoreToWin: 9
+  _playerScore: 0
   _cave1: {fileID: 1701197037}
   _cave2: {fileID: 1341879641}
   _mulita1: {fileID: 634614519}
