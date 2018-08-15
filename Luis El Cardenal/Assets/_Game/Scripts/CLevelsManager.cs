@@ -8,6 +8,9 @@ public class CLevelsManager : MonoBehaviour {
     public static CLevelsManager _instance = null;
     #endregion
 
+    // is first time?
+    bool _tutorialUsed;
+
     // true if the level is cleared
     [SerializeField]
     public bool _level1, _level2, _level3, _level4, _level5, _level6, _level7, _level8;
@@ -25,6 +28,14 @@ public class CLevelsManager : MonoBehaviour {
         }            
         else if (_instance != this)
             Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        if (!_tutorialUsed)
+        {
+            CMainMenu._instance.PlayHelp();
+        }          
     }
 
     public void CheckLevelsState()

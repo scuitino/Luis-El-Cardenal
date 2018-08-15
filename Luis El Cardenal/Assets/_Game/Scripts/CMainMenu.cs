@@ -42,8 +42,7 @@ public class CMainMenu : MonoBehaviour {
     }
 
     private void Start()
-    {
-        _helpAnimator.SetBool("World", true);
+    {        
         CLevelsManager._instance.CheckLevelsState();
     }
 
@@ -86,9 +85,21 @@ public class CMainMenu : MonoBehaviour {
         }
     }
 
+    // play tutorial
+    public void PlayHelp()
+    {
+        _luisAnimator.GetComponent<Button>().enabled = false;
+        _luisAnimator.SetBool("Talking", true);
+        _exampleItemsContainer.SetActive(true);
+        _helpAnimator.gameObject.SetActive(true);
+        _helpAnimator.SetBool("World", true);
+    }
+
     // to disable example items
     public void CloseHelp()
     {
+        _luisAnimator.GetComponent<Button>().enabled = true;
+        _helpAnimator.SetBool("World", true);
         _exampleItemsContainer.SetActive(false);
         _helpAnimator.gameObject.SetActive(false);
         _luisAnimator.SetBool("Talking",false);
