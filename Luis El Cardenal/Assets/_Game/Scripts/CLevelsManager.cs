@@ -9,7 +9,7 @@ public class CLevelsManager : MonoBehaviour {
     #endregion
 
     // is first time?
-    bool _tutorialUsed;
+    public bool _tutorialUsed;
 
     // true if the level is cleared
     [SerializeField]
@@ -35,6 +35,7 @@ public class CLevelsManager : MonoBehaviour {
         if (!_tutorialUsed)
         {
             CMainMenu._instance.PlayHelp();
+            _tutorialUsed = true;
         }          
     }
 

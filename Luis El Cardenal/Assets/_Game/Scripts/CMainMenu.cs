@@ -32,6 +32,7 @@ public class CMainMenu : MonoBehaviour {
 
     private void Awake()
     {
+        _luisAnimator.SetBool("Talking", false);
         //Singleton check
         if (_instance == null)
         {
@@ -42,7 +43,11 @@ public class CMainMenu : MonoBehaviour {
     }
 
     private void Start()
-    {        
+    {
+        if (CLevelsManager._instance._tutorialUsed)
+        {
+            _luisAnimator.GetComponent<Button>().enabled = true;
+        }
         CLevelsManager._instance.CheckLevelsState();
     }
 
