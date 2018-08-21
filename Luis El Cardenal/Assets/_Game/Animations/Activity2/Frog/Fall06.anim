@@ -29,7 +29,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51666665
+        time: 0.31
         value: 1401
         inSlope: 0
         outSlope: 0
@@ -38,7 +38,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.05
+        time: 0.63
         value: 1411
         inSlope: 24.22834
         outSlope: 0
@@ -47,7 +47,7 @@ AnimationClip:
         inWeight: 0.4821149
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.9333333
+        time: 1.16
         value: 1411
         inSlope: 0
         outSlope: 0
@@ -75,7 +75,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51666665
+        time: 0.31
         value: -134
         inSlope: 0
         outSlope: 572.13617
@@ -84,7 +84,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.34247902
       - serializedVersion: 3
-        time: 1.05
+        time: 0.63
         value: -14
         inSlope: 44.913975
         outSlope: 0
@@ -93,7 +93,7 @@ AnimationClip:
         inWeight: 0.32784224
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.9333333
+        time: 1.16
         value: -14
         inSlope: 0
         outSlope: 0
@@ -112,51 +112,51 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 12429b266c5dc3c46822f4d821ff3e88, type: 3}
-    - time: 0.4
+    - time: 0.24
       value: {fileID: 21300000, guid: cd0c0a10377c1c845b50096f3afcbb41, type: 3}
-    - time: 0.51666665
+    - time: 0.31
       value: {fileID: 21300000, guid: b7a75c6aa2908be4aa58f2dcad1d93ba, type: 3}
-    - time: 0.55
+    - time: 0.33
       value: {fileID: 21300000, guid: 420e5b106e497504987b3c17af59250a, type: 3}
-    - time: 0.5833333
+    - time: 0.35
       value: {fileID: 21300000, guid: 6236fcf9909b8fd4880fff2fbcceb88f, type: 3}
-    - time: 0.7
+    - time: 0.42
       value: {fileID: 21300000, guid: 6f1b70ec8694d88498cc9ebfa47ac076, type: 3}
-    - time: 0.8333333
+    - time: 0.5
       value: {fileID: 21300000, guid: 7aca13857ff6d9c45a9d3ff0c1d99463, type: 3}
-    - time: 1
+    - time: 0.6
       value: {fileID: 21300000, guid: 4b5284a721526544b99a85e68e38476d, type: 3}
-    - time: 1.05
+    - time: 0.63
       value: {fileID: 21300000, guid: 49ea67944f67ddd4da4080821f0245ce, type: 3}
-    - time: 1.1166667
+    - time: 0.67
       value: {fileID: 21300000, guid: 39496cd422a9c0d45a716ea1b01cfdf1, type: 3}
-    - time: 1.2
+    - time: 0.72
       value: {fileID: 21300000, guid: 34da6f7b4b00d0945a2f7578d97ce8a7, type: 3}
-    - time: 1.2833333
+    - time: 0.77
       value: {fileID: 21300000, guid: 44207d5388941b94085f81eabe322b22, type: 3}
-    - time: 1.35
+    - time: 0.81
       value: {fileID: 21300000, guid: cb86d843573845d45be0f653426f54e0, type: 3}
-    - time: 1.45
+    - time: 0.87
       value: {fileID: 21300000, guid: a2b7d90540ab57e4eb4de56b6fbe6edb, type: 3}
-    - time: 1.5166667
+    - time: 0.91
       value: {fileID: 21300000, guid: 1abd06475b83073458afe06af816d1a4, type: 3}
-    - time: 1.6166667
+    - time: 0.97
       value: {fileID: 21300000, guid: 39b9ddc7801018c4fb07854a42a7fc41, type: 3}
-    - time: 1.6833333
+    - time: 1.01
       value: {fileID: 21300000, guid: cd773263d76884945a1d1a92fe06a935, type: 3}
-    - time: 1.7666667
+    - time: 1.06
       value: {fileID: 21300000, guid: fc7d043005213a947b1e5553edbc3c20, type: 3}
-    - time: 1.85
+    - time: 1.11
       value: {fileID: 21300000, guid: 75e52f5ce46277b4c9244367e1ed438c, type: 3}
-    - time: 1.95
+    - time: 1.17
       value: {fileID: 21300000, guid: 36aca7c928ee9ed47bccd1511c729cd6, type: 3}
-    - time: 1.9833333
+    - time: 1.19
       value: {fileID: 21300000, guid: fab080dedd68e9245b6b74dbe24d4d13, type: 3}
     attribute: m_Sprite
     path: Frog
     classID: 114
     script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_SampleRate: 60
+  m_SampleRate: 100
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -211,7 +211,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2
+    m_StopTime: 1.2
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -240,7 +240,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51666665
+        time: 0.31
         value: 1401
         inSlope: 0
         outSlope: 0
@@ -249,7 +249,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.05
+        time: 0.63
         value: 1411
         inSlope: 24.22834
         outSlope: 0
@@ -258,7 +258,7 @@ AnimationClip:
         inWeight: 0.4821149
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.9333333
+        time: 1.16
         value: 1411
         inSlope: 0
         outSlope: 0
@@ -286,7 +286,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51666665
+        time: 0.31
         value: -134
         inSlope: 0
         outSlope: 572.13617
@@ -295,7 +295,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.34247902
       - serializedVersion: 3
-        time: 1.05
+        time: 0.63
         value: -14
         inSlope: 44.913975
         outSlope: 0
@@ -304,7 +304,7 @@ AnimationClip:
         inWeight: 0.32784224
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.9333333
+        time: 1.16
         value: -14
         inSlope: 0
         outSlope: 0
@@ -324,28 +324,28 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 0.35
+  - time: 0.21
     functionName: PlaySound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.98333335
+  - time: 0.59
     functionName: PlaySound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
-  - time: 1.5833334
+  - time: 0.95
     functionName: PlayFail
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.8333334
+  - time: 1.1
     functionName: FailJumpCallBack
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -288,7 +288,7 @@ Prefab:
     - target: {fileID: 224461863094728838, guid: 51e3330a7588e6e4199fede7100a0533,
         type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224461863094728838, guid: 51e3330a7588e6e4199fede7100a0533,
         type: 2}
@@ -680,7 +680,7 @@ Prefab:
     - target: {fileID: 224461863094728838, guid: 51e3330a7588e6e4199fede7100a0533,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224461863094728838, guid: 51e3330a7588e6e4199fede7100a0533,
         type: 2}
@@ -1609,7 +1609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &273856990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2315,7 +2315,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Camalote
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -2973,7 +2973,7 @@ Prefab:
     - target: {fileID: 224461863094728838, guid: 51e3330a7588e6e4199fede7100a0533,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224461863094728838, guid: 51e3330a7588e6e4199fede7100a0533,
         type: 2}
@@ -3297,7 +3297,7 @@ RectTransform:
   - {fileID: 1276421639}
   - {fileID: 1974292596}
   m_Father: {fileID: 2109500500}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3476,7 +3476,7 @@ RectTransform:
   m_Children:
   - {fileID: 1574148199}
   m_Father: {fileID: 2109500500}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.80322266, y: 0.5651042}
   m_AnchorMax: {x: 0.8520508, y: 0.6302084}
@@ -4155,7 +4155,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Camalote
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -7173,6 +7173,136 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 768047423}
+--- !u!1 &782315111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 782315112}
+  - component: {fileID: 782315113}
+  m_Layer: 5
+  m_Name: ButtonSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &782315112
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 782315111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2109500500}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &782315113
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 782315111}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243362916184587976, guid: 8cf717565783db748b52a2f4c21e7ca5,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 2565df291f193ba4f9f6d840351e2084, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &802220756 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1241461352251544, guid: 51e3330a7588e6e4199fede7100a0533,
@@ -7720,7 +7850,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Camalote
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -8412,6 +8542,7 @@ MonoBehaviour:
   - {fileID: 320559886}
   - {fileID: 1749154402}
   _luisAnimator: {fileID: 229920187}
+  _buttonsSound: {fileID: 782315113}
 --- !u!1 &811207725
 GameObject:
   m_ObjectHideFlags: 0
@@ -10469,7 +10600,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Camalote
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -11092,7 +11223,7 @@ Prefab:
     - target: {fileID: 224878718856648380, guid: 9c98938322684df4b8b9d3633789292f,
         type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 224878718856648380, guid: 9c98938322684df4b8b9d3633789292f,
         type: 2}
@@ -11438,7 +11569,7 @@ RectTransform:
   - {fileID: 1368295287}
   - {fileID: 500467278}
   m_Father: {fileID: 2109500500}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.16601562}
   m_AnchorMax: {x: 1, y: 0.8339844}
@@ -12036,7 +12167,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Camalote
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -13375,7 +13506,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Camalote
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -14597,7 +14728,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Camalote
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -15711,7 +15842,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Tap
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -16297,7 +16428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1205460200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16310,7 +16441,7 @@ RectTransform:
   m_Children:
   - {fileID: 749131129}
   m_Father: {fileID: 2109500500}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.16601562}
   m_AnchorMax: {x: 1, y: 0.8339844}
@@ -17191,7 +17322,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Tap
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -18080,7 +18211,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2109500500}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6315918, y: 0.39029947}
   m_AnchorMax: {x: 0.89868164, y: 0.7190755}
@@ -19606,7 +19737,7 @@ RectTransform:
   m_LocalScale: {x: 0.999967, y: 0.999967, z: 0.999967}
   m_Children: []
   m_Father: {fileID: 2109500500}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7750488, y: 0.6489584}
   m_AnchorMax: {x: 0.89848626, y: 0.81549484}
@@ -20243,7 +20374,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Tap
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -21582,7 +21713,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Camalote
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -22784,7 +22915,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Camalote
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -23474,7 +23605,7 @@ Prefab:
     - target: {fileID: 224461863094728838, guid: 51e3330a7588e6e4199fede7100a0533,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224461863094728838, guid: 51e3330a7588e6e4199fede7100a0533,
         type: 2}
@@ -23827,7 +23958,7 @@ Prefab:
     - target: {fileID: 224461863094728838, guid: 51e3330a7588e6e4199fede7100a0533,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224461863094728838, guid: 51e3330a7588e6e4199fede7100a0533,
         type: 2}
@@ -24818,7 +24949,7 @@ MonoBehaviour:
   useOnClickAnimations: 1
   waitForOnClickAnimation: 1
   singleClickMode: 0
-  onClickSound: Camalote
+  onClickSound: ~No Sound~
   customOnClickSound: 0
   OnClick:
     m_PersistentCalls:
@@ -27653,6 +27784,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 782315112}
   - {fileID: 101599284}
   - {fileID: 1741269092}
   - {fileID: 203165070}

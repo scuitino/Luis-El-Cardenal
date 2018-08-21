@@ -62,8 +62,15 @@ public class CActivityManager2 : CActivity {
     [SerializeField]
     Animator _luisAnimator;
 
+    // to play button sound
+    [SerializeField]
+    AudioSource _buttonsSound;
+
     // tutorial time
     bool _isTutorial;
+
+    // is playing replay tutorial?
+    bool _replayIsOn;
 
     private void Awake()
     {
@@ -77,6 +84,7 @@ public class CActivityManager2 : CActivity {
     private void Start()
     {
         _isTutorial = true;
+        _replayIsOn = false;
 
         // making all the words availables
         foreach(CWordA2 tWord in _1SWordsList)
@@ -100,6 +108,14 @@ public class CActivityManager2 : CActivity {
         //PlayWord();
 
         _helpAnimator.SetBool("Activity2", true);
+    }
+
+    private void Update()
+    {
+        if (_replayIsOn)
+        {
+            _readyToPlay = false;
+        }
     }
 
     // Play with the next word
@@ -163,7 +179,9 @@ public class CActivityManager2 : CActivity {
             {
                 _whiteButtons[i].DORewind();
                 _leafTexts[i].GetComponent<DOTweenAnimation>().DORewind();
-            }            
+            }
+
+            _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
 
             // load the image sprites
             switch (_actualWord._numberOfSyllables)
@@ -208,6 +226,7 @@ public class CActivityManager2 : CActivity {
     {
         if (_readyToPlay && !_win)
         {
+            _buttonsSound.Play();
             _whiteButtons[aButtonNumber].DORestart();
             _playerAnswer++;
         }        
@@ -218,6 +237,7 @@ public class CActivityManager2 : CActivity {
     {
         if (_readyToPlay && !_win)
         {
+            _buttonsSound.Play();
             _whiteButtons[aButtonNumber].DOPlayBackwards();
             _playerAnswer--;
         }        
@@ -227,7 +247,9 @@ public class CActivityManager2 : CActivity {
     public void CheckResult()
     {
         if (_readyToPlay)
-        {            
+        {
+            _buttonsSound.Play();
+            _luisAnimator.gameObject.GetComponent<Button>().enabled = false;
             if (_playerAnswer > 0) // if the player make a move
             {
                 ChangeRepeatButtonState(false);
@@ -297,16 +319,20 @@ public class CActivityManager2 : CActivity {
         switch (_actualWord._numberOfSyllables)
         {
             case 1:
-                _1SAnimator.SetTrigger("StartFail");
+                _1SAnimator.SetInteger("Syllables", 1);
+                _1SAnimator.SetTrigger("StartSuccess");
                 break;
             case 2:
-                _2SAnimator.SetTrigger("StartFail");
+                _2SAnimator.SetInteger("Syllables", 2);
+                _2SAnimator.SetTrigger("StartSuccess");
                 break;
             case 3:
-                _3SAnimator.SetTrigger("StartFail");
+                _3SAnimator.SetInteger("Syllables", 3);
+                _3SAnimator.SetTrigger("StartSuccess");
                 break;
             case 4:
-                _4SAnimator.SetTrigger("StartFail");
+                _4SAnimator.SetInteger("Syllables", 4);
+                _4SAnimator.SetTrigger("StartSuccess");
                 break;
         }
     }
@@ -320,21 +346,25 @@ public class CActivityManager2 : CActivity {
     // to repeat when de player touch the button
     public void RepeatSound()
     {
-        switch (_actualWord._numberOfSyllables)
+        if (_readyToPlay)
         {
-            case 1:
-                _1Syllable.PlaySound(0);
-                break;
-            case 2:
-                _2Syllable.PlaySound(0);
-                break;
-            case 3:
-                _3Syllable.PlaySound(0);
-                break;
-            case 4:
-                _4Syllable.PlaySound(0);
-                break;
-        }
+            _buttonsSound.Play();
+            switch (_actualWord._numberOfSyllables)
+            {
+                case 1:
+                    _1Syllable.PlaySound(0);
+                    break;
+                case 2:
+                    _2Syllable.PlaySound(0);
+                    break;
+                case 3:
+                    _3Syllable.PlaySound(0);
+                    break;
+                case 4:
+                    _4Syllable.PlaySound(0);
+                    break;
+            }
+        }        
     }
 
     // to enable and disable Repeat Sound button
@@ -346,6 +376,7 @@ public class CActivityManager2 : CActivity {
     // when the player press luis button
     public void ReplayTutorial()
     {
+        _replayIsOn = true;
         _luisAnimator.SetBool("Talking", true);
         _replayTutorialASource.Play();
         PauseGameplay(false);
@@ -360,6 +391,7 @@ public class CActivityManager2 : CActivity {
     // when the player skip the tutorial replay
     public void SkipReTutorial()
     {
+        _replayIsOn = false;
         _luisAnimator.SetBool("Talking", false);
         _replayTutorialASource.Stop();
         PauseGameplay(true);

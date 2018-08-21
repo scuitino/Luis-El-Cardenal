@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _word: Televisor
   _syllables:
-  - Ca
-  - ra
-  - me
-  - lo
+  - CA
+  - RA
+  - ME
+  - LO
   _images:
   - {fileID: 21300000, guid: 753b36c876d98f24ebf3502c2ccf0ef9, type: 3}
   - {fileID: 21300000, guid: fe931625d8b3b4a43a6b121f00ac5a2a, type: 3}
