@@ -218,6 +218,7 @@ MonoBehaviour:
   _level7: 0
   _level8: 0
   _clearedLevel: 0
+  _congratulation: 0
 --- !u!4 &25365407
 Transform:
   m_ObjectHideFlags: 0

@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/Activity8.unity
     guid: c37a1aa65a09c7942a099dd54cd6195b
+  - enabled: 1
+    path: Assets/_Game/Scenes/FinalScene.unity
+    guid: 00dfca3e37aa3644580e66eb298aea74
   m_configObjects: {}

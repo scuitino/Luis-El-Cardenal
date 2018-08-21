@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CLevelsManager : MonoBehaviour {
 
@@ -17,6 +18,15 @@ public class CLevelsManager : MonoBehaviour {
 
     [SerializeField]
     int _clearedLevel;
+
+    // last animation viewed?
+    public bool _congratulation;
+
+    // return to main menu
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     private void Awake()
     {
