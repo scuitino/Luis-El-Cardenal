@@ -185,11 +185,11 @@ public class DragAndDropCell : MonoBehaviour, IDropHandler
                                 case 5: // Activity 5
                                     if (item.GetItemID() == this.GetComponent<CCave>().GetCaveID())
                                     {
-                                        CActivityManager5._instance.AnimateResult(true, this.GetComponent<CCave>().GetCaveNumber(), item.transform.GetChild(0).GetComponent<Image>().sprite);
+                                        CActivityManager5._instance.AnimateResult(true, this.GetComponent<CCave>().GetCaveNumber(), item.transform.GetChild(0).GetComponent<Image>().sprite, item.GetComponent<CWordWritter>().GetWord());
                                     }
                                     else
                                     {
-                                        CActivityManager5._instance.AnimateResult(false, this.GetComponent<CCave>().GetCaveNumber(), item.transform.GetChild(0).GetComponent<Image>().sprite);
+                                        CActivityManager5._instance.AnimateResult(false, this.GetComponent<CCave>().GetCaveNumber(), item.transform.GetChild(0).GetComponent<Image>().sprite, "");
 
                                         // selecting new word
                                         CActivityManager5._instance.WrongAnswer(sourceCell.transform);

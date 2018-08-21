@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 82903598159227254}
   - component: {fileID: 114434733269826174}
   - component: {fileID: 114615075752513674}
+  - component: {fileID: 114275231190154490}
   m_Layer: 5
   m_Name: Yogurt
   m_TagString: Untagged
@@ -238,6 +239,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114275231190154490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb0fa99d2576b64190576aa57490688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _word: YOGUR
 --- !u!114 &114434733269826174
 MonoBehaviour:
   m_ObjectHideFlags: 1

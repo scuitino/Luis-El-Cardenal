@@ -75,6 +75,10 @@ public class CActivityManager5 : CActivity {
     [SerializeField]
     GameObject _sprite1, _sprite2;
 
+    // reference to word text
+    [SerializeField]
+    GameObject _word;
+
     // is tutorial?
     bool _isTutorial;
 
@@ -350,7 +354,7 @@ public class CActivityManager5 : CActivity {
     }
 
     // to animate Luis
-    public void AnimateResult(bool aOption, int aCaveNumber, Sprite aFoodSprite)
+    public void AnimateResult(bool aOption, int aCaveNumber, Sprite aFoodSprite, string aWord)
     {
         NotReady();
         Invoke("SetReady", 4);
@@ -369,6 +373,9 @@ public class CActivityManager5 : CActivity {
 
         if (aOption) // animate good
         {
+            _word.GetComponent<Text>().text = aWord;
+            _word.GetComponent<Animator>().SetTrigger("Play");
+
             if (aCaveNumber == 1)
             {
                 _mulita1.SetTrigger("Success");
@@ -410,7 +417,7 @@ public class CActivityManager5 : CActivity {
     // mulita example animation
     public void StartExampleAnimation()
     {
-        AnimateResult(true, 2, _exampleSprite);
+        AnimateResult(true, 2, _exampleSprite, "RANCHO");
         Invoke("SelectGameWords", 5);
     }
 
