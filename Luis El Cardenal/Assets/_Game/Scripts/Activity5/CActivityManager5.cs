@@ -75,6 +75,9 @@ public class CActivityManager5 : CActivity {
     [SerializeField]
     GameObject _sprite1, _sprite2;
 
+    // is tutorial?
+    bool _isTutorial;
+
     private void Awake()
     {
         //Singleton check
@@ -86,6 +89,7 @@ public class CActivityManager5 : CActivity {
 
     private void Start()
     {
+        _isTutorial = true;
         _helpAnimator.SetBool("Activity5", true);
         _allSelectedWords = new List<GameObject>();
         _selectedLetters = new List<string>();
@@ -376,7 +380,11 @@ public class CActivityManager5 : CActivity {
                 Invoke("DisableFood2", 1.2f);
             }
             Invoke("GoodAnimation", 1);
-            
+
+            if (!_isTutorial)
+            {
+                CWormsManager._instance.Collect();
+            }
             _playerScore ++;            
             if (_playerScore == _scoreToWin)
             {                
@@ -408,6 +416,7 @@ public class CActivityManager5 : CActivity {
 
     public void StopExampleAnimation()
     {
+        _isTutorial = false;
         _playerScore++;
         CancelInvoke(); // cancel all invokes
     }
@@ -464,7 +473,7 @@ public class CActivityManager5 : CActivity {
 
     // when the player skip the tutorial replay
     public void SkipReTutorial()
-    {
+    {        
         _luisAnimator.SetBool("Talking", false);
         _replayTutorialASource.Stop();
         PauseGameplay(true);
