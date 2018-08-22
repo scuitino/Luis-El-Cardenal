@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb0fa99d2576b64190576aa57490688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _word: "ALMOHAD\xD3N"
+  _word: CIEN
 --- !u!114 &114239969756113174
 MonoBehaviour:
   m_ObjectHideFlags: 1
