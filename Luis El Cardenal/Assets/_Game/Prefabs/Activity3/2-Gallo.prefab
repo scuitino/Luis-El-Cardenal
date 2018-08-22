@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 82817876099228046}
   - component: {fileID: 114037992454462246}
   - component: {fileID: 114348123133114694}
+  - component: {fileID: 114062102824450824}
   m_Layer: 5
   m_Name: 2-Gallo
   m_TagString: Untagged
@@ -61,7 +62,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dragSound: {fileID: 8300000, guid: 0ef2df5fd85071947830bbb4ae8bc07f, type: 3}
   _dropSound: {fileID: 8300000, guid: 788bfde9bf4f7d749ae37cde366acfa0, type: 3}
-  _aSource: {fileID: 0}
   _itemID: 1
 --- !u!222 &22227648
 CanvasRenderer:
@@ -251,8 +251,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 82817876099228046}
-        m_MethodName: Play
+      - m_Target: {fileID: 114062102824450824}
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -264,6 +264,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114062102824450824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b830212853c5cb44bb6977119ffd64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aSource: {fileID: 82817876099228046}
+  _activityNumber: 3
 --- !u!114 &114348123133114694
 MonoBehaviour:
   m_ObjectHideFlags: 1

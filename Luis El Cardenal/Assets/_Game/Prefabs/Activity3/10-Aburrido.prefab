@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 82669658082180968}
   - component: {fileID: 114987137265714478}
   - component: {fileID: 114402465800028674}
+  - component: {fileID: 114603553313112780}
   m_Layer: 5
   m_Name: 10-Aburrido
   m_TagString: Untagged
@@ -61,7 +62,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dragSound: {fileID: 8300000, guid: 0ef2df5fd85071947830bbb4ae8bc07f, type: 3}
   _dropSound: {fileID: 8300000, guid: 788bfde9bf4f7d749ae37cde366acfa0, type: 3}
-  _aSource: {fileID: 0}
   _itemID: 9
 --- !u!222 &22227648
 CanvasRenderer:
@@ -1348,6 +1348,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114603553313112780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b830212853c5cb44bb6977119ffd64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aSource: {fileID: 82669658082180968}
+  _activityNumber: 3
 --- !u!114 &114987137265714478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1387,8 +1400,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 82669658082180968}
-        m_MethodName: Play
+      - m_Target: {fileID: 114603553313112780}
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

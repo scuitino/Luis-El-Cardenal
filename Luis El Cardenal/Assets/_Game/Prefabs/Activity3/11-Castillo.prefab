@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 82999489266468024}
   - component: {fileID: 114247305304847662}
   - component: {fileID: 114381434674849394}
+  - component: {fileID: 114569224619046948}
   m_Layer: 5
   m_Name: 11-Castillo
   m_TagString: Untagged
@@ -61,7 +62,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dragSound: {fileID: 8300000, guid: 0ef2df5fd85071947830bbb4ae8bc07f, type: 3}
   _dropSound: {fileID: 8300000, guid: 788bfde9bf4f7d749ae37cde366acfa0, type: 3}
-  _aSource: {fileID: 0}
   _itemID: 10
 --- !u!222 &22227648
 CanvasRenderer:
@@ -278,8 +278,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 82999489266468024}
-        m_MethodName: Play
+      - m_Target: {fileID: 114569224619046948}
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1400,6 +1400,19 @@ MonoBehaviour:
   onClickKeyCodeAlt: 32
   onClickVirtualButtonName: Submit
   onClickVirtualButtonNameAlt: Jump
+--- !u!114 &114569224619046948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b830212853c5cb44bb6977119ffd64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aSource: {fileID: 82999489266468024}
+  _activityNumber: 3
 --- !u!222 &222064737526663000
 CanvasRenderer:
   m_ObjectHideFlags: 1
