@@ -69,7 +69,8 @@ public class CActivity : MonoBehaviour {
     // return to main menu
     public void GoToMainMenu()
     {
-        SceneManager.LoadScene(0);
+        CLevelsManager._instance.SetNextScene(0);
+        SceneManager.LoadSceneAsync(10);
     }
 
     public void TurnOffSkipButton()

@@ -116,6 +116,12 @@ public class CMainMenu : MonoBehaviour {
         Application.Quit();
     }
 
+    // data to loading screen
+    public void SetNextScene(int aIndex)
+    {
+        CLevelsManager._instance.SetNextScene(aIndex);
+    }
+
     // return to specific scene
     public void GoToScene(int aSceneIndex)
     {

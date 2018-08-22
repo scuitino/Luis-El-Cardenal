@@ -22,6 +22,16 @@ public class CLevelsManager : MonoBehaviour {
     // last animation viewed?
     public bool _congratulation;
 
+    // to load the next scene
+    public int _nextScene;
+
+    // to use with loading screen
+    public void SetNextScene(int _index)
+    {
+        Debug.Log(_index);
+        _nextScene = _index;
+    }
+
     // return to main menu
     public void GoToMainMenu()
     {

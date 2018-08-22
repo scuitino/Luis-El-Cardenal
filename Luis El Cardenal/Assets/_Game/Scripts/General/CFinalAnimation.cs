@@ -88,7 +88,7 @@ public class CFinalAnimation : MonoBehaviour {
             if (!CLevelsManager._instance._congratulation) // first time after win all levels
             {
                 CLevelsManager._instance._congratulation = true;
-                SceneManager.LoadScene(9);
+                SceneManager.LoadScene(10);
             }
             else
             {
