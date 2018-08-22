@@ -340,7 +340,10 @@ public class CActivityManager2 : CActivity {
     // Fade in leaf syllable (used by word animator)
     public void TurnOnLeafSyllable(int aIndex)
     {
-        _leafTexts[aIndex].GetComponent<DOTweenAnimation>().DORestart();
+        if (_playerAnswer == _actualWord._numberOfSyllables)
+        {
+            _leafTexts[aIndex].GetComponent<DOTweenAnimation>().DORestart();
+        }        
     }
 
     // to repeat when de player touch the button
