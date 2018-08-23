@@ -37,6 +37,16 @@ public class CPlayButtonSounds : MonoBehaviour {
                     _aSource.Play();
                 }
                 break;
+            case 6:
+                if (CActivityManager6._instance._readyToPlay)
+                {
+                    if (!CActivityManager6._instance._wordIsPlaying)
+                    {
+                        _aSource.Play();
+                        CActivityManager6._instance.DelayWordSound(_aSource.clip.length);
+                    }                    
+                }
+                break;
         }
     }
 }

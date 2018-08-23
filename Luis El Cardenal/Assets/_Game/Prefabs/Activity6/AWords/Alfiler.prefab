@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 114615075752513674}
   - component: {fileID: 114293461469285090}
   - component: {fileID: 95209217135667130}
+  - component: {fileID: 114444354423017710}
   m_Layer: 5
   m_Name: Alfiler
   m_TagString: Untagged
@@ -250,7 +251,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 07ba15f621538954c91d468027dc3c4e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60c9351d5d6f87248a7c88b5ff366387, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -308,8 +309,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 82903598159227254}
-        m_MethodName: Play
+      - m_Target: {fileID: 114444354423017710}
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -321,6 +322,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114444354423017710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b830212853c5cb44bb6977119ffd64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aSource: {fileID: 0}
+  _activityNumber: 6
 --- !u!114 &114615075752513674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1444,7 +1458,7 @@ RectTransform:
   m_GameObject: {fileID: 1392206618860076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_Children: []
   m_Father: {fileID: 22459494}
   m_RootOrder: 0

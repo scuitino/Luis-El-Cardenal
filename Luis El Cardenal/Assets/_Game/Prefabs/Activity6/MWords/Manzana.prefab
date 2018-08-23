@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 114615075752513674}
   - component: {fileID: 114616743478655706}
   - component: {fileID: 95726344402815502}
+  - component: {fileID: 114543811683885196}
   m_Layer: 5
   m_Name: Manzana
   m_TagString: Untagged
@@ -297,8 +298,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 82903598159227254}
-        m_MethodName: Play
+      - m_Target: {fileID: 114543811683885196}
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -310,6 +311,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114543811683885196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b830212853c5cb44bb6977119ffd64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aSource: {fileID: 0}
+  _activityNumber: 6
 --- !u!114 &114615075752513674
 MonoBehaviour:
   m_ObjectHideFlags: 1

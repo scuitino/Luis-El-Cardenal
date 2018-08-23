@@ -59,6 +59,9 @@ public class CActivityManager6 : CActivity
     [SerializeField]
     List<CTrain> _boxes;
 
+    // to know if word sound is playing
+    public bool _wordIsPlaying;
+
     private void Awake()
     {
         //Singleton check
@@ -182,12 +185,14 @@ public class CActivityManager6 : CActivity
     // set ready to play true
     void SetReady()
     {
+        _readyToPlay = true;
         DragAndDropItem.dragDisabled = false;
     }
 
     // turn of ready
     void NotReady()
     {
+        _readyToPlay = false;
         DragAndDropItem.dragDisabled = true;
     }
 
@@ -236,12 +241,23 @@ public class CActivityManager6 : CActivity
         }
     }
 
+    // to not allow the player touch two words at same time
+    public void DelayWordSound(float aDelay)
+    {
+        _wordIsPlaying = true;
+        Invoke("ChangeWordSoundState",aDelay);
+    }
+
+    public void ChangeWordSoundState()
+    {
+        _wordIsPlaying = false;
+    }
+
     // Enable Option and train
     public void EnableChallenges()
     {
         // selecting next word
-        Invoke("NextWord", 1.5f);
-
+        Invoke("NextWord", 1.5f);        
         _startFlag.SetActive(true);
         TurnOffSkipButton();
         _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
