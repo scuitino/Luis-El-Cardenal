@@ -56,6 +56,13 @@ public class CActivityManager4 : CActivity {
     {
         //StartCoroutine(PlayChallenge()); 
         _helpAnimator.SetBool("Activity4", true);
+        Invoke("FixDragAndDrop", 2);
+    }
+
+    // to fix the freeze error
+    void FixDragAndDrop()
+    {
+        DragAndDropItem.dragDisabled = true;
     }
 
     // to control when the player can play

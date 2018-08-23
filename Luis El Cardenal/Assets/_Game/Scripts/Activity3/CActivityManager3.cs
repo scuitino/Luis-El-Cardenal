@@ -72,13 +72,19 @@ public class CActivityManager3 : CActivity {
             _instance = this;
         else if (_instance != this)
             Destroy(gameObject);
-    }
+    }    
 
     private void Start()
     {
         _isTutorial = true;
         _helpAnimator.SetBool("Activity3", true);
-        //StartCoroutine(PlayChallenge()); 
+        Invoke("FixDragAndDrop", 2);
+    }
+
+    // to fix the freeze error
+    void FixDragAndDrop()
+    {
+        DragAndDropItem.dragDisabled = true;
     }
 
     // to control when the player can play

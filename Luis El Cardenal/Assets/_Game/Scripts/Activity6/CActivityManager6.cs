@@ -78,6 +78,13 @@ public class CActivityManager6 : CActivity
         _playingWords = new List<GameObject>();
         _selectedLetters = new List<string>();
         SelectGameWords();
+        Invoke("FixDragAndDrop", 2);
+    }
+
+    // to fix the freeze error
+    void FixDragAndDrop()
+    {
+        DragAndDropItem.dragDisabled = true;
     }
 
     // select all the words for the next game

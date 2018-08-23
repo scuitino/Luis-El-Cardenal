@@ -8,6 +8,19 @@ public class CFinalAnimation : MonoBehaviour {
     [SerializeField]
     int _activityNumber;
 
+    [SerializeField]
+    AudioSource _aSource;
+
+    private void Start()
+    {
+        _aSource = this.GetComponent<AudioSource>();
+    }
+
+    public void PlayMusic()
+    {
+        _aSource.Play();
+    }
+
 	public void RestartGame()
     {               
         switch (_activityNumber)

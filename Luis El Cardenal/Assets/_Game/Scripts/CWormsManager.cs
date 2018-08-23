@@ -8,13 +8,10 @@ public class CWormsManager : MonoBehaviour {
     public static CWormsManager _instance = null;
     #endregion
 
-    private void Awake()
+    private void Start()
     {
-        //Singleton check
-        if (_instance == null)
-            _instance = this;
-        else if (_instance != this)
-            Destroy(gameObject);
+        //Replace Singleton
+        _instance = this;
     }
 
     // collect a worm
