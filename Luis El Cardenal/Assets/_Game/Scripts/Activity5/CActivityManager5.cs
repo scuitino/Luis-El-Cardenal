@@ -202,53 +202,53 @@ public class CActivityManager5 : CActivity {
         int tSelectedWord = Random.Range(0, _allSelectedWords.Count);
         if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() == _group1ID) // if the selected is of group 1
         {
-            if (_group1WordsCount + 1 <= _maxWordsPerGame) // if the group 1 is not at max
-            {
-                _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
-                _group1WordsCount++;
-                _allSelectedWords.RemoveAt(tSelectedWord);
-            }
-            else // select group 2
-            {
-                bool tReady2 = false;
-                while (!tReady2) // while a group 2 word is not selected
-                {
-                    tSelectedWord = Random.Range(0, _allSelectedWords.Count);
-                    if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() != _group1ID) // if the selected is of group 2
-                    {
-                        _cave2.SetCaveID(_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID());
-                        _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
-                        _group2WordsCount++;
-                        _allSelectedWords.RemoveAt(tSelectedWord);
-                        tReady2 = true;
-                    }
-                }
-            }
+            //if (_group1WordsCount + 1 <= _maxWordsPerGame) // if the group 1 is not at max
+            //{
+            _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
+            _group1WordsCount++;
+            _allSelectedWords.RemoveAt(tSelectedWord);
+            //}
+            //else // select group 2
+            //{
+            //    bool tReady2 = false;
+            //    while (!tReady2) // while a group 2 word is not selected
+            //    {
+            //        tSelectedWord = Random.Range(0, _allSelectedWords.Count);
+            //        if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() != _group1ID) // if the selected is of group 2
+            //        {
+            //            _cave2.SetCaveID(_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID());
+            //            _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
+            //            _group2WordsCount++;
+            //            _allSelectedWords.RemoveAt(tSelectedWord);
+            //            tReady2 = true;
+            //        }
+            //    }
+            //}
         }
         else // if the selected is of group 2
         {
-            if (_group2WordsCount + 1 <= _maxWordsPerGame) // if the group 2 is not at max
-            {
-                _cave2.SetCaveID(_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID());
-                _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
-                _group2WordsCount++;
-                _allSelectedWords.RemoveAt(tSelectedWord);
-            }
-            else // select group 1
-            {
-                bool tReady2 = false;
-                while (!tReady2)
-                {
-                    tSelectedWord = Random.Range(0, _allSelectedWords.Count);
-                    if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() == _group1ID) // if the selected is of group 1
-                    {
-                        _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
-                        _group1WordsCount++;
-                        _allSelectedWords.RemoveAt(tSelectedWord);
-                        tReady2 = true;
-                    }
-                }
-            }
+            //if (_group2WordsCount + 1 <= _maxWordsPerGame) // if the group 2 is not at max
+            //{
+            _cave2.SetCaveID(_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID());
+            _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
+            _group2WordsCount++;
+            _allSelectedWords.RemoveAt(tSelectedWord);
+            //}
+            //else // select group 1
+            //{
+            //    bool tReady2 = false;
+            //    while (!tReady2)
+            //    {
+            //        tSelectedWord = Random.Range(0, _allSelectedWords.Count);
+            //        if (_allSelectedWords[tSelectedWord].GetComponent<DragAndDropItem>().GetItemID() == _group1ID) // if the selected is of group 1
+            //        {
+            //            _wordsForTheTable.Add(_allSelectedWords[tSelectedWord]);
+            //            _group1WordsCount++;
+            //            _allSelectedWords.RemoveAt(tSelectedWord);
+            //            tReady2 = true;
+            //        }
+            //    }
+            //}
         }
     }
 
@@ -256,7 +256,6 @@ public class CActivityManager5 : CActivity {
     public void WrongAnswer(Transform aSlot)
     {
         // check if there are avaialable words for each group
-
         bool _g1Available = false;
         bool _g2Available = false;
         for (int i = 0; i < _allSelectedWords.Count; i++)
@@ -268,6 +267,11 @@ public class CActivityManager5 : CActivity {
             else
             {
                 _g2Available = true;
+            }
+
+            if (_g1Available == true && _g2Available == true)
+            {
+                break;
             }
         }
 
@@ -304,7 +308,7 @@ public class CActivityManager5 : CActivity {
                     break;
             }
         }
-        else if (!_g2Available)
+        if (!_g2Available)
         {
             switch (_selectedLetters[1])
             {
@@ -352,6 +356,26 @@ public class CActivityManager5 : CActivity {
         
         // clear the list
         _wordsForTheTable.Clear();
+
+        // check if the word is repeated
+        int tRepeatCount = 0;
+        for (int i = 0; i < _slots.Count; i++)
+        {
+            if (_slots[i].transform.childCount > 0)
+            {
+                if (_slots[i].transform.GetChild(0).name == tSelectedItem.name)
+                {
+                    Debug.Log("Repeated" + tRepeatCount);
+                    tRepeatCount++;
+                }
+            }
+        }
+
+        if (tRepeatCount == 2) // if is repeated
+        {
+            Destroy(aSlot.transform.GetChild(0).gameObject);
+            WrongAnswer(aSlot);
+        }
     }
 
     // to animate Luis
