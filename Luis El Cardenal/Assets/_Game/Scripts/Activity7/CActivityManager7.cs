@@ -53,6 +53,10 @@ public class CActivityManager7 : CActivity
     [SerializeField]
     GameObject _replayButton;
 
+    // replay sentence button
+    [SerializeField]
+    Animator _replaySentenceAnimator;
+
     // tutorial time
     bool _isTutorial;
 
@@ -88,6 +92,14 @@ public class CActivityManager7 : CActivity
     public void PlaySentence()
     {
         _aSource.Play();
+        _replaySentenceAnimator.SetBool("Playing", true);
+        Invoke("StopSpeaker", _aSource.clip.length);
+    }
+
+    // to stop speaker anim
+    public void StopSpeaker()
+    {
+        _replaySentenceAnimator.SetBool("Playing",false);
     }
 
     public void StartWithDelay()
@@ -213,10 +225,11 @@ public class CActivityManager7 : CActivity
                     }
 
                     // animations
+                    _luisAnimator.SetTrigger("Success");                    
                     for (int i = 0; i < _eggs.Count; i++)
                     {
                         if(_eggs[i]._isPressed)
-                        {
+                        {                            
                             _chickenAnimator.SetTrigger("Success");
                             _eggs[i]._eggAnimator.SetTrigger("Success");                            
                         }
@@ -241,10 +254,12 @@ public class CActivityManager7 : CActivity
                 else // lose
                 {
                     // animations
+                    _luisAnimator.SetTrigger("Fail");
                     for (int i = 0; i < _eggs.Count; i++)
                     {
                         if (_eggs[i]._isPressed)
                         {
+                            
                             _chickenAnimator.SetTrigger("Fail");
                             _eggs[i]._eggAnimator.SetTrigger("Fail");                            
                         }
@@ -329,6 +344,7 @@ public class CActivityManager7 : CActivity
     // when the player press luis button
     public void ReplayTutorial()
     {
+        _replaySentenceAnimator.SetBool("Playing",false);
         _replayButton.GetComponent<Button>().interactable = false;
         _aSource.Stop();
         _luisAnimator.SetBool("Talking", true);
