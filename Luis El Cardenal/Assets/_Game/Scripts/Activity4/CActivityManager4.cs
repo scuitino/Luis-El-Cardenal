@@ -101,6 +101,7 @@ public class CActivityManager4 : CActivity {
     // select and play the next challenge
     public IEnumerator PlayChallenge()
     {
+        _readyToPlay = true;
         TurnOffSkipButton();
         _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
         _startFlag.SetActive(true);

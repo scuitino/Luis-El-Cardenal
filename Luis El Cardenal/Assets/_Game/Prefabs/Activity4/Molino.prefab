@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 11440904}
   - component: {fileID: 82039924762848588}
   - component: {fileID: 114144669538445902}
+  - component: {fileID: 114750137233894086}
   m_Layer: 5
   m_Name: Molino
   m_TagString: Untagged
@@ -249,8 +250,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 82039924762848588}
-        m_MethodName: Play
+      - m_Target: {fileID: 114750137233894086}
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -289,6 +290,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114750137233894086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b830212853c5cb44bb6977119ffd64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aSource: {fileID: 0}
+  _activityNumber: 4
 --- !u!222 &222328205601282768
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 11440904}
   - component: {fileID: 82035742912331244}
   - component: {fileID: 114719195110131370}
+  - component: {fileID: 114157724215947410}
   m_Layer: 5
   m_Name: Tenedor
   m_TagString: Untagged
@@ -210,6 +211,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &114157724215947410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b830212853c5cb44bb6977119ffd64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aSource: {fileID: 0}
+  _activityNumber: 4
 --- !u!114 &114506735736967972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -276,8 +290,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 82035742912331244}
-        m_MethodName: Play
+      - m_Target: {fileID: 114157724215947410}
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

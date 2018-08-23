@@ -10,12 +10,29 @@ public class CPlayButtonSounds : MonoBehaviour {
     [SerializeField]
     int _activityNumber;
 
+    private void Start()
+    {
+        _aSource = this.GetComponent<AudioSource>();
+    }
+
     public void PlaySound()
     {
         switch (_activityNumber)
         {
             case 3:
                 if (CActivityManager3._instance._readyToPlay)
+                {
+                    _aSource.Play();
+                }
+                break;
+            case 4:
+                if (CActivityManager4._instance._readyToPlay)
+                {
+                    _aSource.Play();
+                }
+                break;
+            case 5:
+                if (CActivityManager5._instance._readyToPlay)
                 {
                     _aSource.Play();
                 }

@@ -104,6 +104,7 @@ public class CActivityManager5 : CActivity {
     // select all the words for the next game
     public void SelectGameWords()
     {
+        _readyToPlay = true;
         TurnOffSkipButton();
         _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
         _startFlag.SetActive(true);
