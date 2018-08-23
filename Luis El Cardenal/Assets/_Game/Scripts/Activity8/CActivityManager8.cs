@@ -39,6 +39,10 @@ public class CActivityManager8 : CActivity {
     [SerializeField]
     AudioSource _errorSound;
 
+    // replay sentence button
+    [SerializeField]
+    Animator _replaySentenceAnimator;
+
     //errors count per challenge
     int _errorsCount;
 
@@ -134,7 +138,7 @@ public class CActivityManager8 : CActivity {
                 _isTutorial = false;
             }
 
-            _aSource.Play();
+            PlaySentence();
             _replayButton.GetComponent<Button>().interactable = true;
             _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
         }
@@ -216,11 +220,20 @@ public class CActivityManager8 : CActivity {
     public void PlaySentence()
     {
         _aSource.Play();
+        _replaySentenceAnimator.SetBool("Playing", true);
+        Invoke("StopSpeaker", _aSource.clip.length);
+    }
+
+    // to stop speaker anim
+    public void StopSpeaker()
+    {
+        _replaySentenceAnimator.SetBool("Playing", false);
     }
 
     // when the player press luis button
     public void ReplayTutorial()
     {
+        _replaySentenceAnimator.SetBool("Playing", false);
         for (int i = 0; i < _slots.Count; i++)
         {
             _slots[i].GetComponent<Animator>().SetTrigger("Hide");

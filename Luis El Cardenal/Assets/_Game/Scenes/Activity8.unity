@@ -4661,6 +4661,7 @@ MonoBehaviour:
   - {fileID: 364344511}
   - {fileID: 2090849427}
   _errorSound: {fileID: 1937544313}
+  _replaySentenceAnimator: {fileID: 1102450033}
 --- !u!82 &804918840
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10342,7 +10343,7 @@ Prefab:
     - target: {fileID: 224042932520493822, guid: ab21f7d7d112bf04997a406eec9afb95,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -111.05005
+      value: -149.39001
       objectReference: {fileID: 0}
     - target: {fileID: 224042932520493822, guid: ab21f7d7d112bf04997a406eec9afb95,
         type: 2}
@@ -11565,6 +11566,24 @@ MonoBehaviour:
   onClickKeyCodeAlt: 32
   onClickVirtualButtonName: Submit
   onClickVirtualButtonNameAlt: Jump
+--- !u!95 &1102450033
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1102450031}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 115521a2f72046d4ca587cef51ad24e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1117709318
 GameObject:
   m_ObjectHideFlags: 0
