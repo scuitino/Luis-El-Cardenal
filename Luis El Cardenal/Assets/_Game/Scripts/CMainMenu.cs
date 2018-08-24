@@ -28,6 +28,9 @@ public class CMainMenu : MonoBehaviour {
     [SerializeField]
     Animator _luisAnimator;
 
+    [SerializeField]
+    GameObject _skipButton;
+
     public GameObject _exampleItemsContainer;
 
     private void Awake()
@@ -93,6 +96,7 @@ public class CMainMenu : MonoBehaviour {
     // play tutorial
     public void PlayHelp()
     {
+        _skipButton.SetActive(true);
         _luisAnimator.GetComponent<Button>().enabled = false;
         _luisAnimator.SetBool("Talking", true);
         _exampleItemsContainer.SetActive(true);
@@ -103,6 +107,7 @@ public class CMainMenu : MonoBehaviour {
     // to disable example items
     public void CloseHelp()
     {
+        _skipButton.SetActive(false);
         _luisAnimator.GetComponent<Button>().enabled = true;
         _helpAnimator.SetBool("World", true);
         _exampleItemsContainer.SetActive(false);

@@ -104,7 +104,7 @@ public class CActivityManager5 : CActivity {
     // to fix the freeze error
     void FixDragAndDrop()
     {
-        DragAndDropItem.dragDisabled = true;
+        DragAndDropItem.dragDisabled = false;
     }
 
     // select all the words for the next game

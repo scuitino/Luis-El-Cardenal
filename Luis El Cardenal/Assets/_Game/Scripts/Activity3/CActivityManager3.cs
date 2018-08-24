@@ -84,7 +84,7 @@ public class CActivityManager3 : CActivity {
     // to fix the freeze error
     void FixDragAndDrop()
     {
-        DragAndDropItem.dragDisabled = true;
+        DragAndDropItem.dragDisabled = false;
     }
 
     // to control when the player can play
