@@ -53,6 +53,10 @@ public class CActivityManager1 : CActivity
     // tutorial time
     bool _isTutorial;
 
+    // replay speaker animator
+    [SerializeField]
+    Animator _speakerAnimator;
+
     private void Awake()
     {
         //Singleton check
@@ -77,11 +81,27 @@ public class CActivityManager1 : CActivity
         {
             if(_timer >= _timerLimit) // if the timer reach the limit play the sound
             {
-                _selectedItems[_selectedItemIndex].GetComponent<AudioSource>().Play();
-                _timer = 0;
+                ReplaySound();                
             }
             _timer += Time.deltaTime;
         }    
+    }
+
+    public void ReplaySound()
+    {        
+        if (!_selectedItems[_selectedItemIndex].GetComponent<AudioSource>().isPlaying)
+        {
+            _timer = 0;
+            Invoke("StopSpeaker", _selectedItems[_selectedItemIndex].GetComponent<AudioSource>().clip.length);
+            _speakerAnimator.SetBool("Playing", true);
+            _selectedItems[_selectedItemIndex].GetComponent<AudioSource>().Play();
+        }        
+    }
+
+    // to stop speaker anim
+    public void StopSpeaker()
+    {
+        _speakerAnimator.SetBool("Playing", false);
     }
 
     // select all the words for the next game
@@ -117,13 +137,15 @@ public class CActivityManager1 : CActivity
     // to start a new word
 	public void PlayWord()
     {        
-        _luisAnimator.gameObject.GetComponent<Button>().enabled = true;        
+        _luisAnimator.gameObject.GetComponent<Button>().enabled = true;
+        _speakerAnimator.gameObject.GetComponent<Button>().interactable = true;
         ChangeReady(false);
         if (!_win)
         {            
             // select the next word to play
             _selectedItemIndex = Random.Range(0, _selectedItems.Count);
-            _selectedItems[_selectedItemIndex].GetComponent<CItemA1>().PlaySound();
+            //_selectedItems[_selectedItemIndex].GetComponent<CItemA1>().PlaySound();
+            ReplaySound();
             _correctAnswer = _selectedItems[_selectedItemIndex].GetComponent<CItemA1>().GetID();
 
             // waiting for the sound
@@ -136,8 +158,9 @@ public class CActivityManager1 : CActivity
     public void CheckResult(int aAnswer)
     {        
         if (_readyToPlay)
-        {
+        {            
             ChangeReady(false);
+            _speakerAnimator.gameObject.GetComponent<Button>().interactable = false;
             if (aAnswer == _correctAnswer) // if the answer is correct
             {
                 _winsCount++;
@@ -170,6 +193,7 @@ public class CActivityManager1 : CActivity
     public IEnumerator PlayOn(float aDelay)
     {
         yield return new WaitForSeconds(aDelay);
+        _speakerAnimator.gameObject.GetComponent<Button>().interactable = true;
         ChangeReady(true);
         _timer = 0;
         yield return null;
@@ -188,7 +212,13 @@ public class CActivityManager1 : CActivity
     {
         _luisAnimator.SetBool("Talking", true);
         _replayTutorialASource.Play();
+        if (_selectedItems[_selectedItemIndex].GetComponent<AudioSource>().isPlaying)
+        {
+            _selectedItems[_selectedItemIndex].GetComponent<AudioSource>().Stop();
+            _speakerAnimator.SetBool("Playing", false);
+        }
         ChangeReady(false);
+        _speakerAnimator.gameObject.GetComponent<Button>().interactable = false;
         _skipReplayButton.SetActive(true);
         if (_stopTalkingCo != null)
         {
@@ -203,6 +233,7 @@ public class CActivityManager1 : CActivity
         _luisAnimator.SetBool("Talking", false);
         _replayTutorialASource.Stop();
         ChangeReady(true);
+        _speakerAnimator.gameObject.GetComponent<Button>().interactable = true;
         _skipReplayButton.SetActive(false);
         StopCoroutine(_stopTalkingCo);
     }
