@@ -50,8 +50,8 @@ public class CMainMenu : MonoBehaviour {
         if (CLevelsManager._instance._tutorialUsed)
         {
             _luisAnimator.GetComponent<Button>().enabled = true;
-        }
-        CLevelsManager._instance.CheckLevelsState();
+            CLevelsManager._instance.CheckLevelsState();
+        }        
     }
 
     public void EnableColorSprite(int pLevel)
