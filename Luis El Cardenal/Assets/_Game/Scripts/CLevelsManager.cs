@@ -30,7 +30,7 @@ public class CLevelsManager : MonoBehaviour {
     // to use with loading screen
     public void SetNextScene(int _index)
     {
-        Debug.Log(_index);
+        //Debug.Log(_index);
         _nextScene = _index;
     }
 

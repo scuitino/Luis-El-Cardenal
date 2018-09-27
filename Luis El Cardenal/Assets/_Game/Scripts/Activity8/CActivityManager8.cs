@@ -179,21 +179,21 @@ public class CActivityManager8 : CActivity {
     // call when the player answer is wrong
     public void IncorrectAnswer()
     {
-        _errorsCount++;
-        if (_errorsCount < 3)
+        //_errorsCount++;
+        //if (_errorsCount < 3)
+        //{
+        //    _errorSound.Play();
+        //}
+        //else
+        //{
+        for (int i = 0; i < _slots.Count; i++)
         {
-            _errorSound.Play();
+            _slots[i].GetComponent<Animator>().SetTrigger("Hide");
         }
-        else
-        {
-            for (int i = 0; i < _slots.Count; i++)
-            {
-                _slots[i].GetComponent<Animator>().SetTrigger("Hide");
-            }
-            _luisAnimator.SetTrigger("Fail");
-            Invoke("InvokeNext",2);
-            _errorsCount = 0;
-        }
+        _luisAnimator.SetTrigger("Fail");
+        Invoke("InvokeNext",2);
+        _errorsCount = 0;
+        //}
     }
 
     // to delay the next challenge
