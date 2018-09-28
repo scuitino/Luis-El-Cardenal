@@ -27,7 +27,7 @@ public class CActivityManager5 : CActivity {
 
     // food for the mulita
     [SerializeField]
-    Image _food1, _food2;    
+    Image _food1, _food2;
 
     // min & max letters of each group on the table
     [SerializeField]
@@ -58,6 +58,9 @@ public class CActivityManager5 : CActivity {
     // words on the table
     [SerializeField]
     List<GameObject> _wordsForTheTable;
+
+    // to enable when animation is finished
+    GameObject _wrongAnswerNextWord;
 
     // slots to place the table words
     [SerializeField]
@@ -182,7 +185,7 @@ public class CActivityManager5 : CActivity {
         // selecting rest of the table words
         for (int i = 0; i < 7; i++)
         {
-            TakeAnotherWord();          
+            TakeAnotherWord();
         }
 
         // place the table objects into the slots
@@ -359,7 +362,10 @@ public class CActivityManager5 : CActivity {
         tSelectedItem.transform.GetComponent<RectTransform>().offsetMax = new Vector2(0, 0); // new Vector2(right, top);
         tSelectedItem.transform.GetComponent<RectTransform>().localPosition = Vector3.zero;  // to set z Pos 
         tSelectedItem.transform.localScale = Vector3.one;
-        
+
+        _wrongAnswerNextWord = tSelectedItem.gameObject;
+        _wrongAnswerNextWord.SetActive(false);
+
         // clear the list
         _wordsForTheTable.Clear();
 
@@ -391,15 +397,15 @@ public class CActivityManager5 : CActivity {
         Invoke("SetReady", 4);
 
         //  setting icon of food 1 and 2
-        if (aCaveNumber == 1) 
+        if (aCaveNumber == 1)
         {
             _food1.sprite = aFoodSprite;
-            _food1.enabled = true;            
+            _food1.enabled = true;
         }
         else
         {
             _food2.sprite = aFoodSprite;
-            _food2.enabled = true;            
+            _food2.enabled = true;
         }
 
         if (aOption) // animate good
@@ -410,7 +416,7 @@ public class CActivityManager5 : CActivity {
             if (aCaveNumber == 1)
             {
                 _mulita1.SetTrigger("Success");
-                Invoke("DisableFood1", 1.2f);                
+                Invoke("DisableFood1", 1.2f);
             }
             else
             {
@@ -423,9 +429,9 @@ public class CActivityManager5 : CActivity {
             {
                 CWormsManager._instance.Collect();
             }
-            _playerScore ++;            
+            _playerScore++;
             if (_playerScore == _scoreToWin)
-            {                
+            {
                 Invoke("WinGame", 5);
             }
         }
@@ -435,11 +441,13 @@ public class CActivityManager5 : CActivity {
             {
                 _mulita1.SetTrigger("Fail");
                 Invoke("DisableFood1", 3.2f);
+                Invoke("WrongAnswerNextWord", 3.5f);
             }
             else
             {
-                _mulita2.SetTrigger("Fail");                
+                _mulita2.SetTrigger("Fail");
                 Invoke("DisableFood2", 3.2f);
+                Invoke("WrongAnswerNextWord", 3.5f);
             }
             Invoke("BadAnimation", 1);
         }
@@ -469,6 +477,11 @@ public class CActivityManager5 : CActivity {
     public void DisableFood2()
     {
         _food2.enabled = false;
+    }
+
+    public void WrongAnswerNextWord()
+    {
+        _wrongAnswerNextWord.SetActive(true);
     }
 
     // set ready to play true
