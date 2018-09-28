@@ -130,7 +130,7 @@ public class CActivityManager8 : CActivity {
                     _slots[i]._text.text = _availableChallenges[tTemp]._letter;
                     tTemp++;
                 }
-                _slots[i].GetComponent<Animator>().SetTrigger("Show");                   
+                _slots[i].GetComponent<Animator>().SetBool("Show", true);                   
             }
 
             if (_isTutorial)
@@ -164,7 +164,7 @@ public class CActivityManager8 : CActivity {
 
         for (int i = 0; i < _slots.Count; i++)
         {            
-            _slots[i].GetComponent<Animator>().SetTrigger("Hide");
+            _slots[i].GetComponent<Animator>().SetBool("Show", false);
         }
 
         _score++;
@@ -188,7 +188,7 @@ public class CActivityManager8 : CActivity {
         //{
         for (int i = 0; i < _slots.Count; i++)
         {
-            _slots[i].GetComponent<Animator>().SetTrigger("Hide");
+            _slots[i].GetComponent<Animator>().SetBool("Show", false);
         }
         _luisAnimator.SetTrigger("Fail");
         Invoke("InvokeNext",2);
@@ -236,7 +236,7 @@ public class CActivityManager8 : CActivity {
         _replaySentenceAnimator.SetBool("Playing", false);
         for (int i = 0; i < _slots.Count; i++)
         {
-            _slots[i].GetComponent<Animator>().SetTrigger("Hide");
+            _slots[i].GetComponent<Animator>().SetBool("Show", false);
         }
         _replayButton.GetComponent<Button>().interactable = false;
         _aSource.Stop();
@@ -256,7 +256,7 @@ public class CActivityManager8 : CActivity {
     {
         for (int i = 0; i < _slots.Count; i++)
         {
-            _slots[i].GetComponent<Animator>().SetTrigger("Show");
+            _slots[i].GetComponent<Animator>().SetBool("Show", true);
         }
         _replayButton.GetComponent<Button>().interactable = true;
         _luisAnimator.SetBool("Talking", false);
