@@ -2272,7 +2272,7 @@ Prefab:
     - target: {fileID: 114382020845039936, guid: 652b49a994cf64a4f9e0cf2f4f91a33d,
         type: 2}
       propertyPath: _helpSounds.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224765034280107294, guid: 652b49a994cf64a4f9e0cf2f4f91a33d,
         type: 2}
@@ -2409,6 +2409,16 @@ Prefab:
       propertyPath: _rabbitanimator
       value: 
       objectReference: {fileID: 1431156629}
+    - target: {fileID: 114382020845039936, guid: 652b49a994cf64a4f9e0cf2f4f91a33d,
+        type: 2}
+      propertyPath: _helpSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: baf78384d88ef084ca68b36712684467, type: 3}
+    - target: {fileID: 114382020845039936, guid: 652b49a994cf64a4f9e0cf2f4f91a33d,
+        type: 2}
+      propertyPath: _helpSounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9551afb77d591c0449ce1651393ea3d9, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 652b49a994cf64a4f9e0cf2f4f91a33d, type: 2}
   m_IsPrefabParent: 0
@@ -9835,7 +9845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1895779079
 MonoBehaviour:
   m_ObjectHideFlags: 0
