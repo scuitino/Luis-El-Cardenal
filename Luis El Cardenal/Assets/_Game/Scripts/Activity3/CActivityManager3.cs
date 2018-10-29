@@ -27,7 +27,7 @@ public class CActivityManager3 : CActivity {
     int _goodAnswersToWin;
 
     // number of good answers
-    int _successCount;
+    public int _successCount;
 
     // result slots
     [SerializeField, Header("References")]

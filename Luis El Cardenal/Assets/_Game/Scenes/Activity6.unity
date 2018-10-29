@@ -5429,6 +5429,7 @@ MonoBehaviour:
   _replayTutorialASource: {fileID: 709868589}
   _wormsContainer: {fileID: 0}
   _scoreToWin: 5
+  _playerScore: 0
   _luisAnimator: {fileID: 2104900586}
   _trainAnimator: {fileID: 1804984982}
   _option: {fileID: 1753102019}
@@ -9074,6 +9075,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114575238877661312, guid: 9b6939efafa6763439401f9433b2fa3a,
+        type: 2}
+      propertyPath: _activityNumber
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b6939efafa6763439401f9433b2fa3a, type: 2}

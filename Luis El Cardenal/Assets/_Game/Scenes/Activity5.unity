@@ -2709,6 +2709,7 @@ MonoBehaviour:
   _sprite1: {fileID: 343265652}
   _sprite2: {fileID: 1858769105}
   _word: {fileID: 265680173}
+  _isTutorial: 0
 --- !u!1 &829277758
 GameObject:
   m_ObjectHideFlags: 0
@@ -9393,6 +9394,16 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: -31.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 114575238877661312, guid: 9b6939efafa6763439401f9433b2fa3a,
+        type: 2}
+      propertyPath: _activityNumber
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114575238877661312, guid: 9b6939efafa6763439401f9433b2fa3a,
+        type: 2}
+      propertyPath: _wormsCollected
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b6939efafa6763439401f9433b2fa3a, type: 2}

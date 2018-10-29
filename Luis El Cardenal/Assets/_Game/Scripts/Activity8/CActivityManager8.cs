@@ -20,7 +20,7 @@ public class CActivityManager8 : CActivity {
     bool _isTutorial;
 
     // player score
-    int _score;
+    public int _score;
 
     // to control animations
     [SerializeField]

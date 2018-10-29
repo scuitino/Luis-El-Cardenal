@@ -14,8 +14,7 @@ public class CActivityManager5 : CActivity {
     int _scoreToWin = 8;
 
     // actual player points
-    [SerializeField]
-    int _playerScore;
+    public int _playerScore;
 
     // reference to the caves
     [SerializeField]
@@ -83,7 +82,7 @@ public class CActivityManager5 : CActivity {
     GameObject _word;
 
     // is tutorial?
-    bool _isTutorial;
+    public bool _isTutorial;
 
     private void Awake()
     {

@@ -30,7 +30,7 @@ public class CActivityManager4 : CActivity {
     int _goodAnswersToWin;
 
     // number of good answers
-    int _successCount;
+    public int _successCount;
 
     // to know if the player is grabbing a object
     public bool _isGrabbing;

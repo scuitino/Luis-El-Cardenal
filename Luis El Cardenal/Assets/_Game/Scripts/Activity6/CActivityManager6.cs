@@ -15,7 +15,7 @@ public class CActivityManager6 : CActivity
     int _scoreToWin;
 
     // actual player points
-    int _playerScore;
+    public int _playerScore;
 
     // to control luis animations
     [SerializeField]

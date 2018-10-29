@@ -5576,6 +5576,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114575238877661312, guid: 9b6939efafa6763439401f9433b2fa3a,
+        type: 2}
+      propertyPath: _activityNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114575238877661312, guid: 9b6939efafa6763439401f9433b2fa3a,
+        type: 2}
+      propertyPath: _wormsCollected
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b6939efafa6763439401f9433b2fa3a, type: 2}
   m_IsPrefabParent: 0
@@ -9158,6 +9168,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f23476c6aba2bb2479adb8d994dd7ab9, type: 2}
   - {fileID: 11400000, guid: 2014166ce3012e741a6630542ab88073, type: 2}
   _playerAnswer: 0
+  _playerScore: 0
   _1Syllable: {fileID: 1798115998}
   _2Syllable: {fileID: 270371847}
   _3Syllable: {fileID: 1368295288}
@@ -9183,6 +9194,7 @@ MonoBehaviour:
   - {fileID: 1749154402}
   _luisAnimator: {fileID: 229920187}
   _buttonsSound: {fileID: 782315113}
+  _isJumping: 0
 --- !u!1 &811207725
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,8 +18,7 @@ public class CActivityManager1 : CActivity
     int _wordsToWin;
 
     // every good answer +1
-    [SerializeField]
-    int _winsCount;
+    public int _winsCount;
 
     // to play words sounds
     AudioSource _audioSource;

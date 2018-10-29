@@ -1328,6 +1328,7 @@ MonoBehaviour:
   _challengesAvailables: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b000000
   _selectedChallenges: 0000000000000000000000000000000000000000
   _goodAnswersToWin: 5
+  _successCount: 0
   _isGrabbing: 0
   _flowersSlots:
   - {fileID: 1212434800}
@@ -9781,6 +9782,11 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114575238877661312, guid: 9b6939efafa6763439401f9433b2fa3a,
+        type: 2}
+      propertyPath: _activityNumber
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b6939efafa6763439401f9433b2fa3a, type: 2}

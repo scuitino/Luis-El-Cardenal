@@ -27,6 +27,9 @@ public class CActivityManager2 : CActivity {
     [SerializeField]
     int _playerAnswer;
 
+    // score of the player
+    public int _playerScore;    
+
     // actual question word
     CWordA2 _actualWord;    
 
@@ -39,8 +42,7 @@ public class CActivityManager2 : CActivity {
     Animator _1SAnimator, _2SAnimator, _3SAnimator, _4SAnimator;
 
     // Frog animator
-    [SerializeField]
-    Animator _frogAnimator;    
+    public Animator _frogAnimator;    
 
     // to move result button
     [SerializeField]
@@ -71,6 +73,9 @@ public class CActivityManager2 : CActivity {
 
     // is playing replay tutorial?
     bool _replayIsOn;
+
+    // the frog is jumping?
+    public bool _isJumping;
 
     private void Awake()
     {
@@ -265,12 +270,14 @@ public class CActivityManager2 : CActivity {
                 _readyToPlay = false;
                 _frogAnimator.SetTrigger("StartJump");
                 _frogAnimator.SetInteger("Result", _playerAnswer);
-                if (_playerAnswer != _actualWord._numberOfSyllables) // check if the answer is correct
+                if (_playerAnswer != _actualWord._numberOfSyllables) // check if the answer is wrong
                 {
                     _frogAnimator.SetTrigger("Fall");
                 }
                 else
-                {                    
+                {
+                    _isJumping = true;
+                    _playerScore++;
                     _syllablesOnThisLevel.RemoveAt(_actualQuestion); // remove the actual question
                     _actualWord._wasUsed = true; // label the word as used
                 }
@@ -292,6 +299,7 @@ public class CActivityManager2 : CActivity {
     //start syllables success animation
     public void StartSyllablesAnimation()
     {
+        _isJumping = false;
         switch (_actualWord._numberOfSyllables)
         {
             case 1:
