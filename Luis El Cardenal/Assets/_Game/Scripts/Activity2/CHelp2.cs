@@ -27,6 +27,10 @@ public class CHelp2 : MonoBehaviour {
     [SerializeField]
     Animator _chickenAnimator;
 
+    // sentence for activity 7
+    [SerializeField]
+    Animator _sentenceAnimator;
+
     private void Start()
     {
         _helpASource = this.GetComponent<AudioSource>();
@@ -99,6 +103,11 @@ public class CHelp2 : MonoBehaviour {
     public void SkipA7Tutorial()
     {      
         this.gameObject.SetActive(false);        
+    }
+
+    public void ShowSentence()
+    {
+        _sentenceAnimator.SetTrigger("Play");
     }
 
     // only for Activity 8

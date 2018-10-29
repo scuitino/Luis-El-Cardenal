@@ -17237,6 +17237,7 @@ MonoBehaviour:
   _realFrog: {fileID: 1205460199}
   _realToad: {fileID: 1339759953}
   _chickenAnimator: {fileID: 1788764125}
+  _sentenceAnimator: {fileID: 1925485295}
 --- !u!1 &1574148198
 GameObject:
   m_ObjectHideFlags: 0
@@ -20010,7 +20011,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: EL HORNERO CONSTRUYE SU NIDO
+  m_Text: "\xBFC\xD3MO EST\xC1S?"
 --- !u!222 &1925485294
 CanvasRenderer:
   m_ObjectHideFlags: 0
