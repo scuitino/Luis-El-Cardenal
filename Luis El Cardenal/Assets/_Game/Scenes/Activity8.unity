@@ -4729,6 +4729,7 @@ MonoBehaviour:
   _replayTutorialASource: {fileID: 1806577806}
   _wormsContainer: {fileID: 0}
   _replayButton: {fileID: 1102450031}
+  _score: 0
   _luisAnimator: {fileID: 229920187}
   _lampAnimator: {fileID: 1385223872}
   _licuadoraAnimator: {fileID: 816619532}

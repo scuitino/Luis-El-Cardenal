@@ -60,8 +60,8 @@ public class CLevelsManager : MonoBehaviour {
     {               
         // if the savefile exits, ask if the player want to continue
         if (ES3.KeyExists("saveFile"))
-        {            
-            _continueAnimator.SetBool("Active",true);
+        {
+            CheckSave();            
         }
         else
         {
@@ -83,48 +83,69 @@ public class CLevelsManager : MonoBehaviour {
     // color cleared levels
     public void CheckLevelsState()
     {
+        bool tNeedToSave = false;
+
         if (_level1)
         {
+            tNeedToSave = true;
             CMainMenu._instance.EnableColorSprite(1);
             _saveArrayFile[0] = true;
         }
         if (_level2)
         {
+            tNeedToSave = true;
             CMainMenu._instance.EnableColorSprite(2);
             _saveArrayFile[1] = true;
         }
         if (_level3)
         {
+            tNeedToSave = true;
             CMainMenu._instance.EnableColorSprite(3);
             _saveArrayFile[2] = true;
         }
         if (_level4)
         {
+            tNeedToSave = true;
             CMainMenu._instance.EnableColorSprite(4);
             _saveArrayFile[3] = true;
         }
         if (_level5)
         {
+            tNeedToSave = true;
             CMainMenu._instance.EnableColorSprite(5);
             _saveArrayFile[4] = true;
         }
         if (_level6)
         {
+            tNeedToSave = true;
             CMainMenu._instance.EnableColorSprite(6);
             _saveArrayFile[5] = true;
         }
         if (_level7)
         {
+            tNeedToSave = true;
             CMainMenu._instance.EnableColorSprite(7);
             _saveArrayFile[6] = true;
         }
         if (_level8)
         {
+            tNeedToSave = true;
             CMainMenu._instance.EnableColorSprite(8);
             _saveArrayFile[7] = true;
         }
 
-        Debug.Log("guardando");
+        if (tNeedToSave)
+        {
+            SaveData();
+        }        
+    }
+
+    public void ResetGame()
+    {
+        for (int i = 0; i < _saveArrayFile.Length; i++)
+        {
+            _saveArrayFile[i] = false;
+        }
         SaveData();
     }
 
@@ -184,5 +205,24 @@ public class CLevelsManager : MonoBehaviour {
             }
         }        
         _continueAnimator.SetBool("Active", false);
+    }
+
+    public void CheckSave() // if there is no valid save turn of the continue panel
+    {
+        if (ES3.KeyExists("saveFile"))
+        {
+            bool[] tSaveArrayFile = new bool[8];
+            tSaveArrayFile = ES3.Load<bool[]>("saveFile");
+
+            for (int i = 0; i < tSaveArrayFile.Length; i++)
+            {
+                if (tSaveArrayFile[i])
+                {
+                    _continueAnimator.SetBool("Active", true);
+                    return;
+                } 
+            }
+            NewGame();
+        }
     }
 }
