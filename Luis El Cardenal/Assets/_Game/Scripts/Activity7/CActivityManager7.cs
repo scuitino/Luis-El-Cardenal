@@ -34,6 +34,9 @@ public class CActivityManager7 : CActivity
     [SerializeField]
     List<AudioClip> _2WordsAvailable, _3WordsAvailable, _4WordsAvailable, _5WordsAvailable, _2WordsFail, _3WordsFail, _4WordsFail, _5WordsFail;
 
+    [SerializeField]
+    List<string> _2WordsSentences, _3WordsSentences, _4WordsSentences, _5WordsSentences, _2WordsSentencesFail, _3WordsSentencesFail, _4WordsSentencesFail, _5WordsSentencesFail;
+
     //to play sentences
     AudioSource _aSource;
 
@@ -67,6 +70,10 @@ public class CActivityManager7 : CActivity
     [SerializeField]
     Animator _luisAnimator;
 
+    // to show sentence on success
+    [SerializeField]
+    Text _sentenceText;
+
     private void Awake()
     {
         //Singleton check
@@ -82,6 +89,10 @@ public class CActivityManager7 : CActivity
         _3WordsFail = new List<AudioClip>();
         _4WordsFail = new List<AudioClip>();
         _5WordsFail = new List<AudioClip>();
+        _2WordsSentencesFail = new List<string>();
+        _3WordsSentencesFail = new List<string>();
+        _4WordsSentencesFail = new List<string>();
+        _5WordsSentencesFail = new List<string>();
         _aSource = this.GetComponent<AudioSource>();
         _helpAnimator.SetBool("Activity7", true);
         _isTutorial = true;
@@ -150,6 +161,7 @@ public class CActivityManager7 : CActivity
                     {
                         _answerIndex = Random.Range(0, _2WordsAvailable.Count);
                         _aSource.clip = _2WordsAvailable[_answerIndex];
+                        _sentenceText.text = _2WordsSentences[_answerIndex];
                     }
                     break;
                 case 3:
@@ -157,6 +169,7 @@ public class CActivityManager7 : CActivity
                     {
                         _answerIndex = Random.Range(0, _3WordsAvailable.Count);
                         _aSource.clip = _3WordsAvailable[_answerIndex];
+                        _sentenceText.text = _3WordsSentences[_answerIndex];
                     }
                     break;
                 case 4:
@@ -164,6 +177,7 @@ public class CActivityManager7 : CActivity
                     {
                         _answerIndex = Random.Range(0, _4WordsAvailable.Count);
                         _aSource.clip = _4WordsAvailable[_answerIndex];
+                        _sentenceText.text = _4WordsSentences[_answerIndex];
                     }
                     break;
                 case 5:
@@ -171,6 +185,7 @@ public class CActivityManager7 : CActivity
                     {
                         _answerIndex = Random.Range(0, _5WordsAvailable.Count);
                         _aSource.clip = _5WordsAvailable[_answerIndex];
+                        _sentenceText.text = _5WordsSentences[_answerIndex];
                     }
                     break;
             }
@@ -217,6 +232,7 @@ public class CActivityManager7 : CActivity
                 _resultButton.DOPlayBackwards();
                 if (_playerAnswer == _correctAnswer) // success
                 {
+                    _sentenceText.GetComponent<Animator>().SetTrigger("Play");
                     _score++;
                     CWormsManager._instance.Collect();
                     if (_score == 5) // check if the player won
@@ -239,15 +255,19 @@ public class CActivityManager7 : CActivity
                     {
                         case 2:
                             _2WordsAvailable.RemoveAt(_answerIndex);
+                            _2WordsSentences.RemoveAt(_answerIndex);
                             break;
                         case 3:
                             _3WordsAvailable.RemoveAt(_answerIndex);
+                            _3WordsSentences.RemoveAt(_answerIndex);
                             break;
                         case 4:
                             _4WordsAvailable.RemoveAt(_answerIndex);
+                            _4WordsSentences.RemoveAt(_answerIndex);
                             break;
                         case 5:
                             _5WordsAvailable.RemoveAt(_answerIndex);
+                            _5WordsSentences.RemoveAt(_answerIndex);
                             break;
                     }
                 }
@@ -274,65 +294,121 @@ public class CActivityManager7 : CActivity
                                 {
                                     _2WordsAvailable.Add(_2WordsFail[i]);
                                 }
+
+                                for (int i = 0; i < _2WordsSentencesFail.Count; i++)
+                                {
+                                    _2WordsSentences.Add(_2WordsSentencesFail[i]);
+                                }
+
                                 _2WordsFail.Clear();
+                                _2WordsSentencesFail.Clear();
+
                                 _2WordsFail.Add(_2WordsAvailable[0]);
+                                _2WordsSentencesFail.Add(_2WordsSentences[0]);
+
                                 _2WordsAvailable.RemoveAt(_answerIndex);
+                                _2WordsSentences.RemoveAt(_answerIndex);
                             }
                             else
                             {
                                 _2WordsFail.Add(_2WordsAvailable[_answerIndex]);
+                                _2WordsSentencesFail.Add(_2WordsSentences[_answerIndex]);
+
                                 _2WordsAvailable.RemoveAt(_answerIndex);
+                                _2WordsSentences.RemoveAt(_answerIndex);
                             }                            
                             break;
                         case 3:
-                            if (_3WordsAvailable.Count == 1)
+                            if (_3WordsAvailable.Count == 1) // if is the last word of this group, reload the list
                             {
                                 for (int i = 0; i < _3WordsFail.Count; i++)
                                 {
                                     _3WordsAvailable.Add(_3WordsFail[i]);
                                 }
+
+                                for (int i = 0; i < _3WordsSentencesFail.Count; i++)
+                                {
+                                    _3WordsSentences.Add(_3WordsSentencesFail[i]);
+                                }
+
                                 _3WordsFail.Clear();
+                                _3WordsSentencesFail.Clear();
+
                                 _3WordsFail.Add(_3WordsAvailable[0]);
+                                _3WordsSentencesFail.Add(_3WordsSentences[0]);
+
                                 _3WordsAvailable.RemoveAt(_answerIndex);
+                                _3WordsSentences.RemoveAt(_answerIndex);
                             }
                             else
                             {
                                 _3WordsFail.Add(_3WordsAvailable[_answerIndex]);
+                                _3WordsSentencesFail.Add(_3WordsSentences[_answerIndex]);
+
                                 _3WordsAvailable.RemoveAt(_answerIndex);
+                                _3WordsSentences.RemoveAt(_answerIndex);
                             }
                             break;
                         case 4:
-                            if (_4WordsAvailable.Count == 1)
+                            if (_4WordsAvailable.Count == 1) // if is the last word of this group, reload the list
                             {
                                 for (int i = 0; i < _4WordsFail.Count; i++)
                                 {
                                     _4WordsAvailable.Add(_4WordsFail[i]);
                                 }
+
+                                for (int i = 0; i < _4WordsSentencesFail.Count; i++)
+                                {
+                                    _4WordsSentences.Add(_4WordsSentencesFail[i]);
+                                }
+
                                 _4WordsFail.Clear();
+                                _4WordsSentencesFail.Clear();
+
                                 _4WordsFail.Add(_4WordsAvailable[0]);
+                                _4WordsSentencesFail.Add(_4WordsSentences[0]);
+
                                 _4WordsAvailable.RemoveAt(_answerIndex);
+                                _4WordsSentences.RemoveAt(_answerIndex);
                             }
                             else
                             {
                                 _4WordsFail.Add(_4WordsAvailable[_answerIndex]);
+                                _4WordsSentencesFail.Add(_4WordsSentences[_answerIndex]);
+
                                 _4WordsAvailable.RemoveAt(_answerIndex);
+                                _4WordsSentences.RemoveAt(_answerIndex);
                             }
                             break;
                         case 5:
-                            if (_5WordsAvailable.Count == 1)
+                            if (_5WordsAvailable.Count == 1) // if is the last word of this group, reload the list
                             {
                                 for (int i = 0; i < _5WordsFail.Count; i++)
                                 {
                                     _5WordsAvailable.Add(_5WordsFail[i]);
                                 }
+
+                                for (int i = 0; i < _5WordsSentencesFail.Count; i++)
+                                {
+                                    _5WordsSentences.Add(_5WordsSentencesFail[i]);
+                                }
+
                                 _5WordsFail.Clear();
+                                _5WordsSentencesFail.Clear();
+
                                 _5WordsFail.Add(_5WordsAvailable[0]);
+                                _5WordsSentencesFail.Add(_5WordsSentences[0]);
+
                                 _5WordsAvailable.RemoveAt(_answerIndex);
+                                _5WordsSentences.RemoveAt(_answerIndex);
                             }
                             else
                             {
                                 _5WordsFail.Add(_5WordsAvailable[_answerIndex]);
+                                _5WordsSentencesFail.Add(_5WordsSentences[_answerIndex]);
+
                                 _5WordsAvailable.RemoveAt(_answerIndex);
+                                _5WordsSentences.RemoveAt(_answerIndex);
                             }
                             break;
                     }
