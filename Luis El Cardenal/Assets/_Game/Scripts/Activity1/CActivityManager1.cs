@@ -56,6 +56,9 @@ public class CActivityManager1 : CActivity
     [SerializeField]
     Animator _speakerAnimator;
 
+    // first challenge flag
+    bool _firstChallenge;
+
     private void Awake()
     {
         //Singleton check
@@ -72,6 +75,7 @@ public class CActivityManager1 : CActivity
         SelectGameWords();
         //PlayWord();
         _helpAnimator.SetBool("Activity1", true);
+        _firstChallenge = true;
     }
 
     private void Update()
@@ -140,9 +144,17 @@ public class CActivityManager1 : CActivity
         _speakerAnimator.gameObject.GetComponent<Button>().interactable = true;
         ChangeReady(false);
         if (!_win)
-        {            
+        {
             // select the next word to play
-            _selectedItemIndex = Random.Range(0, _selectedItems.Count);
+            if (_firstChallenge)
+            {
+                _selectedItemIndex = 1;
+                _firstChallenge = false;
+            }
+            else
+            {
+                _selectedItemIndex = Random.Range(0, _selectedItems.Count);
+            }            
             //_selectedItems[_selectedItemIndex].GetComponent<CItemA1>().PlaySound();
             ReplaySound();
             _correctAnswer = _selectedItems[_selectedItemIndex].GetComponent<CItemA1>().GetID();
